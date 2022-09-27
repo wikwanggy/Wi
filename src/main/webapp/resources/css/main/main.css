@@ -1,0 +1,17 @@
+@charset "UTF-8";
+*{
+	margin: 0px;;
+	padding: 0px;
+}
+body{
+	margin: 0 auto;
+}
+header{
+	width: 100%;
+	height:100px;
+	background-color: red; 
+	text-align: center;
+}
+#header_menu{
+	float: right;
+}
