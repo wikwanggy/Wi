@@ -29,8 +29,8 @@
 							</div>
 							<input type="submit" value="로그인" id="loginbtn">
 							<div class="loginmenu">
-								<a href="#" class="search" id="search_img">ID</a>
-								<a href="#" class="search" id="search_icon">PW찾기</a>
+								<a href="/Account/searchId" class="search" id="search_img">ID</a>
+								<a href="/Account/findPw" class="search" id="search_icon">PW찾기</a>
 								<a href="/Account/Signup" class="sign_a" id="sign_img">회원가입</a>
 							</div>
 						</div>

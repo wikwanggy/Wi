@@ -4,15 +4,9 @@ public class AccountDTO {
 	private String id ;
 	private String password  ;
 	private String name;
-	private String profile;
+	private String email;
 	private String job;
 	private String number;
-	public String getNumber() {
-		return number;
-	}
-	public void setNumber(String number) {
-		this.number = number;
-	}
 	public String getId() {
 		return id;
 	}
@@ -31,11 +25,11 @@ public class AccountDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getProfile() {
-		return profile;
+	public String getEmail() {
+		return email;
 	}
-	public void setProfile(String profile) {
-		this.profile = profile;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getJob() {
 		return job;
@@ -43,10 +37,17 @@ public class AccountDTO {
 	public void setJob(String job) {
 		this.job = job;
 	}
+	public String getNumber() {
+		return number;
+	}
+	public void setNumber(String number) {
+		this.number = number;
+	}
 	@Override
 	public String toString() {
-		return "AccountDTO [id=" + id + ", password=" + password + ", name=" + name + ", profile=" + profile + ", job="
+		return "AccountDTO [id=" + id + ", password=" + password + ", name=" + name + ", email=" + email + ", job="
 				+ job + ", number=" + number + "]";
 	}
+	
 	
 }

@@ -24,6 +24,9 @@
 	
 	<context:component-scan base-package="org.wi.controller" />
 	
+		<beans:bean id="multipartResolver"
+		class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
+	</beans:bean>
 	
 	
 </beans:beans>

@@ -48,6 +48,6 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="/resources/js/signup.js"></script>
+	<script type="text/javascript" src="/resources/js/Account/signup.js"></script>
 </body>
 </html>

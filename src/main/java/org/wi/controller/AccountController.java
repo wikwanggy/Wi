@@ -1,5 +1,6 @@
 package org.wi.controller;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -71,6 +73,24 @@ public class AccountController {
 			
 			return new ResponseEntity<>(as.idcheck(id), HttpStatus.OK);
 		}
+		// ID 찾기 페이지로 이동
+		@GetMapping("/Account/searchId")
+		public void getfindId() {}
+		// ID 찾기 실행
+		@GetMapping("/Account/findId/{name}/{email}")
+		public ResponseEntity<AccountDTO> findId(@PathVariable("name") String name,@PathVariable("email") String email){
 		
+			return new ResponseEntity<>(as.findId(name,email), HttpStatus.OK);
+		}
+		
+		@GetMapping("/Account/findPw")
+		public void getfindPw() throws Exception {
+			
+		}
+		@PostMapping("/Account/findPw")
+		public void findPwPOST(@ModelAttribute AccountDTO adto,HttpServletResponse response) throws Exception{
+			System.out.println("findPw");
+			as.findPw(response,adto);
+		}
 }
 

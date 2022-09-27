@@ -15,10 +15,18 @@
   	</select>
   	<!-- 회원가입 -->
   	<insert id="signup">
-  		insert into member(id,password,name,number,job)
-  		values(#{id},#{password},#{name},#{number},#{job});
+  		insert into member(id,password,name,email,number,job)
+  		values(#{id},#{password},#{name},#{email},#{number},#{job});
   	</insert>
   	<select id="idcheck" resultType="org.wi.model.AccountDTO">
   			select * from member where id=#{id}
   	</select>
+  	<select id="findId"	resultType="org.wi.model.AccountDTO" >
+  		select id from member
+  		where name=#{name} 
+		and email=#{email}
+  	</select>
+  	<update id="updatePassword" >
+	update member set password = #{password} where id = #{id}
+	</update>
   </mapper>
