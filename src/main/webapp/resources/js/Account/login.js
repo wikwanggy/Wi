@@ -24,7 +24,7 @@ $(document).ready(function(){
 		}else {
 			$.ajax ({
 				type : "POST",
-				url : "/logincheck",
+				url : "/Account/logincheck",
 				data : JSON.stringify ({id:id, password:password}),
 				contentType : "application/json; charset=utf-8",
 				async : false,

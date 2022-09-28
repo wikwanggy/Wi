@@ -24,21 +24,21 @@ public class AccountController {
 		AccountService as;
 
 		// 로그인
-		@RequestMapping(value="/loginpost",method=RequestMethod.POST)
+		@RequestMapping(value="/Account/loginpost",method=RequestMethod.POST)
 		public String postLogin(AccountDTO adto, HttpSession session, RedirectAttributes rttr){
 			boolean result=as.login(adto,session);
 			if(result) { // 로그인 성공
 				System.out.println("로그인 성공");
 				rttr.addFlashAttribute("msg","success");
-				return "redirect:/Main/main";
+				return "redirect:/";
 			}else {
 				System.out.println("로그인 실패");
 				rttr.addFlashAttribute("msg","fail");
-				return "redirect:/";
+				return "redirect:/Account/login";
 			}		
 		}
 		// 로그인 체크
-		@PostMapping("/logincheck")
+		@PostMapping("/Account/logincheck")
 		public ResponseEntity<String> logincheck(@RequestBody AccountDTO adto) {
 			System.out.println(adto);
 			int result = as.logincheck(adto);
@@ -48,7 +48,7 @@ public class AccountController {
 							:new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		// 로그아웃
-		@GetMapping("/logout")
+		@GetMapping("/Account/logout")
 		public String getLogout(HttpSession session) {
 			session.invalidate();
 			return "redirect:/";
