@@ -1,107 +1,83 @@
 /**
  * 
  */
- 
+	
+$(document).ready(function() {
+	// fullpage
+	$('#fullpage').fullpage({		      
+	  anchors: ['sec1', 'sec2', 'sec3'],
+	  menu: '#menu',
+	  scrollingSpeed: 1000,
+	  // scrollBar: true,
+	  onLeave: function(origin, destination, direction) {
+	    // 빠른전환으로 이벤트중복시 fullpage와 swiper전환시점 분리막기
+	    $('#fullpage').on('scroll touchmove mousewheel', function(event) {                    
+	      event.preventDefault();
+	      event.stopPropagation();
+	      return false;
+	    });
+	    swiper.mousewheel.disable();
+	  },
+	  afterLoad: function(anchorLink, index) {      
+	    // 전환이 끝난후 이벤트풀기                               
+	    $('#fullpage').off('scroll mousewheel');      
+	    if(!$(".fp-completely .swiper-wrapper").length > 0) $('#fullpage').off('touchmove'); // 모바일분기
+	    if(swiper) swiper.mousewheel.enable();
+	    // if(index == 4) $.fn.fullpage.setAllowScrolling(false); // 마지막센션에서 올라올때 자동방지
+	  }
+	});           
 
- $(document).ready(function(){
-	$("#fullpage").fullpage({
-		autoScrolling:true,
-		scrollHorizontally:true
-		
+	// swiper
+	var length = $(".sec2 .swiper-slide").length;
+	var swiper = new Swiper('.swiper-container', {
+	
+	  slidesPerView: 1,
+	  spaceBetween: 0,
+	  freeMode: false,
+	  speed: 700,
+	  mousewheel: true,
+	  pagination: {
+	    el: '.swiper-pagination',
+	    clickable: true,
+	  },
+	  on: {
+	    slideChange: function(){        
+	      var idx = this.activeIndex;
+	      // 처음과 마지막 슬라이드가 아닐경우 fullpage전환 막기
+	      if(this.activeIndex != 0 && idx != length) $.fn.fullpage.setAllowScrolling(false);
+	      if(length == 2 && idx == 0) $.fn.fullpage.setAllowScrolling(false) //슬라이드가 2개밖에 없을때
+	      // console.log('즉시 : ' + idx);
+	    },  
+	    slideChangeTransitionEnd: function(){
+	      var idx = this.activeIndex;
+	      // 처음과 마지막 슬라이드일 경우 fullpage전환 풀기
+	      if(idx == 0 || idx >= length-1) $.fn.fullpage.setAllowScrolling(true);
+	      // console.log('전환후 : ' + idx);     
+	    },
+	    touchMove: function(e) {        
+	      var startY = e.touches.startY;
+	      setTimeout(function(){
+	        if(startY > e.touches.currentY) swiper.slideNext();  
+	        else swiper.slidePrev();
+	      },100);        
+	    },
+	  }, 
+	}); 
+	$(function(){
+	    var duration = 300;
+
+	    var $sidebar = $('#side_bar');
+	    var $sidebarButton = $sidebar.find('button').on('click', function(){
+	        $sidebar.toggleClass('open');
+	        if($sidebar.hasClass('open')){
+	            $sidebar.stop(true).animate({left: '0px'}, duration, 'easeOutBack');
+	            $sidebarButton.find('span').text('CLOSE');
+	        }else{
+	            $sidebar.stop(true).animate({left: '-270px'}, duration, 'easeInBack');
+	            $sidebarButton.find('span').text('OPEN');
+	        };
+	    });
 	});
-	 $("#fullpage").fullpage({
-		menu: '#menu',
-		lockAnchors: false,
-		anchors:['firstPage', 'secondPage'],
-		navigation: false,
-		navigationPosition: 'right',
-		navigationTooltips: ['firstSlide', 'secondSlide'],
-		showActiveTooltip: false,
-		slidesNavigation: false,
-		slidesNavPosition: 'bottom',
- 
-		//스크롤
-		css3: true,
-		scrollingSpeed: 700,
-		autoScrolling: true,
-		fitToSection: true,
-		fitToSectionDelay: 1000,
-		scrollBar: false,
-		easing: 'easeInOutCubic',
-		easingcss3: 'ease',
-		loopBottom: false,
-		loopTop: false,
-		loopHorizontal: true,
-		continuousVertical: false,
-		continuousHorizontal: false,
-		scrollHorizontally: false,
-		interlockedSlides: false,
-		dragAndMove: false,
-		offsetSections: false,
-		resetSliders: false,
-		fadingEffect: false,
-		normalScrollElements: '#element1, .element2',
-		scrollOverflow: false,
-		scrollOverflowReset: false,
-		scrollOverflowOptions: null,
-		touchSensitivity: 15,
-		bigSectionsDestination: null,
- 
-		//접근성
-		keyboardScrolling: true,
-		animateAnchor: true,
-		recordHistory: true,
- 
-		//디자인
-		controlArrows: true,
-		verticalCentered: true,
-		sectionsColor : ['#ccc', '#fff'],
-		paddingTop: '3em',
-		paddingBottom: '10px',
-		fixedElements: '#header, .footer',
-		responsiveWidth: 0,
-		responsiveHeight: 0,
-		responsiveSlides: false,
-		parallax: false,
-		parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
-		cards: false,
-		cardsOptions: {perspective: 100, fadeContent: true, fadeBackground: true},
- 
-		//맞춤 선택자
-		sectionSelector: '.section',
-		slideSelector: '.slide',
- 
-		lazyLoading: true,
- 
-	//사건(이벤트)
-	onLeave: function(origin, destination, direction){},
-	afterLoad: function(origin, destination, direction){},
-	afterRender: function(){},
-	afterResize: function(width, height){},
-	afterReBuild: function(){},
-	afterResponsive: function(isResponsive){},
-	afterSlideLoad: function(section, origin, destination, direction){},
-	onSlideLeave: function(section, origin, destination, direction){}
-	})
-	/*var swiper = new Swiper('.swiper-container', {
-    speed: 500,
-    direction: 'vertical',
-    mousewheel: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    on: {
-      reachEnd: function () {
-        swiper.mousewheel.disable();
-      }
-    }
-  });
-  window.addEventListener('wheel', function (event) {
-    if (event.deltaY < 0) {
-      swiper.mousewheel.enable();
-    } else if (event.deltaY > 0) {
-    }
-  });*/
+	
 });
 

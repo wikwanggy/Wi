@@ -17,7 +17,7 @@
 	<c:choose>
 		<c:when test="${sessionScope.login==null}">
 			<div id="home_box">
-				<form action="/loginpost" method="post" id="login">
+				<form action="/Account/loginpost" method="post" id="login">
 					<div id="loginbox">
 						<div id="loginarea">
 							<h1>로그인</h1>
