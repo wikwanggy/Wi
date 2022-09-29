@@ -19,7 +19,9 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css" />
 <link rel="stylesheet" type="text/css"
 	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.6/swiper-bundle.css" />
-<link rel="stylesheet" href="/resources/css/main.css">
+<link rel="stylesheet"	media="screen and (min-width:1024px)" href="/resources/css/main.css">
+<link rel="stylesheet" media="screen and (min-width:768px) and(max-width:1024px)" href="/resources/css/main.css">
+<link rel="stylesheet" media="screen and(max-width:768px)" href="/resources/css/main.css">
 </head>
 <body>
 	<header>

@@ -78,6 +78,18 @@ $(document).ready(function() {
 	        };
 	    });
 	});
-	
+	$(function(){
+		$(window).	resize(function(){
+			var width = $(window).width();
+			console.log(width);
+			if(width>=1024){
+				
+			}else if(width>=768 && width<1024){
+				
+			}else if(width<768){
+				
+			}
+		})
+	})
 });
 
