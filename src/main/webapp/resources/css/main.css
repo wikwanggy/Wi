@@ -147,7 +147,11 @@ header {
   vertical-align: top;
 }
 
-.section {font-size: 3vw; text-align:center}
+.section {
+	font-size: 3vw; 
+	text-align:center;
+	background-color: #b5b5b5;
+	}
 
 .swiper-container {
   width: 100%;
@@ -180,8 +184,7 @@ header {
 }
 .right_box{
 	width: 600px;
-	height: 650px;
-	background-color: white;
+	height: 650px;                     
 	margin: 0 auto;
 	
 }
@@ -192,7 +195,6 @@ header {
 .bottom_box{
 	margin:0px;
 	bottom:0px;
-	background: blue;
 }
 .bottom_box h2{
 	margin:0px;
@@ -220,4 +222,17 @@ header {
 #div_input{
 	position: absolute;
 	
+}
+.stack{
+	display:inline-block;
+	float:inherit;
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+	/* margin-left: 40px; */
+}
+.stack img{
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
 }

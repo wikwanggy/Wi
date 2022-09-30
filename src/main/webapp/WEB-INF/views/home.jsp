@@ -41,7 +41,7 @@
 				<div id="login_menu">
 					<c:choose>
 						<c:when test="${sessionScope.login==null}">
-							<a href="/Account/login">로그인</a>
+							<a href="/Account/login">로그인</a><br><br>
 							<a href="/Account/Signup">회원가입</a>
 						</c:when>
 						<c:when test="${sessionScope.login.id=='admin'}">
@@ -49,7 +49,7 @@
 							<a href="/Account/logout">로그아웃</a>
 						</c:when>
 						<c:otherwise>
-							<a href="/mypage/mypage?id=${sessionScope.login.id}">${sessionScope.login.id}님</a>
+							<a href="/mypage/mypage?id=${sessionScope.login.id}">${sessionScope.login.id}님</a><br><br>
 							<a href="/Account/logout">로그아웃</a>
 						</c:otherwise>
 					</c:choose>
@@ -64,10 +64,10 @@
 			</ul>
 			<span id="navi_bar2"></span>
 			<ul id="tab1">
-				<li><a href="#">KakaoTalk</a></li>
-				<li><a href="#">GitHub</a></li>
-				<li><a href="#">Naver</a></li>
-				<li><a href="#">Instargram</a></li>
+				<li><a href="https://open.kakao.com/o/sJxzFBEe">KakaoTalk</a></li>
+				<li><a href="https://github.com/wikwanggy">GitHub</a></li>
+				<li><a href="https://blog.naver.com/hyye0913">Naver</a></li>
+				<li><a href="https://www.instagram.com/calix_98/">Instargram</a></li>
 			</ul>
 			<ul id="menu">
 				<li data-menuanchor="sec1" class="active"><a href="#sec1"></a></li>
@@ -119,11 +119,21 @@
 						</div>
 						<div class="p_right innerbox">
 							<div class="right_box ">
-								<div class="top_box text_box">
-									<h2>Section 위</h2>
+								<div class="top_box text_box stack_box">
+									<h2>Front-Stack</h2>
+									<div class="stack"><img alt="HTML" src="/resources/css/img/HTML.PNG"></div>
+									<div class="stack"><img alt="CSS" src="/resources/css/img/CSS.PNG"></div>
+									<div class="stack"><img alt="JAVASCRIPT" src="/resources/css/img/JS.PNG"></div>
+									<div class="stack"><img alt="JAVA" src="/resources/css/img/java.PNG"></div>
+									<br><br>
+									<div class="stack"><img alt="jQuery" src="/resources/css/img/jQuery.PNG"></div>
+									<div class="stack"><img alt="Mysql" src="/resources/css/img/Mysql.png"></div>
+									<div class="stack"><img alt="Spring" src="/resources/css/img/spring.png"></div>
 								</div>
-								<div class="bottom_box text_box">
-									<h2>Section 아래</h2>
+								<div class="bottom_box text_box stack_box">
+									<!-- <div class="stack"><img alt="jQuery" src="/resources/css/img/jQuery.PNG"></div>
+									<div class="stack"><img alt="Mysql" src="/resources/css/img/Mysql.png"></div>
+									<div class="stack"><img alt="Spring" src="/resources/css/img/spring.png"></div> -->
 								</div>
 							</div>
 						</div>
