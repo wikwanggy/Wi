@@ -233,12 +233,77 @@ h2{
 	width: 200px;
 	height: 200px;
 	border-radius: 200px;
-	/* margin-left: 40px; */
+	filter: drop-shadow(10px 10px 10px #000);
 }
-.stack img{
+.desc{
+	display: flex;
+    justify-content: center;
+    height: 100%;
+    border-radius: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s ease-in-out;
+    font-family: 'Cafe24Ssurround';
+}
+
+#html{
+	background-image: url("/resources/css/img/HTML.png");
 	width: 200px;
 	height: 200px;
 	border-radius: 200px;
+	background-size: contain;
+}
+#css{
+	background-image: url("/resources/css/img/CSS.png");
+	width: 200px;
+	height: 200px;
+	border-radius: 200px;
+	background-size: contain;
+
+}
+#js{
+	background-image: url("/resources/css/img/JS.png");
+	width: 200px;
+	height: 200px;
+	border-radius: 200px;
+	background-size: contain;
+
+}
+#java{
+	background-image: url("/resources/css/img/java.png");
+	width: 200px;
+	height: 200px;
+	border-radius: 200px;
+	background-size: cover;
+	
+
+}
+#jquery{
+	background-image: url("/resources/css/img/jquery.png");
+	width: 200px;
+	height: 200px;
+	border-radius: 200px;
+	background-size: cover;
+
+}
+#mysql{
+	background-image: url("/resources/css/img/Mysql.png");
+	width: 200px;
+	height: 200px;
+	border-radius: 200px;
+	background-size: contain;
+
+}
+#spring{
+	background-image: url("/resources/css/img/spring.png");
+	width: 200px;
+	height: 200px;
+	border-radius: 200px;
+	background-size: contain;
+
+}
+#html:hover{
+	
 }
 #sec4-1{
 	position: relative;

@@ -107,28 +107,42 @@
 		<div class="section swiper-slide sec3 sec_color1" id="sec1-2">
 			<div class="top_box text_box stack_box">
 				<h2>Stacks</h2>
-				<div class="stack">
-					<img alt="HTML" src="/resources/css/img/HTML.png">
+				<div class="stack" id="html">
+					<div class="desc">
+					<p>HTML</p>
+					</div>
 				</div>
-				<div class="stack">
-					<img alt="CSS" src="/resources/css/img/CSS.png">
+				<div class="stack" id="css">
+					<div class="desc">
+					<p>HTML</p>
+					</div>
 				</div>
-				<div class="stack">
-					<img alt="JAVASCRIPT" src="/resources/css/img/JS.png">
+				<div class="stack" id="js">
+					<div class="desc">
+					<p>HTML</p>
+					</div>
 				</div>
-				<div class="stack">
-					<img alt="JAVA" src="/resources/css/img/java.png">
+				<div class="stack" id="java">
+					<div class="desc">
+					<p>HTML</p>
+					</div>
 				</div>
 			</div>
 			<div>
-				<div class="stack">
-					<img alt="jQuery" src="/resources/css/img/jquery.png">
+				<div class="stack" id="jquery">
+					<div class="desc">
+					<p>HTML</p>
+					</div>
 				</div>
-				<div class="stack">
-					<img alt="Mysql" src="/resources/css/img/Mysql.png">
+				<div class="stack" id="mysql">
+					<div class="desc">
+					<p>HTML</p>
+					</div>
 				</div>
-				<div class="stack">
-					<img alt="Spring" src="/resources/css/img/spring.png">
+				<div class="stack" id="spring">
+					<div class="desc">
+					<p>HTML</p>
+					</div>
 				</div>
 			</div>
 		</div>
