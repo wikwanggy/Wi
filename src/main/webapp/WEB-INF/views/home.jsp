@@ -56,13 +56,6 @@
 				</div>
 			</div>
 			<span id="navi_bar1"></span>
-			<ul id="tab">
-				<li><a href="#">tab1</a></li>
-				<li><a href="#">tab2</a></li>
-				<li><a href="#">tab3</a></li>
-				<li><a href="#">tab4</a></li>
-			</ul>
-			<span id="navi_bar2"></span>
 			<ul id="tab1">
 				<li><a href="https://open.kakao.com/o/sJxzFBEe">KakaoTalk</a></li>
 				<li><a href="https://github.com/wikwanggy">GitHub</a></li>
@@ -73,97 +66,35 @@
 				<li data-menuanchor="sec1" class="active"><a href="#sec1"></a></li>
 				<li data-menuanchor="sec2"><a href="#sec2"></a></li>
 				<li data-menuanchor="sec3"><a href="#sec3"></a></li>
+				<li data-menuanchor="sec4"><a href="#sec4"></a></li>
+				<li data-menuanchor="sec5"><a href="#sec5"></a></li>
+				<li data-menuanchor="sec6"><a href="#sec6"></a></li>
 			</ul>
 		</div>
 	</header>
 	<div id="fullpage">
-		<div class="section sec1 active">
-			<div class="p_left innerbox">
-				<h2>Section 1-왼쪽</h2>
-			</div>
-			<div class="p_right innerbox">
-				<div class="right_box">
-					<div id="div_input">
-							<input type="text">
-					</div>
-					<div class="top_box text_box">
-						<h2>Section 위</h2>
-					</div>
-					<div class="bottom_box text_box">
-						<h2>Section 아래</h2>
-					</div>
-				</div>
+		<div class="section sec1 active sec_color1">
+			<div id="sec1_tb">
+			<h2 id="head_text1"><span>안</span>녕하세요</h2>
+			<span id="text">
+			풀스택 개발자를 꿈 꾸는
+			<br><span id="text_name">위광규</span> 입니다.</span>
 			</div>
 		</div>
-		<div class="section sec2">
+		<div class="section sec2 sec_color2">
 			<div class="swiper-container">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide " id="sec1-1">
-						<div class="p_left innerbox box_img1">
-							<h2>Section 2-1왼쪽</h2>
+					<div class="swiper-slide " id="sec2-1">
+						<div class="p_left innerbox">
+							<div id="sec2_pb">
+								
+							</div>
 						</div>
 						<div class="p_right innerbox ">
 							<div class="right_box">
-								<div class="top_box text_box">
-									<h2>Section 위</h2>
-								</div>
-								<div class="bottom_box text_box">
-									<h2>Section 아래</h2>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide  " id="sec1-2">
-						<div class="p_left innerbox box_img2">
-							<h2>Section 2-1왼쪽</h2>
-						</div>
-						<div class="p_right innerbox">
-							<div class="right_box ">
-								<div class="top_box text_box stack_box">
-									<h2>Front-Stack</h2>
-									<div class="stack"><img alt="HTML" src="/resources/css/img/HTML.PNG"></div>
-									<div class="stack"><img alt="CSS" src="/resources/css/img/CSS.PNG"></div>
-									<div class="stack"><img alt="JAVASCRIPT" src="/resources/css/img/JS.PNG"></div>
-									<div class="stack"><img alt="JAVA" src="/resources/css/img/java.PNG"></div>
-									<br><br>
-									<div class="stack"><img alt="jQuery" src="/resources/css/img/jQuery.PNG"></div>
-									<div class="stack"><img alt="Mysql" src="/resources/css/img/Mysql.png"></div>
-									<div class="stack"><img alt="Spring" src="/resources/css/img/spring.png"></div>
-								</div>
-								<div class="bottom_box text_box stack_box">
-									<!-- <div class="stack"><img alt="jQuery" src="/resources/css/img/jQuery.PNG"></div>
-									<div class="stack"><img alt="Mysql" src="/resources/css/img/Mysql.png"></div>
-									<div class="stack"><img alt="Spring" src="/resources/css/img/spring.png"></div> -->
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide " id="sec1-3">
-						<div class="p_left innerbox box_img3">
-							<h2>Section 3-1왼쪽</h2>
-						</div>
-						<div class="p_right innerbox">
-							<div class="right_box">
-								<div class="top_box text_box">
-									<h2>Section 위</h2>
-								</div>
-								<div class="bottom_box text_box">
-									<h2>Section 아래</h2>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide " id="sec1-4">
-						<div class="p_left innerbox box_img4">
-							<h2>Section 4-1왼쪽</h2>
-						</div>
-						<div class="p_right innerbox">
-							<div class="right_box">
-								<div class="top_box text_box">
-									<h2>Section 위</h2>
-								</div>
-								<div class="bottom_box text_box">
-									<h2>Section 아래</h2>
+								<div class="text_box" id="sec2_tb">
+									<h2 id="">My Profile</h2>
+									<span>저의 개인 프로필입니다.</span>
 								</div>
 							</div>
 						</div>
@@ -173,18 +104,125 @@
 				<div class="swiper-pagination"></div>
 			</div>
 		</div>
-		<div class="section sec3">
-			<div class="p_left innerbox">
-				<h2>Section 5-1왼쪽</h2>
+		<div class="section swiper-slide sec3 sec_color1" id="sec1-2">
+			<div class="top_box text_box stack_box">
+				<h2>Stacks</h2>
+				<div class="stack">
+					<img alt="HTML" src="/resources/css/img/HTML.png">
+				</div>
+				<div class="stack">
+					<img alt="CSS" src="/resources/css/img/CSS.png">
+				</div>
+				<div class="stack">
+					<img alt="JAVASCRIPT" src="/resources/css/img/JS.png">
+				</div>
+				<div class="stack">
+					<img alt="JAVA" src="/resources/css/img/java.png">
+				</div>
+			</div>
+			<div>
+				<div class="stack">
+					<img alt="jQuery" src="/resources/css/img/jquery.png">
+				</div>
+				<div class="stack">
+					<img alt="Mysql" src="/resources/css/img/Mysql.png">
+				</div>
+				<div class="stack">
+					<img alt="Spring" src="/resources/css/img/spring.png">
+				</div>
+			</div>
+		</div>
+		<div class="section swiper-slide sec4 sec_color2" id="sec4-1">
+			<div>
+				<h2>PROJECT</h2>
+			</div>
+				<div class="projectlist">
+					<div class="project">
+						<div class="project_num">
+							<span>01</span>
+						</div>
+						<h2>project name</h2>
+					</div>
+					<div class="project">
+						<div class="project_num">
+							<span>02</span>
+						</div>
+						<h2>project name</h2>
+					</div>
+					<div class="project">
+						<div class="project_num">
+							<span>03</span>
+						</div>
+						<h2>project name</h2>
+					</div>
+					<div class="project">
+						<div class="project_num">
+							<span>04</span>
+						</div>
+						<h2>project name</h2>
+					</div>
+				</div>
+				<div class="projectlist">
+					<div class="project">
+						<div class="project_num">
+							<span>05</span>
+						</div>
+						<h2>project name</h2>
+					</div>
+					<div class="project">
+						<div class="project_num">
+							<span>06</span>
+						</div>
+						<h2>project name</h2>
+					</div>
+					<div class="project">
+						<div class="project_num">
+							<span>07</span>
+						</div>
+						<h2>project name</h2>
+					</div>
+					<div class="project">
+						<div class="project_num">
+							<span>08</span>
+						</div>
+						<h2>project name</h2>
+					</div>
+				</div>
+		</div>
+		<div class="section swiper-slide sec5 sec_color1">
+			<div class="p_left innerbox box_img4">
+				<h2>사진</h2>
 			</div>
 			<div class="p_right innerbox">
-				<div class="right_box">
-					<div class="top_box text_box">
-						<h2>Section 위</h2>
+				<div class="sec5_right_box">
+					<div class="" id="sec5_text">
+						<h2>본인 정보</h2>
+						<span>
+						이름 : 위광규<br>
+						나이 : 25세<br>
+						전화번호 : 010-7742-8827<br>	
+						</span>
+						<span>
+						경력 : 현대자동차(21.04~22.02)<br>
+						병역 : 군필(만기제대)<br>
+						현(울산그린컴퓨터아카데미<br>
+						빅데이터(파이썬)분석을 활용한 JAVA<br> 풀 스택(백엔드+프론트엔드)<br> 웹 개발 양성과정 수강 중)
+						</span>
 					</div>
-					<div class="bottom_box text_box">
-						<h2>Section 아래</h2>
-					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section sec6 sec_color1" id="sec6_box">
+			<div id="sec6_box_text">
+				<label><span>앞</span>으로 계획</label><br>
+				<span>저는 배운 과정으로 이 기술들을 활용할 수 있는 회사에 취업을 하는게  계획입니다.<br>
+				아직은 잘 모르고 서툴지만 지켜봐주시면 감사하겠습니다.</span>
+			</div>
+			<div id="sec6_replybox">
+				<div id="sec6_reply">
+				</div>
+				<div id="sec6_replytext">
+				<label><input type="text" id="sec6_textbox"><input type="button" value="댓글달기" id="replybtn"></label>
 				</div>
 			</div>
 		</div>

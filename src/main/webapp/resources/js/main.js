@@ -5,7 +5,7 @@
 $(document).ready(function() {
 	// fullpage
 	$('#fullpage').fullpage({		      
-	  anchors: ['sec1', 'sec2', 'sec3'],
+	  anchors: ['sec1', 'sec2', 'sec3','sec4','sec5','sec6'],
 	  menu: '#menu',
 	  scrollingSpeed: 1000,
 	  // scrollBar: true,
