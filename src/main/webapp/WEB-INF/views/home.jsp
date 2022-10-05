@@ -159,7 +159,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div><!--  -->
 		<div class="section swiper-slide sec4 sec_color2" id="sec4-1">
 			<div>
 				<h2>PROJECT</h2>

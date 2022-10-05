@@ -23,7 +23,7 @@ public class AccountController {
 		@Autowired
 		AccountService as;
 
-		// 로그인
+		// 로그인//
 		@RequestMapping(value="/Account/loginpost",method=RequestMethod.POST)
 		public String postLogin(AccountDTO adto, HttpSession session, RedirectAttributes rttr){
 			boolean result=as.login(adto,session);

@@ -21,7 +21,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.6/swiper-bundle.css" />
 <link rel="stylesheet" href="/resources/css/Admin/Adminmain.css">
 </head>
-<body>
+<body><!--  -->
 	<header>
 		<div id="side_bar" style="left: -270px;">
 			<button type="button" id="side_btn">

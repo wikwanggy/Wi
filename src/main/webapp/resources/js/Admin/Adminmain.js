@@ -110,6 +110,6 @@ $(document).ready(function() {
 			$(this).css("opacity",0);
 			$(this).css("background-color","#ffff80");
 			
-		});
+		});//
 	});
 });

@@ -365,7 +365,7 @@ h2{
     font-family: 'Cafe24Ssurround';
     color: white;
     position: absolute;
-    top:0px;
+    top:0px;/*  */
 }
 .project_desc div{
 	position:absolute;

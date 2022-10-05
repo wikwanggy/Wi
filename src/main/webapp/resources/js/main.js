@@ -34,7 +34,7 @@ $(document).ready(function() {
 	  slidesPerView: 1,
 	  spaceBetween: 0,
 	  freeMode: false,
-	  speed: 700,
+	  speed: 700,//
 	  mousewheel: true,
 	  pagination: {
 	    el: '.swiper-pagination',
