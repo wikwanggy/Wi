@@ -347,12 +347,28 @@ h2{
     font-size: 16px;
     font-family: 'RecipeKorea';
     color: #fff;
+    z-index: 10;
 }
 .project_num span{
 	position: absolute;
     top: 16px;
     left: -10px;
     font-family: 'Cafe24Ssurround';
+}
+.project_desc{
+	display: flex;
+    justify-content: center;
+    height: 300px;
+    width:300px;
+    opacity:0;
+    transition: .5s ease-in-out;
+    font-family: 'Cafe24Ssurround';
+    color: white;
+    position: absolute;
+    top:0px;
+}
+.project_desc div{
+	position:absolute;
 }
 .sec5_right_box{
 	width: 800px;

@@ -44,8 +44,8 @@
 							<a href="/Account/login">로그인</a><br><br>
 							<a href="/Account/Signup">회원가입</a>
 						</c:when>
-						<c:when test="${sessionScope.login.id=='admin'}">
-							<a href="/Memberlist">관리자메뉴</a>
+						<c:when test="${sessionScope.login.id=='dnkrhkdrb'}">
+							<a href="/Admin/Admin">페이지 수정</a><br><br>
 							<a href="/Account/logout">로그아웃</a>
 						</c:when>
 						<c:otherwise>
@@ -104,44 +104,58 @@
 				<div class="swiper-pagination"></div>
 			</div>
 		</div>
-		<div class="section swiper-slide sec3 sec_color1" id="sec1-2">
-			<div class="top_box text_box stack_box">
-				<h2>Stacks</h2>
+		<div class="section swiper-slide sec3 sec_color1" >
+			<div class="top_box  stack_box">
+				<h2 id="sec3_h2">Stacks</h2>
 				<div class="stack" id="html">
 					<div class="desc">
-					<p>HTML</p>
+						<div>
+							<p>HTML</p>
+						</div>
 					</div>
 				</div>
 				<div class="stack" id="css">
 					<div class="desc">
-					<p>HTML</p>
+						<div>
+							<p>CSS</p>
+						</div>
 					</div>
 				</div>
 				<div class="stack" id="js">
 					<div class="desc">
-					<p>HTML</p>
+						<div>
+							<p>JS</p>
+						</div>
 					</div>
 				</div>
 				<div class="stack" id="java">
 					<div class="desc">
-					<p>HTML</p>
+						<div>
+							<p>JAVA</p>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div>
 				<div class="stack" id="jquery">
 					<div class="desc">
-					<p>HTML</p>
+						<div>
+							<p>JQUERY</p>
+						</div>
 					</div>
 				</div>
 				<div class="stack" id="mysql">
 					<div class="desc">
-					<p>HTML</p>
+						<div>
+							<p>MYSQL</p>
+						</div>
 					</div>
 				</div>
 				<div class="stack" id="spring">
 					<div class="desc">
-					<p>HTML</p>
+						<div>
+							<p>SPRING</p>
+						</div>
 					</div>
 				</div>
 			</div>

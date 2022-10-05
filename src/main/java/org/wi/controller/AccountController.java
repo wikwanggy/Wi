@@ -53,9 +53,9 @@ public class AccountController {
 			session.invalidate();
 			return "redirect:/";
 		}
-		// main 화면으로 이동
-		@RequestMapping(value="/Main/main", method=RequestMethod.GET)
-		public void getmain() {}
+		// login 화면으로 이동
+		@RequestMapping(value="/Account/login", method=RequestMethod.GET)
+		public void getlogin() {}
 	
 		// 회원가입으로 이동
 		@GetMapping("/Account/Signup")
@@ -82,15 +82,19 @@ public class AccountController {
 		
 			return new ResponseEntity<>(as.findId(name,email), HttpStatus.OK);
 		}
-		
+		// 비밀번호 찾기
 		@GetMapping("/Account/findPw")
 		public void getfindPw() throws Exception {
 			
 		}
+		// 비밀번호 찾기
 		@PostMapping("/Account/findPw")
 		public void findPwPOST(@ModelAttribute AccountDTO adto,HttpServletResponse response) throws Exception{
 			System.out.println("findPw");
 			as.findPw(response,adto);
 		}
+		// 관리자 페이지로 이동
+		@GetMapping("/Admin/Admin")
+		public void getAdmin() {}
 }
 
