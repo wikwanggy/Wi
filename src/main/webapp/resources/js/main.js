@@ -112,4 +112,8 @@ $(document).ready(function() {
 			
 		});
 	});
-});
+	$(".sec5").on('scroll',function(){
+		$("footer").css("opactiy",0);
+			
+		});
+	});

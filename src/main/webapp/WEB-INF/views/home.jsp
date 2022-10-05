@@ -26,6 +26,7 @@
 	href="/resources/css/main.css">
 <link rel="stylesheet" media="screen and(max-width:768px)"
 	href="/resources/css/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
 	<header>
@@ -74,11 +75,15 @@
 	</header>
 	<div id="fullpage">
 		<div class="section sec1 active sec_color1">
-			<div id="sec1_tb">
-			<h2 id="head_text1"><span>안</span>녕하세요</h2>
+			<div id="sec1_tb" class="animate__animated animate__bounce">
+			<h2 id="head_text1 "><span>안</span>녕하세요</h2>
 			<span id="text">
 			풀스택 개발자를 꿈 꾸는
 			<br><span id="text_name">위광규</span> 입니다.</span>
+			</div>
+			<div id="Scroll">
+				<a href="#">
+				<span></span><span></span><span></span></a>
 			</div>
 		</div>
 		<div class="section sec2 sec_color2">
@@ -92,7 +97,7 @@
 						</div>
 						<div class="p_right innerbox ">
 							<div class="right_box">
-								<div class="text_box" id="sec2_tb">
+								<div class="text_box animate__animated animate__bounce" id="sec2_tb">
 									<h2 id="">My Profile</h2>
 									<span>저의 개인 프로필입니다.</span>
 								</div>
@@ -102,6 +107,10 @@
 				</div>
 				<!-- Add Pagination -->
 				<div class="swiper-pagination"></div>
+			</div>
+			<div id="Scroll">
+				<a href="#" >
+				<span></span><span></span><span></span></a>
 			</div>
 		</div>
 		<div class="section swiper-slide sec3 sec_color1" >
@@ -159,6 +168,10 @@
 					</div>
 				</div>
 			</div>
+			<div id="Scroll">
+				<a href="#" >
+				<span></span><span></span><span></span></a>
+			</div>
 		</div><!--  -->
 		<div class="section swiper-slide sec4 sec_color2" id="sec4-1">
 			<div>
@@ -169,25 +182,53 @@
 						<div class="project_num">
 							<span>01</span>
 						</div>
-						<h2>project name</h2>
+						<div>project
+							logo
+						</div>
+						<div class="project_desc">
+							<div>
+								<h2>준비중</h2>
+							</div>
+						</div>
 					</div>
 					<div class="project">
 						<div class="project_num">
 							<span>02</span>
 						</div>
-						<h2>project name</h2>
+						<div>project
+							logo
+						</div>
+						<div class="project_desc">
+							<div>
+								<h2>준비중</h2>
+							</div>
+						</div>
 					</div>
 					<div class="project">
 						<div class="project_num">
 							<span>03</span>
 						</div>
-						<h2>project name</h2>
+						<div>project
+							logo
+						</div>
+						<div class="project_desc">
+							<div>
+								<h2>준비중</h2>
+							</div>
+						</div>
 					</div>
 					<div class="project">
 						<div class="project_num">
 							<span>04</span>
 						</div>
-						<h2>project name</h2>
+						<div>project
+							logo
+						</div>
+						<div class="project_desc">
+							<div>
+								<h2>준비중</h2>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="projectlist">
@@ -195,29 +236,59 @@
 						<div class="project_num">
 							<span>05</span>
 						</div>
-						<h2>project name</h2>
+						<div>project
+							logo
+						</div>
+						<div class="project_desc">
+							<div>
+								<h2>준비중</h2>
+							</div>
+						</div>
 					</div>
 					<div class="project">
 						<div class="project_num">
 							<span>06</span>
 						</div>
-						<h2>project name</h2>
+						<div>project
+							logo
+						</div>
+						<div class="project_desc">
+							<div>
+								<h2>준비중</h2>
+							</div>
+						</div>
 					</div>
 					<div class="project">
 						<div class="project_num">
 							<span>07</span>
 						</div>
-						<h2>project name</h2>
+						<div>project
+							logo
+						</div>
+						<div class="project_desc">
+							<div>
+								<h2>준비중</h2>
+							</div>
+						</div>
 					</div>
 					<div class="project">
-						<div class="project_num">
-							<span>08</span>
+					<div class="project_num">
+						<span>08</span>
 						</div>
-						<h2>project name</h2>
+						<div>project logo</div>
+						<div class="project_desc">
+							<div>
+								<h2>준비중</h2>
+							</div>
+						</div>
+						</div>
 					</div>
+					<div id="Scroll">
+				<a href="#" >
+				<span></span><span></span><span></span></a>
+			</div>
 				</div>
-		</div>
-		<div class="section swiper-slide sec5 sec_color1">
+			<div class="section swiper-slide sec5 sec_color1">
 			<div class="p_left innerbox box_img4">
 				<h2>사진</h2>
 			</div>
@@ -239,8 +310,12 @@
 					</div>
 				</div>
 			</div>
+			<div id="Scroll">
+				<a href="#" >
+				<span></span><span></span><span></span></a>
+			</div>
 		</div>
-		<div class="section sec6 sec_color1" id="sec6_box">
+		<div class="section sec6 sec_color2" id="sec6_box">
 			<div id="sec6_box_text">
 				<label><span>앞</span>으로 계획</label><br>
 				<span>저는 배운 과정으로 이 기술들을 활용할 수 있는 회사에 취업을 하는게  계획입니다.<br>
