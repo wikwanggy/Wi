@@ -256,7 +256,7 @@
 						<div class="project_desc">
 							<div>
 								<h2>project name</h2>
-								<a href="/Admin/projectfile"><button type="button">수정하기</button></a>
+								<a><button type="button">수정하기</button></a>
 							</div>
 						</div>
 					</div>
