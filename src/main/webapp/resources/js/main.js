@@ -11,14 +11,15 @@ $(document).ready(function() {
 	  // scrollBar: true,
 	  onLeave: function(origin, destination, direction) {
 	    // 빠른전환으로 이벤트중복시 fullpage와 swiper전환시점 분리막기
-	    $('#fullpage').on('scroll touchmove mousewheel', function(event) {                    
+	    $('#fullpage').on('scroll touchmove mousewheel', function(event) {   
 	      event.preventDefault();
 	      event.stopPropagation();
 	      return false;
 	    });
 	    swiper.mousewheel.disable();
 	  },
-	  afterLoad: function(anchorLink, index) {      
+	  afterLoad: function(anchorLink, index) {    
+		  contentsEvent(index);
 	    // 전환이 끝난후 이벤트풀기                               
 	    $('#fullpage').off('scroll mousewheel');      
 	    if(!$(".fp-completely .swiper-wrapper").length > 0) $('#fullpage').off('touchmove'); // 모바일분기
@@ -71,15 +72,22 @@ $(document).ready(function() {
 	        $sidebar.toggleClass('open');
 	        if($sidebar.hasClass('open')){
 	            $sidebar.stop(true).animate({left: '0px'}, duration, 'easeOutBack');
+	            $sidebarButton.stop(true).animate({left:'190px',});
+	            $sidebarButton.css("background-color","#ffff80");
+	            $sidebarButton.css("border-radius","20px 20px 20px 20px");
+	            $sidebarButton.css("border","1px solid black");
 	            $sidebarButton.find('span').text('CLOSE');
 	        }else{
 	            $sidebar.stop(true).animate({left: '-270px'}, duration, 'easeInBack');
+	            $sidebarButton.stop(true).animate({left:'270px'});
+	            $sidebarButton.css("background-color","#ffffff");
+	            $sidebarButton.css("border-radius","0px 10px 10px 0px");
 	            $sidebarButton.find('span').text('OPEN');
 	        };
 	    });
 	});
 	$(function(){
-		$(window).	resize(function(){
+		$(window).resize(function(){
 			var width = $(window).width();
 			console.log(width);
 			if(width>=1024){
@@ -112,8 +120,10 @@ $(document).ready(function() {
 			
 		});
 	});
-	$(".sec5").on('scroll',function(){
-		$("footer").css("opactiy",0);
-			
-		});
-	});
+		function contentsEvent(index){
+			var $thisContents = $(".contents").eq(index-1);
+			$('.contents').not($thisContents).hide();
+			$thisContents.stop(false,true).fadeIn(100);
+		};
+
+});

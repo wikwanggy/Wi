@@ -15,6 +15,7 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.6/swiper-bundle.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="/resources/js/main.js"></script>
+<script type="text/javascript" src="/resources/js/Account/reply.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css" />
 <link rel="stylesheet" type="text/css"
@@ -29,8 +30,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
-	<header>
-		<div id="side_bar" style="left: -270px;">
+	<header id="side_bar" style="left: -270px;">
+		<div >
 			<button type="button" id="side_btn">
 				<span>OPEN</span>
 			</button>
@@ -58,10 +59,10 @@
 			</div>
 			<span id="navi_bar1"></span>
 			<ul id="tab1">
-				<li><a href="https://open.kakao.com/o/sJxzFBEe">KakaoTalk</a></li>
-				<li><a href="https://github.com/wikwanggy">GitHub</a></li>
-				<li><a href="https://blog.naver.com/hyye0913">Naver</a></li>
-				<li><a href="https://www.instagram.com/calix_98/">Instargram</a></li>
+				<li><a href="https://open.kakao.com/o/sJxzFBEe" id="kakao"> KakaoTalk</a></li>
+				<li><a href="https://github.com/wikwanggy" id="git"> GitHub</a></li>
+				<li><a href="https://blog.naver.com/hyye0913" id="blog"> Blog</a></li>
+				<li><a href="https://www.instagram.com/calix_98/" id="insta"> Instargram</a></li>
 			</ul>
 			<ul id="menu">
 				<li data-menuanchor="sec1" class="active"><a href="#sec1"></a></li>
@@ -75,11 +76,13 @@
 	</header>
 	<div id="fullpage">
 		<div class="section sec1 active sec_color1">
-			<div id="sec1_tb" class="animate__animated animate__bounce">
-			<h2 id="head_text1 "><span>안</span>녕하세요</h2>
+			<div class="contents">
+				<div id="sec1_tb" class="animate__animated animate__bounce">
+				<h2 id="head_text1 "><span>안</span>녕하세요</h2>
 			<span id="text">
 			풀스택 개발자를 꿈 꾸는
 			<br><span id="text_name">위광규</span> 입니다.</span>
+			</div>
 			</div>
 			<div id="Scroll">
 				<a href="#">
@@ -88,16 +91,16 @@
 		</div>
 		<div class="section sec2 sec_color2">
 			<div class="swiper-container">
-				<div class="swiper-wrapper">
+				<div class="swiper-wrapper contents">
 					<div class="swiper-slide " id="sec2-1">
 						<div class="p_left innerbox">
-							<div id="sec2_pb">
+							<div id="sec2_pb" class="animate__animated animate__headShake">
 								
 							</div>
 						</div>
 						<div class="p_right innerbox ">
 							<div class="right_box">
-								<div class="text_box animate__animated animate__bounce" id="sec2_tb">
+								<div class="text_box" id="sec2_tb">
 									<h2 id="">My Profile</h2>
 									<span>저의 개인 프로필입니다.</span>
 								</div>
@@ -114,8 +117,9 @@
 			</div>
 		</div>
 		<div class="section swiper-slide sec3 sec_color1" >
-			<div class="top_box  stack_box">
-				<h2 id="sec3_h2">Stacks</h2>
+			<div class="contents">
+				<h2 id="sec3_h2" class="animate__animated animate__fadeInDown">Stacks</h2>
+				<div class="top_box  stack_box animate__animated animate__fadeInDown">
 				<div class="stack" id="html">
 					<div class="desc">
 						<div>
@@ -145,7 +149,7 @@
 					</div>
 				</div>
 			</div>
-			<div>
+			<div class="stack_box animate__animated animate__fadeInDown">
 				<div class="stack" id="jquery">
 					<div class="desc">
 						<div>
@@ -168,17 +172,19 @@
 					</div>
 				</div>
 			</div>
+			</div>
 			<div id="Scroll">
 				<a href="#" >
 				<span></span><span></span><span></span></a>
 			</div>
 		</div><!--  -->
 		<div class="section swiper-slide sec4 sec_color2" id="sec4-1">
-			<div>
+			<div class="contents ">
+				<div class="animate__animated animate__fadeInDown">
 				<h2>PROJECT</h2>
 			</div>
-				<div class="projectlist">
-					<div class="project">
+				<div class="projectlist animate__animated animate__fadeInDown ">
+					<div class="project ">
 						<div class="project_num">
 							<span>01</span>
 						</div>
@@ -231,7 +237,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="projectlist">
+				<div class="projectlist animate__animated animate__fadeInDown">
 					<div class="project">
 						<div class="project_num">
 							<span>05</span>
@@ -283,49 +289,58 @@
 						</div>
 						</div>
 					</div>
+			</div>
 					<div id="Scroll">
 				<a href="#" >
 				<span></span><span></span><span></span></a>
 			</div>
 				</div>
 			<div class="section swiper-slide sec5 sec_color1">
-			<div class="p_left innerbox box_img4">
-				<h2>사진</h2>
-			</div>
-			<div class="p_right innerbox">
-				<div class="sec5_right_box">
-					<div class="" id="sec5_text">
-						<h2>본인 정보</h2>
-						<span>
-						이름 : 위광규<br>
-						나이 : 25세<br>
-						전화번호 : 010-7742-8827<br>	
-						</span>
-						<span>
-						경력 : 현대자동차(21.04~22.02)<br>
-						병역 : 군필(만기제대)<br>
-						현(울산그린컴퓨터아카데미<br>
-						빅데이터(파이썬)분석을 활용한 JAVA<br> 풀 스택(백엔드+프론트엔드)<br> 웹 개발 양성과정 수강 중)
-						</span>
+				<div class="contents">
+					<div class="p_left innerbox box_img4">
+						<h2>사진</h2>
+					</div>
+					<div class="p_right innerbox">
+						<div class="sec5_right_box">
+							<div class="" id="sec5_text">
+								<h2>본인 정보</h2>
+								<span>
+								이름 : 위광규<br>
+								나이 : 25세<br>
+								전화번호 : 010-7742-8827<br>	
+								</span>
+								<span>
+								경력 : 현대자동차(21.04~22.02)<br>
+								병역 : 군필(만기제대)<br>
+								</span>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div id="Scroll">
-				<a href="#" >
-				<span></span><span></span><span></span></a>
-			</div>
-		</div>
-		<div class="section sec6 sec_color2" id="sec6_box">
-			<div id="sec6_box_text">
-				<label><span>앞</span>으로 계획</label><br>
-				<span>저는 배운 과정으로 이 기술들을 활용할 수 있는 회사에 취업을 하는게  계획입니다.<br>
-				아직은 잘 모르고 서툴지만 지켜봐주시면 감사하겠습니다.</span>
-			</div>
-			<div id="sec6_replybox">
-				<div id="sec6_reply">
+				<div id="Scroll">
+					<a href="#" >
+					<span></span><span></span><span></span></a>
 				</div>
-				<div id="sec6_replytext">
-				<label><input type="text" id="sec6_textbox"><input type="button" value="댓글달기" id="replybtn"></label>
+			</div>
+		<div class="section sec6 sec_color2" id="sec6_box">
+			<div class="contents section">
+				<div id="sec6_box_text">
+					<label><span>앞</span>으로 계획</label><br>
+					<span>저는 배운 과정으로 이 기술들을 활용할 수 있는 회사에 취업을 하는게  계획입니다.<br>
+					아직은 잘 모르고 서툴지만 지켜봐주시면 감사하겠습니다.</span>
+				</div>
+				<div id="sec6_replybox">
+					<div id="sec6_reply">
+					</div>
+					<div id="sec6_replytext">
+						<div id="chat">
+							<ul id="replyUL">
+								
+							</ul>
+						</div>
+						<label><input type="text" class="sec6_textbox" id="reply">
+						<input type="button" value="댓글달기" class="replybtn" id="add"></label>
+					</div>
 				</div>
 			</div>
 		</div>
