@@ -15,7 +15,7 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.6/swiper-bundle.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="/resources/js/main.js"></script>
-<script type="text/javascript" src="/resources/js/Account/reply.js"></script>
+<script type="text/javascript" src="/resources/js/Account/Reply.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css" />
 <link rel="stylesheet" type="text/css"
@@ -331,15 +331,30 @@
 				</div>
 				<div id="sec6_replybox">
 					<div id="sec6_reply">
+						<div>
+							<input type="text" value="${replylist.rno}" name="rno">
+							<input type="text" value="${replylist.reply}" name="reply">
+							<input type="text" value="${replylist.id}" name="id">
+						</div>
 						<div id="chat">
 							<ul id="replyUL">
-								
+
 							</ul>
 						</div>
-					</div>
-					<div id="sec6_replytext">
-						<label><input type="text" class="sec6_textbox" id="reply">
-						<input type="button" value="댓글달기" class="replybtn" id="add"></label>
+					
+						<div id="uploadResult">
+							<ul>
+							</ul>
+						</div>
+						<div id="sec6_replytext">
+						<div>
+							<textarea rows="5" cols="50" id="reply" class="sec6_textbox"></textarea>
+							<input type="hidden" name="replydate" id="replydate">
+						</div>
+						<div>
+							<input type="button" value="댓글쓰기" id="add" class="replybtn">
+						</div>
+						</div>
 					</div>
 				</div>
 			</div>

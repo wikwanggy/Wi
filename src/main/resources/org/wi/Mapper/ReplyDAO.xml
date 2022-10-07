@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="org.wi.Mapper.ReplyDAO">
+	<insert id="rewrite"> <!-- 댓글을 쓸 땐 insert문을 -->
+		insert into reply(rno,reply, id,replydate)
+		values(#{rno},#{reply},#{id},#{replydate});
+	</insert>
+	<select id="list" resultType="org.wi.model.ReplyDTO"> <!-- 리스트를 만들땐 select문을 -->
+		select * from reply 
+		where rno =#{rno};
+	</select>
+	<update id="remodify">
+		update reply
+		set reply = #{reply}
+		where rno = #{rno};
+	</update>
+	<delete id="remove">
+		delete from reply
+		where rno=#{rno}
+	</delete>
+</mapper> 
