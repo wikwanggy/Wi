@@ -331,13 +331,13 @@
 				</div>
 				<div id="sec6_replybox">
 					<div id="sec6_reply">
-					</div>
-					<div id="sec6_replytext">
 						<div id="chat">
 							<ul id="replyUL">
 								
 							</ul>
 						</div>
+					</div>
+					<div id="sec6_replytext">
 						<label><input type="text" class="sec6_textbox" id="reply">
 						<input type="button" value="댓글달기" class="replybtn" id="add"></label>
 					</div>
