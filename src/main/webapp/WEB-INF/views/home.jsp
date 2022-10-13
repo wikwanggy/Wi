@@ -281,10 +281,11 @@
 					<div class="project_num">
 						<span>08</span>
 						</div>
-						<div>project logo</div>
+						<div></div>
 						<div class="project_desc">
-							<div>
-								<h2>준비중</h2>
+							<div id="projectlist_box">
+								<p style="font-size:35px;">프로젝트 리스트</p>
+								<a href="/Account/projectlist"><button id="project_btn">더 보기</button></a>
 							</div>
 						</div>
 						</div>
@@ -324,38 +325,17 @@
 			</div>
 		<div class="section sec6 sec_color2" id="sec6_box">
 			<div class="contents section">
+				<div><h1 id="sec6_h1">CONTACT</h1></div>
 				<div id="sec6_box_text">
 					<label><span>앞</span>으로 계획</label><br>
 					<span>저는 배운 과정으로 이 기술들을 활용할 수 있는 회사에 취업을 하는게  계획입니다.<br>
 					아직은 잘 모르고 서툴지만 지켜봐주시면 감사하겠습니다.</span>
 				</div>
-				<div id="sec6_replybox">
-					<div id="sec6_reply">
-						<div>
-							<input type="text" value="${replylist.rno}" name="rno">
-							<input type="text" value="${replylist.reply}" name="reply">
-							<input type="text" value="${replylist.id}" name="id">
-						</div>
-						<div id="chat">
-							<ul id="replyUL">
-
-							</ul>
-						</div>
-					
-						<div id="uploadResult">
-							<ul>
-							</ul>
-						</div>
-						<div id="sec6_replytext">
-						<div>
-							<textarea rows="5" cols="50" id="reply" class="sec6_textbox"></textarea>
-							<input type="hidden" name="replydate" id="replydate">
-						</div>
-						<div>
-							<input type="button" value="댓글쓰기" id="add" class="replybtn">
-						</div>
-						</div>
-					</div>
+				<div id="sec6_textbox">
+					<div id="kakao_h1" class="SNS"><a href="https://open.kakao.com/o/sJxzFBEe" id="kakao_a">KAKAO</a></div>
+					<div id="git_h1" class="SNS"><a href="https://github.com/wikwanggy" id="git_a">GIT</a></div>
+					<div id="blog_h1" class="SNS"><a href="https://blog.naver.com/hyye0913" id="blog_a">BLOG</a></div>
+					<div id="insta_h1" class="SNS"><a href="https://www.instagram.com/calix_98/" id="insta_a"> INSTA</a></div>
 				</div>
 			</div>
 		</div>

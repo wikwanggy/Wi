@@ -2,7 +2,7 @@
  * 
  */
 
-$(document).ready(function(){ // jquery 준비....
+/*$(document).ready(function(){ // jquery 준비....
 	// 함수 호출
 	// detail.jsp가 시작되자마자 bno값을 가져올려면 $(document).ready 아래에 선언
 	var rnoValue = $("input[name='rno']").val();
@@ -119,4 +119,4 @@ function add(reply){  // add 함수 선언 시작부분
 			}
 		}
 	})
-} 
+} */

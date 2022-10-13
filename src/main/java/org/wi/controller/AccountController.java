@@ -96,5 +96,8 @@ public class AccountController {
 		// 관리자 페이지로 이동
 		@GetMapping("/Admin/Admin")
 		public void getAdmin() {}
+		@GetMapping("/Account/projectlist")
+		public void getprojectlist() {}
+			
 }
 
