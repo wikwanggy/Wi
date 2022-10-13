@@ -1,15 +1,19 @@
 package org.wi.service;
 
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 
 import org.apache.commons.mail.HtmlEmail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.wi.Mapper.AccountDAO;
 import org.wi.model.AccountDTO;
+import org.wi.model.ProjectCriteriaDTO;
+import org.wi.model.ProjectDTO;
 
 @Service
 public class AccountServiceImpl implements AccountService {
@@ -123,6 +127,14 @@ public class AccountServiceImpl implements AccountService {
 			out.close();
 		}
 		
+	}
+	//게시물 리스트
+	public ArrayList<ProjectDTO> list(ProjectCriteriaDTO pcd){
+		
+		return adao.list(pcd);
+	}
+	public int total(ProjectCriteriaDTO pcd) {
+		return adao.total(pcd);
 	}
 	
 }

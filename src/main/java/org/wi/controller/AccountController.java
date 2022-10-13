@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.wi.model.AccountDTO;
+import org.wi.model.ProjectCriteriaDTO;
+import org.wi.model.ProjectPageDTO;
 import org.wi.service.AccountService;
 
 @Controller
@@ -97,7 +100,12 @@ public class AccountController {
 		@GetMapping("/Admin/Admin")
 		public void getAdmin() {}
 		@GetMapping("/Account/projectlist")
-		public void getprojectlist() {}
+		public String list(Model model,ProjectCriteriaDTO pcd) {
+			model.addAttribute("list",as.list(pcd));
+			int total = as.total(pcd);
+			model.addAttribute("paging",new ProjectPageDTO(pcd,total));
+			return "/Account/projectlist";
+		}
 			
 }
 

@@ -21,4 +21,51 @@
   	<select id="idcheck" resultType="org.wi.model.AccountDTO">
   			select * from member where id=#{id}
   	</select>
+  	<select id="list" resultType="org.wi.model.ProjectDTO">
+		select *
+		from(
+		select @rownum:=@rownum+1 rownum,b.* 
+		from project b,(select @rownum:=0)as tmp
+		<if test="keyword!=null">
+				<choose>
+					<when test="type =='T'.toString()">
+						where id like concat('%',#{keyword},'%')
+					</when>
+					<when test="type =='C'.toString()">
+						where name like concat('%',#{keyword},'%')
+					</when>
+					<otherwise>
+						where id like concat('%',#{keyword},'%')
+						OR name like concat('%',#{keyword},'%')
+					</otherwise>
+				</choose>
+		</if>
+		order by id DESC
+		) as projectlist
+		<![CDATA[
+		where rownum > (#{pageNum}-1)*#{amount} and rownum<= #{pageNum}*#{amount} 
+		]]>
+	</select>
+		<select id="total" resultType="int">
+		select count(*) from project
+				<if test="keyword!=null">
+				<choose>
+					<when test="type =='T'.toString()">
+						where id like concat('%',#{keyword},'%')
+					</when>
+					<when test="type =='C'.toString()">
+						where name like concat('%',#{keyword},'%')
+					</when>
+					<otherwise>
+						where id like concat('%',#{keyword},'%')
+						OR name like concat('%',#{keyword},'%')
+					</otherwise>
+				</choose>
+		</if>
+	</select>
+	 <update id="cntup">
+   	update project
+   	set cnt = cnt + 1
+   	where bno = #{bno}
+   </update>
   </mapper><!--  -->

@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+body{
+	margin: 0;
+}
+#listbox{
+	margin: 16px auto;
+	height:920px;
+	width: 1024px;	
+	position: relative;
+}
+table{
+	width: 1024px;
+	height: 860px;
+
+}
+table, th, td{
+	text-align: center;
+	border: 1px solid black;
+}
+#pagenum_box{
+	position: absolute;
+	left: 500px;
+}
+.page_num{
+	color: black;
+	font-size: 20px;
+	text-align: center;
+}
+.bno{
+	width: 50px;
+}
+.name{
+	width: 60px;
+}
+.id{
+	width: 90px;
+}
+.content{
+	width: 150px;
+}
+.date{
+	width: 150px;
+}
+.cnt{
+	width: 50px;
+}
+#content_a{
+	color: black;
+	font-size: 20px;
+}
