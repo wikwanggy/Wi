@@ -63,9 +63,12 @@
 				</choose>
 		</if>
 	</select>
+	<select id="detail"  resultType="org.wi.model.ProjectDTO">
+   		select*from project where bno=#{bno}
+   </select>
 	 <update id="cntup">
-   	update project
-   	set cnt = cnt + 1
-   	where bno = #{bno}
+   		update project
+   		set cnt = cnt + 1
+   		where bno = #{bno}
    </update>
   </mapper><!--  -->

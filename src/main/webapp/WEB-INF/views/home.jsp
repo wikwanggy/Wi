@@ -15,7 +15,6 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.6/swiper-bundle.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="/resources/js/main.js"></script>
-<script type="text/javascript" src="/resources/js/Account/Reply.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css" />
 <link rel="stylesheet" type="text/css"
@@ -188,12 +187,14 @@
 						<div class="project_num">
 							<span>01</span>
 						</div>
-						<div>project
-							logo
+						<div id="project1_img">
+							
 						</div>
 						<div class="project_desc">
 							<div>
-								<h2>준비중</h2>
+								<h2>Mongle</h2>
+									<a href="https://github.com/wikwanggy/Mongle"><img src="/resources/css/img/git.PNG" alt="git" class="project_git">
+									</a>
 							</div>
 						</div>
 					</div>
@@ -201,21 +202,21 @@
 						<div class="project_num">
 							<span>02</span>
 						</div>
-						<div>project
-							logo
+						<div id="project2_img">
 						</div>
 						<div class="project_desc">
 							<div>
-								<h2>준비중</h2>
+								<h2>규월드</h2>
+									<a href="https://github.com/wikwanggy/wi"><img src="/resources/css/img/git.PNG" alt="git" class="project_git"></a>
 							</div>
 						</div>
 					</div>
-					<div class="project">
+					<div class="project" style="background-color: rgb(255, 255, 128);">
 						<div class="project_num">
 							<span>03</span>
 						</div>
-						<div>project
-							logo
+						<div>
+							<h2	style="color:black;font-size:40px;margin-top: 100px;">Coming Soon</h2>
 						</div>
 						<div class="project_desc">
 							<div>
@@ -223,73 +224,21 @@
 							</div>
 						</div>
 					</div>
-					<div class="project">
+					<div class="project" style="background-color:#424242;">
 						<div class="project_num">
 							<span>04</span>
 						</div>
-						<div>project
-							logo
+						<div>
+							<h2 style="font-size:40px;margin-top: 100px;">열심히 <br>채우겠습니다.</h2>
 						</div>
-						<div class="project_desc">
-							<div>
-								<h2>준비중</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="projectlist animate__animated animate__fadeInDown">
-					<div class="project">
-						<div class="project_num">
-							<span>05</span>
-						</div>
-						<div>project
-							logo
-						</div>
-						<div class="project_desc">
-							<div>
-								<h2>준비중</h2>
-							</div>
-						</div>
-					</div>
-					<div class="project">
-						<div class="project_num">
-							<span>06</span>
-						</div>
-						<div>project
-							logo
-						</div>
-						<div class="project_desc">
-							<div>
-								<h2>준비중</h2>
-							</div>
-						</div>
-					</div>
-					<div class="project">
-						<div class="project_num">
-							<span>07</span>
-						</div>
-						<div>project
-							logo
-						</div>
-						<div class="project_desc">
-							<div>
-								<h2>준비중</h2>
-							</div>
-						</div>
-					</div>
-					<div class="project">
-					<div class="project_num">
-						<span>08</span>
-						</div>
-						<div></div>
 						<div class="project_desc">
 							<div id="projectlist_box">
 								<p style="font-size:35px;">프로젝트 리스트</p>
 								<a href="/Account/projectlist"><button id="project_btn">더 보기</button></a>
 							</div>
 						</div>
-						</div>
 					</div>
+				</div>
 			</div>
 					<div id="Scroll">
 				<a href="#" >
@@ -323,11 +272,10 @@
 					<span></span><span></span><span></span></a>
 				</div>
 			</div>
-		<div class="section sec6 sec_color2" id="sec6_box">
+		<div class="section sec6 " id="sec6_box">
 			<div class="contents section">
 				<div><h1 id="sec6_h1">CONTACT</h1></div>
 				<div id="sec6_box_text">
-					<label><span>앞</span>으로 계획</label><br>
 					<span>저는 배운 과정으로 이 기술들을 활용할 수 있는 회사에 취업을 하는게  계획입니다.<br>
 					아직은 잘 모르고 서툴지만 지켜봐주시면 감사하겠습니다.</span>
 				</div>

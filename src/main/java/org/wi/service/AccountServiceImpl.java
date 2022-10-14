@@ -136,5 +136,10 @@ public class AccountServiceImpl implements AccountService {
 	public int total(ProjectCriteriaDTO pcd) {
 		return adao.total(pcd);
 	}
+	@Override
+	public ProjectDTO detail(ProjectDTO pjd) {
+		adao.cntup(pjd);
+		return adao.detail(pjd);
+	}
 	
 }

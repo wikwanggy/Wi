@@ -2,24 +2,15 @@
 
 body{
 	margin: 0;
-
-}
-#video_box{
-	position:absolute;
-	z-index: -10;
-	left:0px;
-	right: 0px;
-}
-video{
 	width: 100%;
-	height: 100vh;
-	object-fit:cover;
-	z-index: -10;
+	background-color: #717171;
 }
+
 #home_box{
 	display: flex;
 	position:relative;
-  	justify-content: center;
+  	justify-content: flex-end;
+  	margin-right: 200px;
   	align-items: center;
   	min-height: 100vh;
   	z-index: 1000;
@@ -32,6 +23,8 @@ video{
 	border: 1px solid black;
 	border-radius: 25px;
 	background-color: white;
+	background-image: url("/resources/css/img/loginback.jpg");
+	background-size: cover;
 }
 #loginarea{
 	padding: 17px 17px 0;
@@ -102,5 +95,17 @@ a{
 }
 a:hover {
 	text-decoration: underline;
+}
+#backimg{
+	width: 930px;
+    height: 930px;
+    background-image: url(/resources/css/img/back.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20%;
+    position: absolute;
+    left: 80px;
+    top: 20px;
+    bottom: 20px;
 }
 

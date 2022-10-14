@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.wi.model.AccountDTO;
 import org.wi.model.ProjectCriteriaDTO;
+import org.wi.model.ProjectDTO;
 import org.wi.model.ProjectPageDTO;
 import org.wi.service.AccountService;
 
@@ -99,12 +100,20 @@ public class AccountController {
 		// 관리자 페이지로 이동
 		@GetMapping("/Admin/Admin")
 		public void getAdmin() {}
+		// 프로젝트 리스트
 		@GetMapping("/Account/projectlist")
 		public String list(Model model,ProjectCriteriaDTO pcd) {
 			model.addAttribute("list",as.list(pcd));
 			int total = as.total(pcd);
 			model.addAttribute("paging",new ProjectPageDTO(pcd,total));
 			return "/Account/projectlist";
+		}
+		// 프로젝트 디테일
+		@GetMapping("/Account/detail")
+		public String detail(Model model,ProjectDTO pjd) {
+			model.addAttribute("detail",as.detail(pjd));
+			
+			return "/Account/detail";
 		}
 			
 }

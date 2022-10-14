@@ -2,21 +2,35 @@
 
 body{
 	margin: 0;
+	background-color: #717171;
 }
 #listbox{
 	margin: 16px auto;
-	height:920px;
+	height:860px;
 	width: 1024px;	
 	position: relative;
+
+	
 }
-table{
+#head_h2{
+	text-align: center;
+	color: white;
+}
+#table_div{
 	width: 1024px;
 	height: 860px;
 
 }
+table{
+	width: 1024px;
+}
 table, th, td{
 	text-align: center;
-	border: 1px solid black;
+	border: 1px solid white;
+	color:white;
+}
+table tr td a{
+	color: white;
 }
 #pagenum_box{
 	position: absolute;

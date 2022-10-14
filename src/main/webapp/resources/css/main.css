@@ -436,12 +436,12 @@ h2{
 .project{
 	width: 300px;
 	height: 300px;
-	background-color:#ffff80;
 	position: relative;
+	
 }
 .project h2{
 	color:white;
-	font-size: 20px;
+	font-size: 50px;
 }
 .project_num{
 	position: absolute;
@@ -478,7 +478,7 @@ h2{
 }
 .project_desc div{
 	position:absolute;
-	top:120px;
+	top:40px;
 }
 #projectlist_box{
 	top:10px;
@@ -487,6 +487,25 @@ h2{
 	width: 150px;
 	height: 50px;
 	border-radius: 20px;
+}
+#project1_img{
+	background-image: url("/resources/css/img/logo.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 300px;
+	height: 300px;
+}
+#project2_img{
+	background-image: url("/resources/css/img/logo2.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 300px;
+	height: 300px;
+}
+.project_git{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
 }
 .sec5_right_box{
 	width: 800px;
@@ -512,19 +531,13 @@ h2{
 }
 #sec6_box_text{
 	font-family: 'Cafe24Ssurround';
-	width: 800px;
 	height: 30%;
 	margin: 20px auto;
 	
 	
 }
-#sec6_box_text label span{
-	color: #ffff00;
-	font-size: 2em;
-	
-}
 #sec6_box_text span{
-	font-size: 20px;
+	font-size: 40px;
 }
 #sec6_textbox{
 	width: 800px;
@@ -588,7 +601,7 @@ h2{
 }
 #kakao_a{
 	font-size: 20px;
-	color:#ffff00;
+	color:#dddd00;
 }
 #git_a{
 	font-size: 20px;

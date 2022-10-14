@@ -101,7 +101,7 @@ $(document).ready(function() {
 	})
 	$(document).ready(function(){
 		$(".desc").mouseover(function(){
-			$(this).css("opacity",0.8);
+			$(this).css("opacity",1);
 			$(this).css("background-color","#333333");
 		});
 		$(".desc").mouseout(function(){
@@ -111,7 +111,7 @@ $(document).ready(function() {
 	});
 	$(document).ready(function(){
 		$(".project_desc").mouseover(function(){
-			$(this).css("opacity",0.8);
+			$(this).css("opacity",1);
 			$(this).css("background-color","#333333");
 		});
 		$(".project_desc").mouseout(function(){

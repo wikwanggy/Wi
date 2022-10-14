@@ -11,4 +11,6 @@
 	<select id="getTime1" resultType="String">
 		select sysdate();
 	</select>
+	
+	
 </mapper>

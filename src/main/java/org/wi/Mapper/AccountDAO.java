@@ -22,6 +22,10 @@ public interface AccountDAO {
 	public void updatePassword(AccountDTO adto);
 	// 게시물 리스트
 	public ArrayList<ProjectDTO> list(ProjectCriteriaDTO pcd);
-	
+	// 토탈
 	public int total(ProjectCriteriaDTO pcd);
+	// 디테일
+	public ProjectDTO detail(ProjectDTO pjd);
+	// 조회수
+	public void cntup(ProjectDTO pjd);
 }

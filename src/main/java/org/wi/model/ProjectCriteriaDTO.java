@@ -49,6 +49,8 @@ public class ProjectCriteriaDTO {
 	// to string
 	@Override
 	public String toString() {
-		return "CriteriaVO [pageNum=" + pageNum + ", amount=" + amount + "]";
+		return "ProjectCriteriaDTO [pageNum=" + pageNum + ", amount=" + amount + ", keyword=" + keyword + ", type="
+				+ type + "]";
 	}
+	
 }

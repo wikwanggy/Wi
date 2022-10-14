@@ -10,9 +10,7 @@
 <meta charset="UTF-8">
 </head>
 <body>
-	<div id="video_box">
-	<video src="/resources/css/video/main.mp4" muted autoplay loop> </video>
-
+	<div id="backimg">
 	</div>
 	<c:choose>
 		<c:when test="${sessionScope.login==null}">

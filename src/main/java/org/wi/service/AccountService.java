@@ -26,6 +26,9 @@ public interface AccountService {
 	void sendEmail(AccountDTO adto, String div) throws Exception;
 	// 게시물 리스트
 	public ArrayList<ProjectDTO> list(ProjectCriteriaDTO pcd);
+	// 토탈
 	public int total(ProjectCriteriaDTO pcd);
+	
+	public ProjectDTO detail(ProjectDTO pjd);
 
 }
