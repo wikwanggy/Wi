@@ -28,7 +28,11 @@ public interface AccountService {
 	public ArrayList<ProjectDTO> list(ProjectCriteriaDTO pcd);
 	// 토탈
 	public int total(ProjectCriteriaDTO pcd);
-	
+	// 상세보기
 	public ProjectDTO detail(ProjectDTO pjd);
+	// 수정
+	public void modify(ProjectDTO pjd);
+	// 삭제
+	public void remove(ProjectDTO pjd);
 
 }

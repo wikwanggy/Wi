@@ -174,4 +174,35 @@ table{
 th,td{
 
 	border:  1px solid black;
+	
+}
+#replybox{
+	height: 100%;
+	width: 800px;
+	background-color: aqua;	
+}
+#replyUL{
+	list-style:none;
+	text-align: left;
+	padding-left: 0px;
+}
+.replyli{
+	display: flex;
+	justify-content: space-between;
+	height: 50px;
+	border: 1px solid black;
+    line-height: 45px;	
+}
+.replycontent{
+	width: 620px;
+	height: 45px;
+	border: none; 
+	resize: none;
+	line-height: 45px;
+}
+#reply{
+	    height: 80px;
+    width: 95%;
+    border: none;
+    resize: none;
 }

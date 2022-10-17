@@ -4,6 +4,160 @@ body{
 	margin: 0;
 	background-color: #717171;
 }
+#side_bar{
+	position:fixed;
+	width: 270px;
+    height: 100%;
+    background-color: white;
+}
+#side_btn{
+	background-color: #ffffff;
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 270px;
+    width: 70px;
+    height: 38px;/*  */
+    line-height: 38px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+    border-radius: 0px 10px 10px 0px;
+    
+} 
+header {
+    top: 0;
+    left: 0;
+   z-index: 110;
+}
+#inner_header{
+	padding: 60px 20px 0 80px;
+}
+#photo{
+	width: 100px;
+	height: 100px;
+	border: 1px solid black;
+	border-radius: 100px;
+	text-align: center;
+}
+#photo img{
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+}
+#login_menu a{
+	text-decoration: none;
+	color: black;
+	line-height: 15px;
+}
+#navi_bar1{
+    overflow: hidden;
+    left:60px;
+    top:220px;
+    display: block;
+    width: 180px;
+    height: 1px;
+    max-height: 280px;
+    margin: 14px auto;
+    background-color: #c0c0c0;
+}
+
+#tab1{
+	list-style: none;
+}
+#tab1 li{
+	padding-left:40px;
+	text-align: left;
+	line-height: 50px;
+}
+#tab1 li a{
+	text-decoration: none;
+	color: black;
+}
+#kakao::before{
+	content:"";
+	background-image:url("/resources/css/img/kakao.PNG");
+	background-size:15px 15px;
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+	border-radius: 50%;
+}
+#git::before{
+	content:"";
+	background-image:url("/resources/css/img/git.PNG");
+	background-size:15px 15px;
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+	border-radius: 50%;
+}
+#blog::before{
+	content:"";
+	background-image:url("/resources/css/img/blog.PNG");
+	background-size:15px 15px;
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+	border-radius: 50%;
+}
+#insta::before{
+	content:"";
+	background-image:url("/resources/css/img/insta.PNG");
+	background-size:15px 15px;
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+	border-radius: 50%;
+}
+#menu li {
+  display: inline-block;
+  margin: 10px;
+  width: 12px;
+  height: 12px;
+  color: #000;
+  background: #ffff00;
+  -webkit-border-radius: 10px;
+  border-radius: 12px;
+   float: left;
+}
+#menu li.active {
+  background: #00ff00;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ff80ff;
+}
+#menu li a {
+  text-decoration: none;
+  color: #808080;
+}
+#menu li.active a:hover {
+  color: #000;
+}
+#menu li:hover {
+  background: #000;
+}
+#menu li a,
+#menu li.active a {
+  padding: 9px 18px;
+  display: block;
+}
+#menu li.active a {
+  color:black;
+}
+#menu {
+  position:absolute;
+  top:650px;
+  left:100px;
+  height: 40px;
+  z-index: 70;
+  width: 40px;
+  padding: 0;
+  margin: 0;
+  opacity: 1!important;
+  display: inline-block;
+  vertical-align: top;
+}
 #listbox{
 	margin: 16px auto;
 	height:860px;
@@ -45,16 +199,21 @@ table tr td a{
 	width: 50px;
 }
 .name{
-	width: 60px;
+	width: 150px;
 }
 .id{
 	width: 90px;
 }
 .content{
-	width: 150px;
+	width: 480px;
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis; 
+	line-height: 65px;
 }
 .date{
-	width: 150px;
+	width: 170px;
 }
 .cnt{
 	width: 50px;
@@ -62,4 +221,7 @@ table tr td a{
 #content_a{
 	color: black;
 	font-size: 20px;
+}
+.list{
+	height:65px;
 }

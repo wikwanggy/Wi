@@ -10,15 +10,7 @@ public class ProjectDTO {
 	private String content;
 	private int cnt;
 	private String regdate;
-	
-	
-	
-	public String getRegdate() {
-		return regdate;
-	}
-	public void setRegdate(String regdate) {
-		this.regdate = regdate;
-	}
+	private int rownum;
 	public String getName() {
 		return name;
 	}
@@ -67,11 +59,27 @@ public class ProjectDTO {
 	public void setCnt(int cnt) {
 		this.cnt = cnt;
 	}
+	public String getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
+	}
+	public int getRownum() {
+		return rownum;
+	}
+	public void setRownum(int rownum) {
+		this.rownum = rownum;
+	}
 	@Override
 	public String toString() {
 		return "ProjectDTO [name=" + name + ", logo=" + logo + ", link=" + link + ", uuid=" + uuid + ", bno=" + bno
-				+ ", id=" + id + ", content=" + content + ", cnt=" + cnt + ", regdate=" + regdate + "]";
+				+ ", id=" + id + ", content=" + content + ", cnt=" + cnt + ", regdate=" + regdate + ", rownum=" + rownum
+				+ "]";
 	}
+	
+	
+	
 	
 	
 	

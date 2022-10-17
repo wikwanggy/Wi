@@ -11,6 +11,8 @@
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="/resources/js/sidebar.js"></script>
+<script type="text/javascript" src="/resources/js/Account/reply.js"></script>
+<script type="text/javascript" src="/resources/js/Account/attach.js"></script>
 <link rel="stylesheet" href="/resources/css/Account/detail.css">
 </head>
 <body>
@@ -31,9 +33,6 @@
 							<a href="/Account/Signup">회원가입</a>
 						</c:when>
 						<c:when test="${sessionScope.login.id=='dnkrhkdrb'}">
-							<input type="button" value="글삭제" formaction="/Account/remove"><br><br>
-							<input type="button" value="글수정" formaction="/Account/remove">
-							<br><br>
 							<a href="/Account/logout">로그아웃</a>
 						</c:when>
 						<c:otherwise>
@@ -65,11 +64,11 @@
 			<h2>게시물 상세 보기</h2>
 		</div>
 		<div id="detailbox">
-			<form>
+			<form method="post">
 				<table>
 					<tr style="height: 40px;">
 						<th style="width: 80px;">번호</th>
-						<td>${detail.bno}</td>
+						<td><input value="${detail.bno}" type="text" readonly name="bno"></td>
 						<th>조회수</th>
 						<td>${detail.cnt}</td>
 					</tr>
@@ -81,15 +80,50 @@
 					</tr>
 					<tr >
 						<th>내용</th>
-						<td colspan="3">${detail.content}</td>
+						<td colspan="3"><textarea name="content" style="height: 99%; width: 99%;border: none; resize: none;">${detail.content}</textarea></td>
 					</tr>
+					
 					<tr style="height: 40px;">
 						<th>작성일자</th>
-						<td colspan="3">${detail.regdate}</td>
+						<td>${detail.regdate}</td>
+						<th>링크</th>
+						<td><a href="${detail.link}">${detail.link}</a></td>
+						
 					</tr>
 				</table>
+					<c:choose>
+						<c:when test="${sessionScope.login==null}">
+						</c:when>
+						<c:when test="${sessionScope.login.id=='dnkrhkdrb'}">
+							<input type="submit" value="글수정" formaction="/Account/modify">
+							<input type="submit" value="글삭제" formaction="/Account/remove">
+						</c:when>
+						<c:otherwise>
+						</c:otherwise>
+					</c:choose>
 			</form>
+			<div id="uploadResult">
+		<ul>
+		</ul>
 		</div>
+		<div id="replybox">
+			<div><label>COMMENT</label></div>
+			
+			<div>
+				<textarea rows="5" cols="50" id="reply" ></textarea>
+			</div>
+			<div>
+				<input type="button" value="댓글쓰기" id="add">   
+			</div>
+			<div>
+			</div>
+			<div id="chat">
+				<ul id="replyUL">
+					
+				</ul>
+			</div>
+		</div>
+	</div>
 	</section>
 </body>
 </html>

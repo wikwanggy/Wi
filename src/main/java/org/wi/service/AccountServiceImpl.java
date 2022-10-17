@@ -141,5 +141,14 @@ public class AccountServiceImpl implements AccountService {
 		adao.cntup(pjd);
 		return adao.detail(pjd);
 	}
+	@Override
+	public void modify(ProjectDTO pjd) {
+		adao.modify(pjd);
+		
+	}
+	public void remove(ProjectDTO pjd) {
+		adao.remove(pjd);
+		
+	}
 	
 }

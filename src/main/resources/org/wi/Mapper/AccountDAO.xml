@@ -40,7 +40,7 @@
 					</otherwise>
 				</choose>
 		</if>
-		order by id DESC
+		order by cnt DESC
 		) as projectlist
 		<![CDATA[
 		where rownum > (#{pageNum}-1)*#{amount} and rownum<= #{pageNum}*#{amount} 
@@ -71,4 +71,14 @@
    		set cnt = cnt + 1
    		where bno = #{bno}
    </update>
+   <update id="modify">
+   		update project
+   		set
+   			content=#{content}
+   		where bno=#{bno}
+   </update>
+   <delete id="remove">
+   		delete from project
+   		where bno=#{bno}
+   </delete>
   </mapper><!--  -->

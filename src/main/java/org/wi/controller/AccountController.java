@@ -102,7 +102,7 @@ public class AccountController {
 		public void getAdmin() {}
 		// 프로젝트 리스트
 		@GetMapping("/Account/projectlist")
-		public String list(Model model,ProjectCriteriaDTO pcd) {
+		public String list(Model model,ProjectCriteriaDTO pcd,HttpSession session) {
 			model.addAttribute("list",as.list(pcd));
 			int total = as.total(pcd);
 			model.addAttribute("paging",new ProjectPageDTO(pcd,total));
@@ -110,11 +110,25 @@ public class AccountController {
 		}
 		// 프로젝트 디테일
 		@GetMapping("/Account/detail")
-		public String detail(Model model,ProjectDTO pjd) {
+		public String detail(Model model,ProjectDTO pjd,HttpSession session) {
 			model.addAttribute("detail",as.detail(pjd));
 			
 			return "/Account/detail";
 		}
-			
+		// 프로젝트 수정
+		@PostMapping("/Account/modify")
+		public String modify(ProjectDTO pjd, RedirectAttributes rttr,HttpSession session) {
+			as.modify(pjd);
+			rttr.addFlashAttribute("bno",pjd.getBno());
+			return "redirect:/Account/projectlist";
+		}
+		// 프로젝트 삭제
+		@PostMapping("/Account/remove")
+		public String remove(ProjectDTO pjd,HttpSession session) {
+			as.remove(pjd);
+			return "redirect:/Account/projectlist";
+		}
+		@GetMapping("/Account/newproject")
+		public void newproject() {}
 }
 

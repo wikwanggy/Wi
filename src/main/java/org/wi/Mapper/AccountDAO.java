@@ -28,4 +28,8 @@ public interface AccountDAO {
 	public ProjectDTO detail(ProjectDTO pjd);
 	// 조회수
 	public void cntup(ProjectDTO pjd);
+	// 수정
+	public void modify(ProjectDTO pjd);
+	// 삭제
+	public void remove(ProjectDTO pjd);
 }

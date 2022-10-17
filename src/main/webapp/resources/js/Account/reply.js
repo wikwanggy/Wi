@@ -2,21 +2,21 @@
  * 
  */
 
-/*$(document).ready(function(){ // jquery 준비....
+$(document).ready(function(){ // jquery 준비....
 	// 함수 호출
 	// detail.jsp가 시작되자마자 bno값을 가져올려면 $(document).ready 아래에 선언
-	var rnoValue = $("input[name='rno']").val();
+	var bnoValue = $("input[name='bno']").val();
 	
 	// detail.jsp가 시작되자마자 댓글목록 리스트(list) 함수를 호출
-	list(rnoValue);
+	list(bnoValue);
 	// 댓글 쓰기버튼을 클릭하면 
 	$("#add").on("click",function(){
 		// 댓글쓰기 버튼을 클릭했을 당시에 댓글내용을 가져올려면 $("add").on("click",function(){아래에 선언
 		var replyValue = $("#reply").val();
-		var idValue ="aaaa1234";
-		var replydateValue=" ";
+		var idValue ="1234";
 		
-		add({rno:rnoValue,reply:replyValue,id:idValue,replydate:replydateValue}); // 댓글쓰기를 하기위한 함수 호출	
+		
+		add({bno:bnoValue,reply:replyValue,id:idValue}); // 댓글쓰기를 하기위한 함수 호출	
 	})
 	// 댓글 수정버튼을 클릭하면
 	// 이미 존재하는 태그에 이벤트를 처리하고
@@ -74,23 +74,21 @@ function modify(reply){
 	})
 }
 	// add 함수 선언 끝 부분
-	function list(rno){// list함수 선언시작
+	function list(bno){// list함수 선언시작
 		
 		// alert(bno);
-		$.getJSON("/replies/"+rno+".json",function(data){ // "/replies/"+bno+".json"(주소) / function(data)(화면에 표시될 리스트를 위한 함수) 
+		$.getJSON("/replies/"+bno+".json",function(data){ // "/replies/"+bno+".json"(주소) / function(data)(화면에 표시될 리스트를 위한 함수) 
 		
 			var str=""; // <li>를 저장할 변수 선언
-			for(var i=0;i<data.length;i++){ 
-				str+="<li>id : "+data[i].id+"</li>"
-				str+="<li>rno : "+data[i].rno+"</li>"
-				str+="<li><textarea id='replycontent"+data[i].rno+"'>"+data[i].reply+"</textarea></li>"
-				str+="<li><input class='update' type='button' value='수정' data-rno="+data[i].rno+" data-reply="+data[i].reply+">"
-				str+="</li>"
-				str+="<li><input class='remove' type='button' value='삭제' data-rno="+data[i].rno+" data-reply="+data[i].reply+">"
-				str+="</li>"
+			for(var i=0;i<data.length;i++){ // data.length는 데이타 길이에 맡게 반복
+				str+="<div class='replyli'>"
+				str+="<li>ID("+data[i].id+")</li>" //  data[i]데이터 길이만큼 id를 <li>태그안에 넣어 HTML에 표현
+				str+="<li><textarea readonly class='replycontent'>"+data[i].reply+"</textarea></li>" // data[i]데이터 길이만큼 reply를 <li>태그안에 넣어 HTML에 표현
+				str+="<li>댓글번호("+data[i].rno+")</li>"
+				str+="</div><br><br>"
 			}
 			$("#replyUL").html(str); // 위의 for문안에 표시할려고 적어놨는 문법을 replyUL이라는 아이디를 가진 태그에 표시
-		})
+		});
 		
 	}
 	// list함수 선언 끝
@@ -119,4 +117,4 @@ function add(reply){  // add 함수 선언 시작부분
 			}
 		}
 	})
-} */
+} 
