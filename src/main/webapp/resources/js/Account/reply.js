@@ -1,6 +1,6 @@
 /**
  * 
- */
+ *//*
 
 $(document).ready(function(){ // jquery 준비....
 	// 함수 호출
@@ -13,7 +13,7 @@ $(document).ready(function(){ // jquery 준비....
 	$("#add").on("click",function(){
 		// 댓글쓰기 버튼을 클릭했을 당시에 댓글내용을 가져올려면 $("add").on("click",function(){아래에 선언
 		var replyValue = $("#reply").val();
-		var idValue ="1234";
+		var idValue =$("input[name='id']").val();
 		
 		
 		add({bno:bnoValue,reply:replyValue,id:idValue}); // 댓글쓰기를 하기위한 함수 호출	
@@ -82,9 +82,10 @@ function modify(reply){
 			var str=""; // <li>를 저장할 변수 선언
 			for(var i=0;i<data.length;i++){ // data.length는 데이타 길이에 맡게 반복
 				str+="<div class='replyli'>"
-				str+="<li>ID("+data[i].id+")</li>" //  data[i]데이터 길이만큼 id를 <li>태그안에 넣어 HTML에 표현
+				str+="<li><input type='hidden' name='id' id='id' value='${sessionScope.login.id}'>ID("+data[i].id+")</li>" //  data[i]데이터 길이만큼 id를 <li>태그안에 넣어 HTML에 표현
 				str+="<li><textarea readonly class='replycontent'>"+data[i].reply+"</textarea></li>" // data[i]데이터 길이만큼 reply를 <li>태그안에 넣어 HTML에 표현
 				str+="<li>댓글번호("+data[i].rno+")</li>"
+				str=="<input type='hidden' id='replydate' name='replydate'>"
 				str+="</div><br><br>"
 			}
 			$("#replyUL").html(str); // 위의 for문안에 표시할려고 적어놨는 문법을 replyUL이라는 아이디를 가진 태그에 표시
@@ -118,3 +119,127 @@ function add(reply){  // add 함수 선언 시작부분
 		}
 	})
 } 
+*/
+/**
+ * 
+ */
+	
+$(document).ready(function(){
+	
+	//댓글
+	var bnoval=$("input[name='bno']").val();
+	
+	list(bnoval);
+	
+	$("#replywrt").on("click",function(){
+		var replyval=$("#reply").val();
+		var idval=$("input[name='sessionid']").val();
+		
+		if(replyval==''){
+			alert("내용을 입력하세요.");
+			return;
+		}
+		
+		replywrt({bno:bnoval,reply:replyval,id:idval});
+		
+		console.log(replyval);
+	})
+	$("#chat").on("click",".remove",function(){
+		var rno=$(this).data("rno");
+		var result=confirm("삭제 후엔 복구할 수 없습니다. 정말 삭제하시겠습니까?");
+		if(result){
+			remove(rno);
+		}
+	})
+	$("textarea.autosize").on('keydown keyup', function () {
+		$(this).height(1).height( $(this).prop('scrollHeight')+12 );	
+	})
+	$('.text_box textarea').keyup(function() {
+		var content = $(this).val();
+		$('.text_box .count span').html(content.length);
+		if (content.length > 300) {
+			alert("최대 200자까지 입력 가능합니다.");
+			$(this).val(content.substring(0, 300));
+			$('.text_box .count span').html(300);
+		}
+	})
+	$("#chat").on("click",".update",function(){
+		var rno=$(this).data("rno");
+		var reply=$('#replycontent'+rno).val();
+		var id=$(this).data("id");
+		if(reply==''){
+			alert("내용을 입력하세요.");
+			return;
+		}
+		modify({rno:rno,reply:reply,id:id});
+	})
+})
+function replywrt(reply){
+	console.log(reply);
+	$.ajax({ //ajax (비동기식 처리)
+		type:"post", // method방식(get, post, put, delete)
+		url:"/replies/new", // controller의 value(url주소예시:/sample/getText)
+		data:JSON.stringify(reply),
+		contentType:"application/json; charset=utf-8",
+		success:function(result){
+			if(result=="success"){
+				alert("댓글 성공");
+				location.reload();
+			}
+		}
+	})
+}
+
+function list(bno){
+	//alert(bno)
+	//↓type=get, data=JSON
+	$.getJSON("/replies/"+bno+".json", function(data){
+			var str="";
+			var idval=$("input[name='sessionid']").val();
+			/*var list=data.list;
+			var pf=data.page;*/
+			
+			for(var i=0;i<data.length;i++){
+				str+="<li class='li'>"
+				str+=data[i].id+"<span> | </span>"
+				
+				if(data[i].id==idval||idval=='dnkrhkdrb'){
+					
+					str+="<div class='replycontent'>"+data[i].reply+"</div>"
+				}else{
+					str+="<pre><span class='replycontent'>"+data[i].reply+"</span></pre>"
+				}
+				str+="</li><br>"
+			}
+			$("#replyUL").html(str);
+	})
+	
+}
+
+function remove(rno){
+	$.ajax({
+		type:"delete",
+		url:"/replies/remove/"+rno,
+		success:function(result){
+			if(result=="success"){
+				//alert("삭제가 완료되었습니다.");
+				location.reload();
+			}
+		}
+	})
+}
+function modify(reply){
+	console.log(reply);
+	$.ajax({
+		type:"put",
+		url:"/replies/modify",
+		data:JSON.stringify(reply),
+		contentType:"application/json; charset=utf-8",
+		success:function(result){
+			if(result=="success"){
+				location.reload();
+			}
+		}
+	})
+}
+

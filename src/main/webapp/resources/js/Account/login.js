@@ -44,5 +44,12 @@ $(document).ready(function(){
 		
 		return check;
 	})
+	TweenMax.from(".logo", 1, {
+		  left:-600, 
+		  backgroundColor:"#ccc",
+		  padding: 50,
+		  border:"1px solid red",
+		  borderRadius:15
+		});
 
 })

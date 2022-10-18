@@ -2,6 +2,8 @@ package org.wi.controller;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +23,7 @@ public class ReplyController {
 	
 	// 댓글 쓰기
 	@RequestMapping(value = "/replies/new",method = RequestMethod.POST)
-	public ResponseEntity<String> replywrite(@RequestBody ReplyDTO reply) { // Model일 경우 @RequestBody를 쓰고
+	public ResponseEntity<String> replywrite(@RequestBody ReplyDTO reply,HttpSession session) { // Model일 경우 @RequestBody를 쓰고
 		// insert가 성공했으면 result 변수에 1저장
 		// insert가 실패했으면 result 변수에 0저장
 		int result = rs.rewrite(reply);

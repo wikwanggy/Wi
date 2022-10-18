@@ -5,17 +5,19 @@
 <head>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/resources/js/Account/login.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
 <link rel="stylesheet" href="/resources/css/Account/login.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <title>Home</title>
 <meta charset="UTF-8">
 </head>
 <body>
-	<div id="backimg">
+	<div id="backimg" class="logo">
 	</div>
 	<c:choose>
 		<c:when test="${sessionScope.login==null}">
 			<div id="home_box">
-				<form action="/Account/loginpost" method="post" id="login">
+				<form action="/Account/loginpost" method="post" id="login" class="animate__animatedanimate__zoomInDown">
 					<div id="loginbox">
 						<div id="loginarea">
 							<h1>로그인</h1>

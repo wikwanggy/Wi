@@ -11,6 +11,7 @@ public class ProjectDTO {
 	private int cnt;
 	private String regdate;
 	private int rownum;
+	private int count;
 	public String getName() {
 		return name;
 	}
@@ -71,18 +72,18 @@ public class ProjectDTO {
 	public void setRownum(int rownum) {
 		this.rownum = rownum;
 	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
 	@Override
 	public String toString() {
 		return "ProjectDTO [name=" + name + ", logo=" + logo + ", link=" + link + ", uuid=" + uuid + ", bno=" + bno
 				+ ", id=" + id + ", content=" + content + ", cnt=" + cnt + ", regdate=" + regdate + ", rownum=" + rownum
-				+ "]";
+				+ ", count=" + count + "]";
 	}
-	
-	
-	
-	
-	
-	
 	
 	
 }

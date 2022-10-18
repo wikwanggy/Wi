@@ -65,10 +65,10 @@
 		</div>
 		<div id="detailbox">
 			<form method="post">
-				<table>
+				<table id="table">
 					<tr style="height: 40px;">
 						<th style="width: 80px;">번호</th>
-						<td><input value="${detail.bno}" type="text" readonly name="bno"></td>
+						<td><input value="${detail.bno}" type="text" readonly name="bno" id="input_bno"></td>
 						<th>조회수</th>
 						<td>${detail.cnt}</td>
 					</tr>
@@ -80,14 +80,14 @@
 					</tr>
 					<tr >
 						<th>내용</th>
-						<td colspan="3"><textarea name="content" style="height: 99%; width: 99%;border: none; resize: none;">${detail.content}</textarea></td>
+						<td colspan="3"><textarea name="content" readonly="readonly" style="height: 98%; width: 99%;border: none; resize: none;">${detail.content}</textarea></td>
 					</tr>
 					
 					<tr style="height: 40px;">
 						<th>작성일자</th>
 						<td>${detail.regdate}</td>
 						<th>링크</th>
-						<td><a href="${detail.link}">${detail.link}</a></td>
+						<td><a href="${detail.link}" id="link">${detail.link}</a></td>
 						
 					</tr>
 				</table>
@@ -106,24 +106,62 @@
 		<ul>
 		</ul>
 		</div>
-		<div id="replybox">
-			<div><label>COMMENT</label></div>
-			
-			<div>
-				<textarea rows="5" cols="50" id="reply" ></textarea>
-			</div>
-			<div>
-				<input type="button" value="댓글쓰기" id="add">   
-			</div>
-			<div>
-			</div>
-			<div id="chat">
-				<ul id="replyUL">
-					
-				</ul>
+			<div id="replybox">
+
+				<table id="detail_reply">
+					<tr class="trtd">
+						<td class="trtd"><c:choose>
+								<c:when test="${sessionScope.login!=null}">
+									<div class="detail_input">
+										<div>
+											<label>댓글 <c:if test="${detail.count!=0}">
+								${detail.count}개
+							</c:if>
+											</label> <input type="hidden" name="sessionid"
+												value="${sessionScope.login.id}">
+										</div>
+										<div class="text_box">
+											<textarea  cols="115" rows="7" placeholder="댓글 입력" id="reply"></textarea>
+											<div class="count"><span>0</span>/300</div>
+										</div>
+										<div id="reply_wrt">
+											<input type="button" class="btn_board" id="replywrt"
+												value="작성">
+										</div>
+									</div>
+								</c:when>
+								<c:otherwise>
+									<div class="detail_input">
+										<div>
+											<label>댓글 <c:if test="${detail.count!=0}">
+								${detail.count}개
+							</c:if>
+											</label> <input type="hidden" name="sessionid" value="guest">
+										</div>
+										<div class="text_box">
+											<textarea  cols="115" rows="7" style="font-family: 'establishRoomNo703OTF';" placeholder="댓글 입력" id="reply"></textarea>
+											<div class="count"><span>0</span>/300</div>
+										</div>
+										<div id="reply_wrt">
+											<input type="button" class="btn_board" id="replywrt"
+												value="작성">
+										</div>
+									</div>
+								</c:otherwise>
+							</c:choose></td>
+					</tr>
+					<tr class="trtd">
+						<td class="trtd">
+							<div id="chat">
+								<ul id="replyUL" class="detail_input">
+
+								</ul>
+							</div>
+						</td>
+					</tr>
+				</table>
 			</div>
 		</div>
-	</div>
 	</section>
 </body>
 </html>

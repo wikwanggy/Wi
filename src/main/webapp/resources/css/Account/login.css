@@ -99,7 +99,7 @@ a:hover {
 #backimg{
 	width: 930px;
     height: 930px;
-    background-image: url(/resources/css/img/back.jpg);
+    background-image: url(/resources/css/img/login.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 20%;
@@ -108,4 +108,6 @@ a:hover {
     top: 20px;
     bottom: 20px;
 }
-
+.animate__animated.animate__zoomInDown {
+  --animate-duration: 2s;
+}
