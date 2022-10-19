@@ -21,11 +21,16 @@
   	<select id="idcheck" resultType="org.wi.model.AccountDTO">
   			select * from member where id=#{id}
   	</select>
-  	<select id="list" resultType="org.wi.model.ProjectDTO">
-		select *
-		from(
-		select @rownum:=@rownum+1 rownum,b.* 
-		from project b,(select @rownum:=0)as tmp
+  <select id="list" resultType="org.wi.model.ProjectDTO">
+		select rownum,bno,name,link,regdate,cnt,id,content,Concat(Replace(uploadpath,'\\','/'),'/',uuid,'_'
+      ,filename)AS filem
+      from(
+      select @rownum:=@rownum+1 rownum, b.* 
+      from( select *
+      from(select
+      p.bno,name,link,cnt,id,content,regdate,uploadpath,uuid,filename
+      from project p join attach a on p.bno = a.bno where image=1)
+      as j) as b,(select @rownum:=0)as tmp
 		<if test="keyword!=null">
 				<choose>
 					<when test="type =='T'.toString()">
@@ -81,4 +86,12 @@
    		delete from project
    		where bno=#{bno}
    </delete>
+   <insert id="newproject">
+		<selectKey keyProperty="bno" order="BEFORE" resultType="int">
+			select ifnull(max(bno)+1,1) bno
+			from project
+		</selectKey>
+		insert into project(name, content,link,regdate,bno,id,cnt)
+		values(#{name},#{content},#{link},now(),#{bno},#{id},'0')
+	</insert>
   </mapper><!--  -->

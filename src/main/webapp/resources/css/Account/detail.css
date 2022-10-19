@@ -8,19 +8,21 @@
 *{
 	margin:0px;
 	padding: 0px;
-	
+	font-size: 20px;
 }
 body{
 	margin: 0px;
 	background-color:#c0c0c0;
 }
 #side_bar{
+	font-family: 'establishRoomNo703OTF';
 	position:fixed;
 	width: 270px;
     height: 100%;
     background-color: white;
 }
 #side_btn{
+	font-family: 'establishRoomNo703OTF';
 	background-color: #ffffff;
     display: block;
     position: absolute;
@@ -171,18 +173,20 @@ header {
 section{
 	text-align: center;
 	font-family: 'establishRoomNo703OTF';
+	font-size: 20px;
 }
 #detailbox{
 	margin: 0 auto;
 	width: 800px;
 	height: 800px;
-	background-color:  aqua; 
+	
 }
 #table{
 	width: 800px;
 	height: 800px;
 	border-collapse: collapse;
-		border:  1px solid black;
+	border:  1px solid black;
+	box-shadow: 6px 6px grey;
 }
 th,td{
 
@@ -190,14 +194,14 @@ th,td{
 	
 }
 #replybox{
-	height: 100%;
 	width: 800px;
-	background-color: aqua;	
+	
 }
 #replyUL{
 	list-style:none;
 	text-align: left;
 	padding-left: 0px;
+	margin-top: 10px;
 }
 .replyli{
 	display: flex;
@@ -205,6 +209,7 @@ th,td{
 	height: 50px;
 	border: 1px solid black;
     line-height: 45px;	
+    
 }
 .replycontent{
 	width: 720px;
@@ -212,11 +217,12 @@ th,td{
 }
 #reply{
 	height: 80px;
-    width: 90%;
+    width: 95%;
     border: none;
     resize: none;
     border-radius: 15px;
-    
+    box-shadow: 5px 5px;
+
 }
 textarea.autosize { 
 	min-height: 50px; 
@@ -232,13 +238,12 @@ textarea{
 }
 .li{
 	width:800px;
-	display: contents;
 	line-height: 30px;
     display: flex;
     justify-content: space-around;
     border: 1px solid black;
     border-radius: 15px;
-	
+	box-shadow: 3px 3p
 }
 .text_box {
 	position:relative; 
@@ -257,16 +262,18 @@ textarea{
 	}
 .text_box .count {
 	position:absolute;
-	 right:20px; 
+	 right:5px; 
 	 bottom:20px; 
 	 color:#666; 
 	font-family: 'establishRoomNo703OTF';
-	  font-size:15px;
+	 font-size:20px;
 }
 #input_bno{
 	background: transparent;
     border: 0px;
     text-align: center;
+    font-size: 20px;
+    font-family: 'establishRoomNo703OTF';
 }
 .trtd{
 	border: none;
@@ -275,3 +282,39 @@ textarea{
 	text-decoration: none;
 	color: black;
 }
+#replywrt{
+	WIDTH: 120px;
+    height: 40px;
+    border-radius: 15px;
+    border: 1px solid black;
+    box-shadow: 3px 3px;
+    font-family: 'establishRoomNo703OTF';
+    background-color: transparent;
+}
+.detail_input {
+    margin-top: 15px;
+}
+label {
+    font-size: 40px;
+}
+.submit{
+	margin-top: 20px;
+    height: 40px;
+    width: 80px;
+    border: 1px solid black;
+    box-shadow: 3px 3px;
+    border-radius: 15px;
+    font-family: 'establishRoomNo703OTF';
+    background-color: transparent;
+}
+button {
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 120px;
+    height: 50px;
+    margin-bottom: 40px;
+    background-color: transparent;
+    box-shadow: 5px 5px black;
+}
+
+

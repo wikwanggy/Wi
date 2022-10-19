@@ -32,4 +32,6 @@ public interface AccountDAO {
 	public void modify(ProjectDTO pjd);
 	// 삭제
 	public void remove(ProjectDTO pjd);
+	//글쓰기
+	public void newproject(ProjectDTO pjd);
 }

@@ -13,7 +13,6 @@
 <script type="text/javascript" src="/resources/js/sidebar.js"></script>
 <link rel="stylesheet" href="/resources/css/Account/projectlist.css">
 </head>
-
 <body>
 	<header id="side_bar" style="left: -270px;">
 		<div >
@@ -49,18 +48,11 @@
 				<li><a href="https://blog.naver.com/hyye0913" id="blog"> Blog</a></li>
 				<li><a href="https://www.instagram.com/calix_98/" id="insta"> Instargram</a></li>
 			</ul>
-			<ul id="menu">
-				<li data-menuanchor="sec1" class="active"><a href="#sec1"></a></li>
-				<li data-menuanchor="sec2"><a href="#sec2"></a></li>
-				<li data-menuanchor="sec3"><a href="#sec3"></a></li>
-				<li data-menuanchor="sec4"><a href="#sec4"></a></li>
-				<li data-menuanchor="sec5"><a href="#sec5"></a></li>
-				<li data-menuanchor="sec6"><a href="#sec6"></a></li>
-			</ul>
+			
 		</div>
 	</header>
 	<div id="head_h2">
-		<h2>ProJect List</h2>
+		<h2 style="font-size: 60px;">ProJect List</h2>
 	</div>
 	<div id="listbox">
 		<form>

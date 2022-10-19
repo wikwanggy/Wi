@@ -49,19 +49,12 @@
 				<li><a href="https://blog.naver.com/hyye0913" id="blog"> Blog</a></li>
 				<li><a href="https://www.instagram.com/calix_98/" id="insta"> Instargram</a></li>
 			</ul>
-			<ul id="menu">
-				<li data-menuanchor="sec1" class="active"><a href="#sec1"></a></li>
-				<li data-menuanchor="sec2"><a href="#sec2"></a></li>
-				<li data-menuanchor="sec3"><a href="#sec3"></a></li>
-				<li data-menuanchor="sec4"><a href="#sec4"></a></li>
-				<li data-menuanchor="sec5"><a href="#sec5"></a></li>
-				<li data-menuanchor="sec6"><a href="#sec6"></a></li>
-			</ul>
+		
 		</div>
 	</header>
-	<section>
+	<section style="margin-top: 20px;">
 		<div>
-			<h2>게시물 상세 보기</h2>
+			<h2 style="font-size: 40px;">게시물 상세 보기</h2>
 		</div>
 		<div id="detailbox">
 			<form method="post">
@@ -80,9 +73,12 @@
 					</tr>
 					<tr >
 						<th>내용</th>
-						<td colspan="3"><textarea name="content" readonly="readonly" style="height: 98%; width: 99%;border: none; resize: none;">${detail.content}</textarea></td>
+						<td colspan="3"><textarea name="content"style="background-color: transparent; height: 98%; width: 99%;border: none; resize: none; font-size: 20px; font-family: 'establishRoomNo703OTF';">${detail.content}</textarea></td>
 					</tr>
-					
+					<tr >
+						<th>첨부파일</th>
+						<td colspan="3"><div id="uploadResult"><ul></ul></div></td>
+					</tr>
 					<tr style="height: 40px;">
 						<th>작성일자</th>
 						<td>${detail.regdate}</td>
@@ -95,17 +91,13 @@
 						<c:when test="${sessionScope.login==null}">
 						</c:when>
 						<c:when test="${sessionScope.login.id=='dnkrhkdrb'}">
-							<input type="submit" value="글수정" formaction="/Account/modify">
-							<input type="submit" value="글삭제" formaction="/Account/remove">
+							<input type="submit" value="글수정" formaction="/Account/modify" class="submit">
+							<input type="submit" value="글삭제" formaction="/Account/remove" class="submit">
 						</c:when>
 						<c:otherwise>
 						</c:otherwise>
 					</c:choose>
 			</form>
-			<div id="uploadResult">
-		<ul>
-		</ul>
-		</div>
 			<div id="replybox">
 
 				<table id="detail_reply">
@@ -121,19 +113,19 @@
 												value="${sessionScope.login.id}">
 										</div>
 										<div class="text_box">
-											<textarea  cols="115" rows="7" placeholder="댓글 입력" id="reply"></textarea>
+											<textarea  cols="115" rows="7" style="font-family: 'establishRoomNo703OTF';" placeholder="댓글 입력" id="reply"></textarea>
 											<div class="count"><span>0</span>/300</div>
 										</div>
 										<div id="reply_wrt">
 											<input type="button" class="btn_board" id="replywrt"
-												value="작성">
+												value="COMMENT 남기기">
 										</div>
 									</div>
 								</c:when>
 								<c:otherwise>
 									<div class="detail_input">
 										<div>
-											<label>댓글 <c:if test="${detail.count!=0}">
+											<label>COMMENT<c:if test="${detail.count!=0}">
 								${detail.count}개
 							</c:if>
 											</label> <input type="hidden" name="sessionid" value="guest">
@@ -144,7 +136,7 @@
 										</div>
 										<div id="reply_wrt">
 											<input type="button" class="btn_board" id="replywrt"
-												value="작성">
+												value="COMMENT남기기">
 										</div>
 									</div>
 								</c:otherwise>

@@ -187,13 +187,13 @@
 						<div class="project_num">
 							<span>01</span>
 						</div>
-						<div id="project1_img">
-							
+						<div id="project1_box">
+							<img id="project1_img" src="/display?filename=${list.filem}">
 						</div>
 						<div class="project_desc">
 							<div>
 								<h2>Mongle</h2>
-									<a href="https://github.com/wikwanggy/Mongle"><img src="/resources/css/img/git.PNG" alt="git" class="project_git">
+									<a href="https://github.com/wikwanggy/Mongle"><img src="/display?filename=${list.filem}" alt="git" class="project_git">
 									</a>
 							</div>
 						</div>
@@ -207,7 +207,7 @@
 						<div class="project_desc">
 							<div>
 								<h2>규월드</h2>
-									<a href="https://github.com/wikwanggy/wi"><img src="/resources/css/img/git.PNG" alt="git" class="project_git"></a>
+									<a href="https://github.com/wikwanggy/wi"><img src="/resources/css/img/git.svg" alt="git" class="project_git"></a>
 							</div>
 						</div>
 					</div>

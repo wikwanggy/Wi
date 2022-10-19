@@ -6,12 +6,13 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
 import org.apache.commons.mail.HtmlEmail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.wi.Mapper.AccountDAO;
+import org.wi.Mapper.projectAttachDAO;
 import org.wi.model.AccountDTO;
+import org.wi.model.AttachFileDTO;
 import org.wi.model.ProjectCriteriaDTO;
 import org.wi.model.ProjectDTO;
 
@@ -19,6 +20,9 @@ import org.wi.model.ProjectDTO;
 public class AccountServiceImpl implements AccountService {
 	@Autowired
 	AccountDAO adao;
+	
+	@Autowired
+	projectAttachDAO padao;
 	
 	// 로그인 select
 	public boolean login(AccountDTO adto, HttpSession session) {
@@ -149,6 +153,21 @@ public class AccountServiceImpl implements AccountService {
 	public void remove(ProjectDTO pjd) {
 		adao.remove(pjd);
 		
+	}
+	
+	public void newproject(ProjectDTO pjd) {
+		adao.newproject(pjd);
+		
+		pjd.getAttach().forEach(attach ->{
+			attach.setBno(pjd.getBno());
+			padao.insert(attach);
+		});
+		
+	}
+	
+	public ArrayList<AttachFileDTO> attachlist(int bno) {
+		
+		return padao.attachlist(bno);
 	}
 	
 }

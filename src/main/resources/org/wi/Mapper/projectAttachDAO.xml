@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.wi.Mapper.projectAttachDAO">
+	<!-- 파일경로,파일명,uuid,image여부를 attach테이블에 insert -->
+	<insert id="insert">
+		insert into attach(uuid, uploadpath, filename, image, bno)
+		value(#{uuid},#{uploadPath},#{fileName},#{image},#{bno});
+	</insert>
+	<select id="attachlist" resultType="org.wi.model.AttachFileDTO">
+	select * from attach where bno=#{bno};
+	</select>
+</mapper>

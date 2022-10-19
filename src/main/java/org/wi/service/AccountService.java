@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.wi.model.AccountDTO;
+import org.wi.model.AttachFileDTO;
 import org.wi.model.ProjectCriteriaDTO;
 import org.wi.model.ProjectDTO;
 
@@ -34,5 +35,9 @@ public interface AccountService {
 	public void modify(ProjectDTO pjd);
 	// 삭제
 	public void remove(ProjectDTO pjd);
-
+	// 글쓰기 설계
+	public void newproject(ProjectDTO pjd);
+	// 첨부파일 조회 설계
+	public ArrayList<AttachFileDTO> attachlist(int bno);
+	
 }

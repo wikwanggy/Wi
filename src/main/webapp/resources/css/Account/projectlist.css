@@ -1,5 +1,14 @@
 @charset "UTF-8";
-
+@font-face {
+    font-family: 'establishRoomNo703OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRoomNo703OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+	font-family: 'establishRoomNo703OTF';
+	font-size: 20px;
+}
 body{
 	margin: 0;
 	background-color: #717171;
@@ -77,7 +86,7 @@ header {
 }
 #kakao::before{
 	content:"";
-	background-image:url("/resources/css/img/kakao.PNG");
+	background-image:url("/resources/css/img/kakao.svg");
 	background-size:15px 15px;
 	width: 15px;
 	height: 15px;
@@ -86,7 +95,7 @@ header {
 }
 #git::before{
 	content:"";
-	background-image:url("/resources/css/img/git.PNG");
+	background-image:url("/resources/css/img/git.svg");
 	background-size:15px 15px;
 	width: 15px;
 	height: 15px;
@@ -95,7 +104,7 @@ header {
 }
 #blog::before{
 	content:"";
-	background-image:url("/resources/css/img/blog.PNG");
+	background-image:url("/resources/css/img/blog.svg");
 	background-size:15px 15px;
 	width: 15px;
 	height: 15px;
@@ -104,7 +113,7 @@ header {
 }
 #insta::before{
 	content:"";
-	background-image:url("/resources/css/img/insta.PNG");
+	background-image:url("/resources/css/img/insta.svg");
 	background-size:15px 15px;
 	width: 15px;
 	height: 15px;
@@ -161,30 +170,27 @@ header {
 #listbox{
 	margin: 16px auto;
 	height:860px;
-	width: 1024px;	
+	width: 1200px;	
 	position: relative;
 
 	
 }
 #head_h2{
 	text-align: center;
-	color: white;
+	
 }
 #table_div{
-	width: 1024px;
+	width: 1200px;
 	height: 860px;
 
 }
 table{
-	width: 1024px;
+	width: 1200px;
 }
 table, th, td{
 	text-align: center;
 	border: 1px solid white;
-	color:white;
-}
-table tr td a{
-	color: white;
+	c
 }
 #pagenum_box{
 	position: absolute;
@@ -205,7 +211,7 @@ table tr td a{
 	width: 90px;
 }
 .content{
-	width: 480px;
+	width: 615px;
 	display: inline-block;
 	white-space: nowrap;
 	overflow: hidden;
@@ -213,7 +219,7 @@ table tr td a{
 	line-height: 65px;
 }
 .date{
-	width: 170px;
+	width: 205px;
 }
 .cnt{
 	width: 50px;
@@ -221,7 +227,26 @@ table tr td a{
 #content_a{
 	color: black;
 	font-size: 20px;
+	text-decoration: none;
 }
 .list{
 	height:65px;
+}
+button {
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 120px;
+    height: 50px;
+    margin-bottom: 40px;
+    background-color: transparent;
+    box-shadow: 5px 5px black;
+}
+input[type="submit"] {
+    border: 1px solid black;
+    height: 50px;
+    width: 120px;
+    border-radius: 15px;
+    box-shadow: 5px 5px;
+    margin-left: 10px;
+    background-color: transparent;
 }

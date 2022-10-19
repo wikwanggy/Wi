@@ -1,5 +1,7 @@
 package org.wi.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.wi.model.AccountDTO;
+import org.wi.model.AttachFileDTO;
 import org.wi.model.ProjectCriteriaDTO;
 import org.wi.model.ProjectDTO;
 import org.wi.model.ProjectPageDTO;
@@ -128,7 +131,21 @@ public class AccountController {
 			as.remove(pjd);
 			return "redirect:/Account/projectlist";
 		}
+		// 글쓰기 화면
 		@GetMapping("/Account/newproject")
-		public void newproject() {}
+		public void newproject(HttpSession session) {}
+		// 게시판 글쓰기 페이지
+		@PostMapping("/Account/newproject")
+		public String newprojectpost(ProjectDTO pjd) {
+			System.out.println("pjd===>"+pjd);
+			// 비즈니스 영역 연결한 후 BoardService에 있는 write메소드호츨	
+			as.newproject(pjd);
+			return "redirect:/Account/projectlist";
+		}
+		// 해당게시물의 첨부파일의 데이터를 ajax로 전송
+		@RequestMapping(value ="/attachlist", method=RequestMethod.GET)
+		public ResponseEntity<ArrayList<AttachFileDTO>>  uploadAjaxPost(int bno){
+			return new ResponseEntity<>(as.attachlist(bno),HttpStatus.OK);
+		}
 }
 
