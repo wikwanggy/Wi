@@ -89,7 +89,7 @@ header {
 }
 #kakao::before{
 	content:"";
-	background-image:url("/resources/css/img/kakao.PNG");
+	background-image:url("/resources/css/img/kakao.svg");
 	background-size:15px 15px;
 	width: 15px;
 	height: 15px;
@@ -98,7 +98,7 @@ header {
 }
 #git::before{
 	content:"";
-	background-image:url("/resources/css/img/git.PNG");
+	background-image:url("/resources/css/img/git.svg");
 	background-size:15px 15px;
 	width: 15px;
 	height: 15px;
@@ -107,7 +107,7 @@ header {
 }
 #blog::before{
 	content:"";
-	background-image:url("/resources/css/img/blog.PNG");
+	background-image:url("/resources/css/img/blog.svg");
 	background-size:15px 15px;
 	width: 15px;
 	height: 15px;
@@ -116,7 +116,7 @@ header {
 }
 #insta::before{
 	content:"";
-	background-image:url("/resources/css/img/insta.PNG");
+	background-image:url("/resources/css/img/insta.svg");
 	background-size:15px 15px;
 	width: 15px;
 	height: 15px;

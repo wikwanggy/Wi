@@ -6,7 +6,7 @@
 <mapper namespace="org.wi.Mapper.ReplyDAO">
 	<insert id="rewrite"> <!-- 댓글을 쓸 땐 insert문을 -->
 		insert into reply(reply, id, bno,replydate)
-		values(#{reply},#{id},#{bno},#{replydate});
+		values(#{reply},#{id},#{bno},now());
 	</insert>
 	<select id="list" resultType="org.wi.model.ReplyDTO"> <!-- 리스트를 만들땐 select문을 -->
 		select * from reply 
@@ -22,10 +22,3 @@
 		where rno=#{rno}
 	</delete>
 </mapper>
-
-<!-- select *
-		from(
-		select @rownum:=@rownum+1 rownum,b.* 
-		from reply b,(select @rownum:=0)as tmp
-		order by replydate DESC
-		) as reply; -->

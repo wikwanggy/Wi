@@ -37,9 +37,13 @@ public class ReplyController {
 	// 댓글 목록 리스트
 	@RequestMapping(value = "/replies/{bno}",method = RequestMethod.GET) 
 	public  ResponseEntity<ArrayList<ReplyDTO>> getlist(@PathVariable int bno){ // int이기에 @PathVariable를 쓴다.
-		System.out.println(bno);
+		System.out.println("댓글 목록 리스트="+bno);
 		
-		rs.list(bno);
+		//rs.list(bno);
+		
+		
+		//System.out.println("121212="+rs.list(bno));
+		
 		
 		return new ResponseEntity<>(rs.list(bno),HttpStatus.OK); 
 	}

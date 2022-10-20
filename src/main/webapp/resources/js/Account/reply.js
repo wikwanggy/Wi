@@ -193,25 +193,30 @@ function replywrt(reply){
 function list(bno){
 	//alert(bno)
 	//↓type=get, data=JSON
+	alert("bbbbbbbbb")
 	$.getJSON("/replies/"+bno+".json", function(data){
-			var str="";
-			var idval=$("input[name='sessionid']").val();
-			/*var list=data.list;
-			var pf=data.page;*/
+		console.log("abcd")
+		console.log(data)
+		console.log("efaef")	
+		
+		var str="";
+		var idval=$("input[name='sessionid']").val();
+		/*var list=data.list;
+		var pf=data.page;*/
+		
+		for(var i=0;i<data.length;i++){
+			str+="<li class='li'>"
+			str+=data[i].id+"<span> | </span>"
 			
-			for(var i=0;i<data.length;i++){
-				str+="<li class='li'>"
-				str+=data[i].id+"<span> | </span>"
+			if(data[i].id==idval||idval=='dnkrhkdrb'){
 				
-				if(data[i].id==idval||idval=='dnkrhkdrb'){
-					
-					str+="<div class='replycontent'>"+data[i].reply+"</div>"
-				}else{
-					str+="<pre><span class='replycontent'>"+data[i].reply+"</span></pre>"
-				}
-				str+="</li><br>"
+				str+="<div class='replycontent'>"+data[i].reply+"</div>"
+			}else{
+				str+="<pre><span class='replycontent'>"+data[i].reply+"</span></pre>"
 			}
-			$("#replyUL").html(str);
+			str+="</li><br>"
+		}
+		$("#replyUL").html(str);
 	})
 	
 }
