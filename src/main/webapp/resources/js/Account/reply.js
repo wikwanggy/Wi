@@ -193,11 +193,8 @@ function replywrt(reply){
 function list(bno){
 	//alert(bno)
 	//↓type=get, data=JSON
-	alert("bbbbbbbbb")
 	$.getJSON("/replies/"+bno+".json", function(data){
-		console.log("abcd")
-		console.log(data)
-		console.log("efaef")	
+
 		
 		var str="";
 		var idval=$("input[name='sessionid']").val();

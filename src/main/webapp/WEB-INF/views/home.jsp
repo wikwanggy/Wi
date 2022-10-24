@@ -46,7 +46,6 @@
 							<a href="/Account/Signup">회원가입</a>
 						</c:when>
 						<c:when test="${sessionScope.login.id=='dnkrhkdrb'}">
-							<a href="/Admin/Admin">페이지 수정</a><br><br>
 							<a href="/Account/logout">로그아웃</a>
 						</c:when>
 						<c:otherwise>
@@ -188,12 +187,12 @@
 							<span>01</span>
 						</div>
 						<div id="project1_box">
-							<img id="project1_img" src="/display?filename=${list.filem}">
+							
 						</div>
 						<div class="project_desc">
 							<div>
 								<h2>Mongle</h2>
-									<a href="https://github.com/wikwanggy/Mongle"><img src="/display?filename=${list.filem}" alt="git" class="project_git">
+									<a href="https://github.com/wikwanggy/Mongle"><img src="/resources/css/img/git.svg" alt="git" class="project_git">
 									</a>
 							</div>
 						</div>
@@ -248,7 +247,7 @@
 			<div class="section swiper-slide sec5 sec_color1">
 				<div class="contents">
 					<div class="p_left innerbox box_img4">
-						<h2>사진</h2>
+						<div id="myimg"></div>
 					</div>
 					<div class="p_right innerbox">
 						<div class="sec5_right_box">

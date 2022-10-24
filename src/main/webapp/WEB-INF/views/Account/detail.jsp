@@ -23,7 +23,7 @@
 			</button>
 			<div id="inner_header">
 				<div id="photo">
-					<a href="#"><img src="/resources/css/img/photo.png" alt="photo"></a>
+					<a href="/"><img src="/resources/css/img/photo.png" alt="photo"></a>
 				</div>
 				<br>
 				<div id="login_menu">

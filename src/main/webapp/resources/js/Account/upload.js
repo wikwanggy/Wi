@@ -75,7 +75,7 @@ $(document).ready(function() {
         			 // 아래에 있는거 실행
         			 var filePath=encodeURIComponent(obj.uploadPath+"/s_"+obj.uuid+"_"+obj.fileName);
             		 console.log(filePath);
-            		 str+="<li><img src='/display?fileName="+filePath+"'></li>"
+            		 str+="<li class='imgbox'><img src='/display?fileName="+filePath+"'></li>"
         		 }
 
         		 else{// 그렇지 않으면 
