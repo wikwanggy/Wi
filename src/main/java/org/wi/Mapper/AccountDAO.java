@@ -34,4 +34,6 @@ public interface AccountDAO {
 	public void remove(ProjectDTO pjd);
 	//글쓰기
 	public void newproject(ProjectDTO pjd);
+	// 이메일 중복체크
+	public AccountDTO emailcheck(String email);
 }

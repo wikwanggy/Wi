@@ -80,13 +80,21 @@ public class AccountController {
 			
 			return new ResponseEntity<>(as.idcheck(id), HttpStatus.OK);
 		}
+		//email체크
+		@GetMapping("/Account/Signup/emailcheck/{email}")
+		//                  @PathVariable
+		public ResponseEntity<AccountDTO> emailcheck(@PathVariable("email") String email) {
+			System.out.println(email);
+			return new ResponseEntity<>(as.emailcheck(email), HttpStatus.OK);
+		}
 		// ID 찾기 페이지로 이동
 		@GetMapping("/Account/searchId")
 		public void getfindId() {}
 		// ID 찾기 실행
 		@GetMapping("/Account/findId/{name}/{email}")
 		public ResponseEntity<AccountDTO> findId(@PathVariable("name") String name,@PathVariable("email") String email){
-		
+			System.out.println("controller="+name);
+			System.out.println("controller="+email);
 			return new ResponseEntity<>(as.findId(name,email), HttpStatus.OK);
 		}
 		// 비밀번호 찾기

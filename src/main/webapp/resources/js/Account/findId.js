@@ -4,7 +4,6 @@
 $(document).ready(function(){
 	$("#findId").submit(function() {
 		event.preventDefault();
-		
 		var name = $("#name").val();
 		var email = $("#email").val();
 		var check = false;
@@ -21,7 +20,6 @@ $(document).ready(function(){
 		
 		// 어느쪽에도 해당되지 않는다면 아래의 ajax를 실행한다.
 		}else {
-			
 			$.getJSON("/Account/findId/"+encodeURIComponent(name)+"/"+email+".json",function(result){
 				console.log(result.id)
 				alert("찾으시는 id는"+result.id+"입니다 ")

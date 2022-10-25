@@ -35,15 +35,16 @@
 					<div class="div_box" id="number_box">
 						<span>number<input tpye="text" name="number" id="number"></span>
 					</div>
-					<div class="div_box" id="job_box">
-						<span>JOB<input tpye="text" name="job" id="job"></span>
+					<div class="div_box"id="emailbox">
+						<span>Email<input type="text" name="email"id="email" class="input"></span>
 					</div>
-					<div >
+					<div>
 						<input type="submit" value="가입하기" class="signup_btn">
 					</div>
 				</form>
 				<div>
-				<input type="submit" value="뒤로가기" class="signup_btn" formaction="/" id="back_btn">
+					<input type="submit" value="뒤로가기" class="signup_btn" formaction="/"
+						id="back_btn">
 				</div>
 			</div>
 		</div>

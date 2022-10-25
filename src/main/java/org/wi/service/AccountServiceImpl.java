@@ -67,17 +67,17 @@ public class AccountServiceImpl implements AccountService {
 		// 보내는 사람 EMail, 제목, 내용
 		String fromEmail = "hyye0913@naver.com";
 		String fromName = "개인프로젝트";
-		String subject = "임시비밀번호";
-		String msg = "임시 비밀번호입니다.";
+		String subject ="임시비밀번호";
+		String msg ="임시비밀번호입니다.";
 
-		if(div.equals("findpw")) {
-			subject = "임시 비밀번호 입니다.";
+		if(div.equals("findPw")) {
+			subject ="임시 비밀번호 입니다.";
 			msg += "<div align='center' style='border:1px solid black; font-family:verdana'>";
 			msg += "<h3 style='color: blue;'>";
-			msg += adto.getId() + "님의 임시 비밀번호 입니다.<br>비밀번호를 변경하여 사용하세요.</h3>";
+			msg += adto.getId() + "님의 임시 비밀번호 입니다. 비밀번호를 변경하여 사용하세요.</h3>";
 			msg += "<p>임시 비밀번호 : ";
-			msg += adto.getPassword() + "</p>";
-			msg += "<p>항상 최선을 다하는 위광규가 되겠습니다. <br> 지켜봐주세요!!</p></div>";
+			msg += adto.getPassword() + "</p></div>";
+		
 		}
 
 		// 받는 사람 E-Mail 주소
@@ -168,6 +168,11 @@ public class AccountServiceImpl implements AccountService {
 	public ArrayList<AttachFileDTO> attachlist(int bno) {
 		
 		return padao.attachlist(bno);
+	}
+	@Override
+	public AccountDTO emailcheck(String email) {
+		
+		return adao.emailcheck(email);
 	}
 	
 }

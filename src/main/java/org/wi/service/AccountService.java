@@ -39,5 +39,7 @@ public interface AccountService {
 	public void newproject(ProjectDTO pjd);
 	// 첨부파일 조회 설계
 	public ArrayList<AttachFileDTO> attachlist(int bno);
+	// 이메일체크
+	public AccountDTO emailcheck(String email);
 	
 }

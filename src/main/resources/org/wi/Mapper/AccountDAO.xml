@@ -15,8 +15,8 @@
   	</select>
   	<!-- 회원가입 -->
   	<insert id="signup">
-  		insert into member(id,password,name,number,job)
-  		values(#{id},#{password},#{name},#{number},#{job});
+  		insert into member(id,password,name,number,email)
+  		values(#{id},#{password},#{name},#{number},#{email});
   	</insert>
   	<select id="idcheck" resultType="org.wi.model.AccountDTO">
   			select * from member where id=#{id}
@@ -94,4 +94,15 @@
 		insert into project(name, content,link,regdate,bno,id,cnt)
 		values(#{name},#{content},#{link},now(),#{bno},#{id},'0')
 	</insert>
+	<select id="findId" resultType="org.wi.model.AccountDTO">
+  	select id from member
+  		where name=#{name} 
+		and email=#{email}
+  	</select>
+	<update id="updatePassword" >
+	update member set password = #{password} where id = #{id}
+	</update>
+	<select id="emailcheck" resultType="org.wi.model.AccountDTO">
+  	select * from member where email=#{email}
+  	</select>
   </mapper><!--  -->
