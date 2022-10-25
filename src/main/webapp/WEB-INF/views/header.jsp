@@ -22,7 +22,7 @@
 	<header id="side_bar" style="left: -270px;">
 		<div >
 			<button type="button" id="side_btn">
-				<span>OPEN</span>
+				<span>OPEN</span><!--  -->
 			</button>
 			<div id="inner_header">
 				<div id="photo">
