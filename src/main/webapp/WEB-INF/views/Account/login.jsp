@@ -12,8 +12,6 @@
 <meta charset="UTF-8">
 </head>
 <body>
-	<div id="backimg" class="logo">
-	</div>
 	<c:choose>
 		<c:when test="${sessionScope.login==null}">
 			<div id="home_box">
@@ -21,10 +19,10 @@
 					<div id="loginbox">
 						<div id="loginarea">
 							<h1>로그인</h1>
-							<div>
+							<div style="margin-top: 30px;">
 								<input type="text" name="id" placeholder="아이디" id="id" class="input">
 							</div>
-							<div>
+							<div style="margin-top: 30px;">
 								<input type="password" name="password" placeholder="비밀번호" id="password" class="input">
 							</div>
 							<input type="submit" value="로그인" id="loginbtn">

@@ -1,0 +1,72 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'establishRoomNo703OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRoomNo703OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+	margin: 0 auto;
+	font-family: 'establishRoomNo703OTF';
+}
+body{
+	background-image: url("/resources/css/img/findid.jpg");
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+.findid{
+	width: 800px;
+	height: 800px;
+	position: relative;
+}
+h1{
+	font-size: 60px;
+	margin-top: 40px;
+}
+#box{
+	width: 700px;
+	height: 700px;
+	background-color: white;
+	position: absolute;
+   left: 49px;
+    bottom: 0px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 15px;
+    box-shadow: 10px 10px gray;
+    background-image: url("/resources/css/img/findid.jpg");
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+form{
+	margin-top: 30px;
+}
+tr{
+	height: 90px;
+}
+th{
+	    font-size: 40px;
+}
+#name{
+	width: 580px;
+    height: 50px;
+    border-radius: 15px;
+    font-size: 40px;
+}
+#email{
+	width: 580px;
+    height: 50px;
+    border-radius: 15px;
+    font-size: 40px;
+}
+.btn{
+	width: 150px;
+    height: 40px;
+    border-radius: 15px;
+    box-shadow: 5px 5px grey;
+    border: 1px solid gray;
+    margin-left: 15px;
+}
+span{
+	background-color: white;
+}

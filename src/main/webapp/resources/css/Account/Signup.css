@@ -1,11 +1,17 @@
 @charset "UTF-8";
-
+@font-face {
+    font-family: 'establishRoomNo703OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRoomNo703OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 body{
 	margin: 0;
-	background-image: url("/resources/css/img/background.png");
+	background-image: url("/resources/css/img/sign.jpg");
     background-repeat: no-repeat;
     background-size: cover; 
 	background-position: center;
+	 font-family: 'establishRoomNo703OTF';
 }
 #signup{
 	display: flex;
@@ -19,6 +25,9 @@ body{
 	padding: 25px;
 	font-weight: 900;
 	border: 1px solid black;
+	background-color: white;
+	box-shadow:10px 10px gray; 
+	border-radius: 15px;
 }
 #signuparea{
 	padding: 17px 17px 0;
@@ -33,8 +42,8 @@ h1{
 	display: block;
     padding: 15px 0;
     margin-top: 11px;
-    background-color: #19ce60;
-    border: 1px solid #15c654;
+background-color: #159fc6;
+    border: 1px solid #159fc6;
     -webkit-border-radius: 2px;
     border-radius: 2px;
     font-size: 13px;

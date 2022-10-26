@@ -43,8 +43,8 @@
 					</div>
 				</form>
 				<div>
-					<input type="submit" value="뒤로가기" class="signup_btn" formaction="/"
-						id="back_btn">
+					<a href="/" style="text-decoration: none;"><input type="button" value="뒤로가기" class="signup_btn"
+						id="back_btn"></a>
 				</div>
 			</div>
 		</div>

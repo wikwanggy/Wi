@@ -22,20 +22,20 @@ $(function(){
 	});
 })
 </script>
-<!-- <link rel="stylesheet" href="/resources/css/login/findpw.css"> -->
+<link rel="stylesheet" href="/resources/css/Account/findpw.css">
 <title>Insert title here</title>
 </head>
 <body>
-	<div>
-		<div>
-			<div>
+	<div class="findpw">
+		<div id="box">
+			<div id="title">
 				<h1>비밀번호 찾기</h1>
 			</div>
-			<div>
-				아이디<input type="text" name="id" id="id">
-				Email<input type="text" name="email" id="email">
-				<button type="button" id="findBtn">찾기</button>
-				<button type="button" onclick="history.go(-1);">뒤로가기</button>
+			<div id="content">
+				<span>아이디 : <input type="text" name="id" id="id"> </span><br><br>
+				<span>Email : <input type="text" name="email" id="email"></span><br><br>
+				<button type="button" id="findBtn" class="btn">찾기</button>
+				<button type="button" onclick="history.go(-1);" class="btn">뒤로가기</button>
 			</div>
 		</div>
 	</div>

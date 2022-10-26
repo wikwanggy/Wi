@@ -1,47 +1,52 @@
 @charset "UTF-8";
-
+@font-face {
+    font-family: 'establishRoomNo703OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRoomNo703OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 body{
 	margin: 0;
 	width: 100%;
-	background-color: #717171;
+	background-image: url("/resources/css/img/loginback.jpg");
+	background-size: cover;
 }
 
 #home_box{
 	display: flex;
 	position:relative;
-  	justify-content: flex-end;
-  	margin-right: 200px;
+  	justify-content: center;
   	align-items: center;
   	min-height: 100vh;
   	z-index: 1000;
 }
 #loginbox{
-	width: 400px;
-	height: 400px;
+	width: 700px;
+	height: 500px;
 	padding: 25px;
 	font-weight: 900;
 	border: 1px solid black;
 	border-radius: 25px;
 	background-color: white;
-	background-image: url("/resources/css/img/loginback.jpg");
-	background-size: cover;
+	box-shadow: 10px 10px gray;
 }
 #loginarea{
 	padding: 17px 17px 0;
-	width: 366px;
 	height: 375px;
 	text-align: center;
 }
 h1{
 	margin: 0px 8px 28px 0;
+	font-family: 'establishRoomNo703OTF';
+	font-size: 40px;
 }
 #loginbtn{
 	display: block;
     padding: 15px 0;
-    margin-top: 28px;
-    margin-left: 26px;
-    background-color: #19ce60;
-    border: 1px solid #15c654;
+    margin-top: 60px;
+    margin-left: 110px;
+  background-color: #159fc6;
+    border: 1px solid #159fc6;
     -webkit-border-radius: 2px;
     border-radius: 2px;
     font-size: 13px;
@@ -49,26 +54,24 @@ h1{
     font-weight: 700;
     text-align: center;
     text-decoration: none;
-	width: 315px;
+	width: 450px;
 	height: 48px;
+	font-family: 'establishRoomNo703OTF';
+	font-size: 18px;
 }
 .loginmenu{
 	margin: 50px 8px 0 4px;
 
 }
 .input{
-	width: 315px;
+	width: 450px;
 	height: 48px;
 	text-align: center;
+	font-family: 'establishRoomNo703OTF';
+	font-size: 18px;
 }
 #password{
 	margin: 28px 0px 0 0;
-}
-.sign_a{
-	float: right;
-}
-.search{
-	float: left;
 }
 #search_img::before{
 	content:"";
@@ -96,18 +99,7 @@ a{
 a:hover {
 	text-decoration: underline;
 }
-#backimg{
-	width: 930px;
-    height: 930px;
-    background-image: url(/resources/css/img/login.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 20%;
-    position: absolute;
-    left: 80px;
-    top: 20px;
-    bottom: 20px;
-}
+
 .animate__animated.animate__zoomInDown {
   --animate-duration: 2s;
 }
