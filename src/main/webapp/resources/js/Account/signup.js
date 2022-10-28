@@ -37,7 +37,7 @@ $(document).ready(function() {
 			// 컬러는 레드색상에 마진은 왼쪽으로 10px만
 			$("#idalert").css("color", "red").css("margin-left", "10px");
 			// 사용중이 아니라면
-			 idck= false;
+			 idck = false;
 		}).fail(function(data) {
 			// 만약에 #id의 내용이 정규식에 맞다면 아래를 실행해라
 			if (idRegex.test($("#id").val())) {
@@ -202,10 +202,6 @@ $(document).ready(function() {
 
 		if(idrs == true && pwrs == true && pwcheckrs == true && namers == true && emailrs == true){
 			alert("회원가입을 축하합니다.");
-		}else if(idck == false){
-			alert("ID가 중복되었습니다.")
-		}else if(emailck == false){
-			alert("Email이 중복되었습니다.")
 		}else{
 			alert("다시 확인해주세요.");
 			return false;

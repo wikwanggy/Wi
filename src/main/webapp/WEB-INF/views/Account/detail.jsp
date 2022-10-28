@@ -36,7 +36,7 @@
 							<a href="/Account/logout">로그아웃</a>
 						</c:when>
 						<c:otherwise>
-							<a href="/mypage/mypage?id=${sessionScope.login.id}">${sessionScope.login.id}님</a><br><br>
+							<a href="/Account/mypage?id=${sessionScope.login.id}">${sessionScope.login.id}님</a><br><br>
 							<a href="/Account/logout">로그아웃</a>
 						</c:otherwise>
 					</c:choose>

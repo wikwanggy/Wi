@@ -19,13 +19,8 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css" />
 <link rel="stylesheet" type="text/css"
 	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.6/swiper-bundle.css" />
-<link rel="stylesheet" media="screen and (min-width:1024px)"
-	href="/resources/css/main.css">
-<link rel="stylesheet"
-	media="screen and (min-width:768px) and(max-width:1024px)"
-	href="/resources/css/main.css">
-<link rel="stylesheet" media="screen and(max-width:768px)"
-	href="/resources/css/main.css">
+<link rel="stylesheet" href="/resources/css/main.css">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
@@ -36,7 +31,7 @@
 			</button>
 			<div id="inner_header">
 				<div id="photo">
-					<a href="#"><img src="/resources/css/img/photo.png" alt="photo"></a>
+					<a href="#"><img src="/resources/css/img/mainlogo.jpg" alt="photo"></a>
 				</div>
 				<br>
 				<div id="login_menu">
@@ -49,7 +44,7 @@
 							<a href="/Account/logout">로그아웃</a>
 						</c:when>
 						<c:otherwise>
-							<a href="/mypage/mypage?id=${sessionScope.login.id}">${sessionScope.login.id}님</a><br><br>
+							<a href="/Account/mypage?id=${sessionScope.login.id}">${sessionScope.login.id}님</a><br><br>
 							<a href="/Account/logout">로그아웃</a>
 						</c:otherwise>
 					</c:choose>

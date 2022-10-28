@@ -105,4 +105,60 @@
 	<select id="emailcheck" resultType="org.wi.model.AccountDTO">
   	select * from member where email=#{email}
   	</select>
+  	<select id="mmdetail" resultType="org.wi.model.AccountDTO">
+  		select * from member where id=#{id};
+  	</select>
+  	<!--회원리스트 -->
+	<select id="memberlist" resultType="org.wi.model.AccountDTO">
+		select *
+		from(
+		select @rownum:=@rownum+1 rownum,b.* 
+		from member b,(select @rownum:=0)as tmp
+		<if test="keyword!=null">
+				<choose>
+					<when test="type =='T'.toString()">
+						where id like concat('%',#{keyword},'%')
+					</when>
+					<when test="type =='C'.toString()">
+						where name like concat('%',#{keyword},'%')
+					</when>
+					<otherwise>
+						where id like concat('%',#{keyword},'%')
+						OR name like concat('%',#{keyword},'%')
+					</otherwise>
+				</choose>
+		</if>
+		order by id DESC
+		) as memberlist
+		<![CDATA[
+		where rownum > (#{pageNum}-1)*#{amount} and rownum<= #{pageNum}*#{amount} 
+		]]>
+	</select>
+		<select id="mtotal" resultType="int">
+		select count(*) from member
+				<if test="keyword!=null">
+				<choose>
+					<when test="type =='T'.toString()">
+						where id like concat('%',#{keyword},'%')
+					</when>
+					<when test="type =='C'.toString()">
+						where name like concat('%',#{keyword},'%')
+					</when>
+					<otherwise>
+						where id like concat('%',#{keyword},'%')
+						OR name like concat('%',#{keyword},'%')
+					</otherwise>
+				</choose>
+		</if>
+	</select>
+	<delete id="mleave">
+  		delete from member where id=#{id};
+  	</delete>
+  	<update id="mmodify">
+  		update member 
+  		set password=#{password}, 
+  		email=#{email},
+  		name=#{name}
+  		where id=#{id};
+  	</update>
   </mapper><!--  -->

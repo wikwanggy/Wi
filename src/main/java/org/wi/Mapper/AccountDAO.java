@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import org.wi.model.AccountDTO;
 import org.wi.model.ProjectCriteriaDTO;
 import org.wi.model.ProjectDTO;
+import org.wi.model.adminCriteriaDTO;
 
 public interface AccountDAO {
 	// 로그인 select
@@ -36,4 +37,14 @@ public interface AccountDAO {
 	public void newproject(ProjectDTO pjd);
 	// 이메일 중복체크
 	public AccountDTO emailcheck(String email);
+	// 회원 멤버리스트
+	public ArrayList<AccountDTO> memberlist(adminCriteriaDTO cri);
+	// 회원정보 상세
+	public ProjectDTO mmdetail(AccountDTO adto);
+	// 회원정보 수정
+	public void mmodify(AccountDTO adto);
+	// 회원탈퇴
+	public void mleave(AccountDTO adto);
+	// memberlist 전체 테이블 건수 체크
+	public int mtotal(adminCriteriaDTO cri);
 }

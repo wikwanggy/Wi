@@ -23,6 +23,8 @@ import org.wi.model.AttachFileDTO;
 import org.wi.model.ProjectCriteriaDTO;
 import org.wi.model.ProjectDTO;
 import org.wi.model.ProjectPageDTO;
+import org.wi.model.adminCriteriaDTO;
+import org.wi.model.adminPageDTO;
 import org.wi.service.AccountService;
 
 @Controller
@@ -154,6 +156,64 @@ public class AccountController {
 		@RequestMapping(value ="/attachlist", method=RequestMethod.GET)
 		public ResponseEntity<ArrayList<AttachFileDTO>>  uploadAjaxPost(int bno){
 			return new ResponseEntity<>(as.attachlist(bno),HttpStatus.OK);
+		}// 회원 페이지 이동
+		@GetMapping("/Account/mypage")
+		public void Accountmove(AccountDTO adto,Model model) {
+			model.addAttribute("mypage",as.mmdetail(adto));
 		}
-}
+		// 회원정보 수정페이지로 이동
+		@GetMapping("/Account/mdetail")
+		public void mdetail(AccountDTO adto,Model model) {
+			
+			model.addAttribute("mdetail", as.mmdetail(adto));
+
+		}
+		// 회원정보 상세
+		@PostMapping("/Account/mdetail")
+		public String detailpost(AccountDTO adto,Model model) {
+			
+			
+			return "/Accountm/mdetail";
+			
+		}
+		// 회원정보 수정
+		@PostMapping("/Account/mmodify")
+		public String mmodify(AccountDTO adto, RedirectAttributes rttr) {
+			System.out.println(adto);
+			as.mmodify(adto);
+			rttr.addAttribute("id",adto.getId());
+			return "redirect:/Account/mypage";
+		}
+		
+		
+		// 회원 탈퇴
+		@GetMapping("/Account/mleave")
+		public String mleave(AccountDTO adto,HttpSession session) {
+			as.mleave(adto);
+			session.invalidate();
+			return "redirect:/";
+		}
+		// 회원리스트
+		@GetMapping("/Admin/Memberlist")
+		public String memberlist(Model model, adminCriteriaDTO cri) {
+			model.addAttribute("memberlist",as.memberlist(cri));
+			int total = as.mtotal(cri);
+			//model.addAttribute("paging",new PageVo(cri,190));
+			model.addAttribute("paging",new adminPageDTO(cri,total));
+			return "/Admin/Memberlist";
+		}
+		// 관리자로 로그인 후 멤버리스트에서 상세정보로 이동
+		@GetMapping("/Admin/listdetail")
+		public void listdetail(AccountDTO adto,Model model) {
+			model.addAttribute("mypage",as.mmdetail(adto));
+		}
+		// 관리자로 로그인 후 멤버리스트 상세정보들어가서 회원삭제
+		@GetMapping("/Admin/mleave")
+		public String adminleave(AccountDTO adto,HttpSession session) {
+			as.mleave(adto);
+			return "redirect:/Admin/Memberlist";
+		}
+		
+	
+}	
 

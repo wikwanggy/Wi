@@ -9,6 +9,7 @@ import org.wi.model.AccountDTO;
 import org.wi.model.AttachFileDTO;
 import org.wi.model.ProjectCriteriaDTO;
 import org.wi.model.ProjectDTO;
+import org.wi.model.adminCriteriaDTO;
 
 public interface AccountService {
 	// 로그인
@@ -41,5 +42,17 @@ public interface AccountService {
 	public ArrayList<AttachFileDTO> attachlist(int bno);
 	// 이메일체크
 	public AccountDTO emailcheck(String email);
+	// 멤버 리스트
+		public ArrayList<AccountDTO> memberlist(adminCriteriaDTO cri);
+		// 회원정보 상세 
+		public ProjectDTO mmdetail(AccountDTO adto);
+		// 회원정보 상세 
+		public void mmodify(AccountDTO adto);
+		// 회원정보 상세 
+		public void mleave(AccountDTO adto);
+		// memberlist테이블 전체건수 설계
+		public int mtotal(adminCriteriaDTO cri);
+
+
 	
 }

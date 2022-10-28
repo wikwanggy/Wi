@@ -203,7 +203,7 @@ function list(bno){
 		
 		for(var i=0;i<data.length;i++){
 			str+="<li class='li'>"
-			str+=data[i].id+"<span> | </span>"
+			str+="<span>"+data[i].id+"</span><span> | </span>"
 			
 			if(data[i].id==idval||idval=='dnkrhkdrb'){
 				

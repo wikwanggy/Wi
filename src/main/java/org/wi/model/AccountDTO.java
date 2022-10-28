@@ -5,8 +5,8 @@ public class AccountDTO {
 	private String password  ;
 	private String name;
 	private String email;
-	private String job;
 	private String number;
+	
 	public String getId() {
 		return id;
 	}
@@ -31,12 +31,6 @@ public class AccountDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getJob() {
-		return job;
-	}
-	public void setJob(String job) {
-		this.job = job;
-	}
 	public String getNumber() {
 		return number;
 	}
@@ -45,9 +39,10 @@ public class AccountDTO {
 	}
 	@Override
 	public String toString() {
-		return "AccountDTO [id=" + id + ", password=" + password + ", name=" + name + ", email=" + email + ", job="
-				+ job + ", number=" + number + "]";
+		return "AccountDTO [id=" + id + ", password=" + password + ", name=" + name + ", email=" + email + ", number="
+				+ number + "]";
 	}
+	
 	
 	
 }

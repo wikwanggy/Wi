@@ -15,6 +15,7 @@ import org.wi.model.AccountDTO;
 import org.wi.model.AttachFileDTO;
 import org.wi.model.ProjectCriteriaDTO;
 import org.wi.model.ProjectDTO;
+import org.wi.model.adminCriteriaDTO;
 
 @Service
 public class AccountServiceImpl implements AccountService {
@@ -174,5 +175,29 @@ public class AccountServiceImpl implements AccountService {
 		
 		return adao.emailcheck(email);
 	}
+
+	// 회원 리스트
+	public ArrayList<AccountDTO> memberlist(adminCriteriaDTO cri) {
+
+		return adao.memberlist(cri);
+	}
 	
+	// 회원 정보 상세
+	public ProjectDTO mmdetail(AccountDTO adto) {
+	
+		return adao.mmdetail(adto);
+	}
+	// 회원정보 수정
+	public void mmodify(AccountDTO adto) {
+		adao.mmodify(adto);
+	}
+	// 회원 탈퇴
+	public void mleave(AccountDTO adto) {
+		adao.mleave(adto);
+
+	}// 페이징
+			public int mtotal(adminCriteriaDTO cri) {
+				return adao.mtotal(cri);
+
+	}
 }
