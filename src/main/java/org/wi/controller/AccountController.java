@@ -162,18 +162,18 @@ public class AccountController {
 			model.addAttribute("mypage",as.mmdetail(adto));
 		}
 		// 회원정보 수정페이지로 이동
-		@GetMapping("/Account/mdetail")
+		@GetMapping("/Account/mmdetail")
 		public void mdetail(AccountDTO adto,Model model) {
 			
-			model.addAttribute("mdetail", as.mmdetail(adto));
+			model.addAttribute("mmdetail", as.mmdetail(adto));
 
 		}
 		// 회원정보 상세
-		@PostMapping("/Account/mdetail")
+		@PostMapping("/Account/mmdetail")
 		public String detailpost(AccountDTO adto,Model model) {
 			
 			
-			return "/Accountm/mdetail";
+			return "/Accountm/mmdetail";
 			
 		}
 		// 회원정보 수정
@@ -194,13 +194,13 @@ public class AccountController {
 			return "redirect:/";
 		}
 		// 회원리스트
-		@GetMapping("/Admin/Memberlist")
+		@GetMapping("/Admin/memberlist")
 		public String memberlist(Model model, adminCriteriaDTO cri) {
 			model.addAttribute("memberlist",as.memberlist(cri));
 			int total = as.mtotal(cri);
 			//model.addAttribute("paging",new PageVo(cri,190));
 			model.addAttribute("paging",new adminPageDTO(cri,total));
-			return "/Admin/Memberlist";
+			return "/Admin/memberlist";
 		}
 		// 관리자로 로그인 후 멤버리스트에서 상세정보로 이동
 		@GetMapping("/Admin/listdetail")
@@ -211,7 +211,7 @@ public class AccountController {
 		@GetMapping("/Admin/mleave")
 		public String adminleave(AccountDTO adto,HttpSession session) {
 			as.mleave(adto);
-			return "redirect:/Admin/Memberlist";
+			return "redirect:/Admin/memberlist";
 		}
 		
 	

@@ -45,7 +45,7 @@ public interface AccountService {
 	// 멤버 리스트
 		public ArrayList<AccountDTO> memberlist(adminCriteriaDTO cri);
 		// 회원정보 상세 
-		public ProjectDTO mmdetail(AccountDTO adto);
+		public AccountDTO mmdetail(AccountDTO adto);
 		// 회원정보 상세 
 		public void mmodify(AccountDTO adto);
 		// 회원정보 상세 

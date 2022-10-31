@@ -183,7 +183,7 @@ public class AccountServiceImpl implements AccountService {
 	}
 	
 	// 회원 정보 상세
-	public ProjectDTO mmdetail(AccountDTO adto) {
+	public AccountDTO mmdetail(AccountDTO adto) {
 	
 		return adao.mmdetail(adto);
 	}

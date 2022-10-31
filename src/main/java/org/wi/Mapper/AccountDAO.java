@@ -40,7 +40,7 @@ public interface AccountDAO {
 	// 회원 멤버리스트
 	public ArrayList<AccountDTO> memberlist(adminCriteriaDTO cri);
 	// 회원정보 상세
-	public ProjectDTO mmdetail(AccountDTO adto);
+	public AccountDTO mmdetail(AccountDTO adto);
 	// 회원정보 수정
 	public void mmodify(AccountDTO adto);
 	// 회원탈퇴

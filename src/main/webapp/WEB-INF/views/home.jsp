@@ -41,6 +41,7 @@
 							<a href="/Account/Signup">회원가입</a>
 						</c:when>
 						<c:when test="${sessionScope.login.id=='dnkrhkdrb'}">
+							<a href="/Admin/memberlist">관리자메뉴</a><br><br>
 							<a href="/Account/logout">로그아웃</a>
 						</c:when>
 						<c:otherwise>
