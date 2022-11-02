@@ -43,6 +43,7 @@
 				</table>
 				<br>
 				<div>
+					<a href="/"><input type="button" value="홈으로" class="btn"></a>
 					<input type="submit" value="회원정보 수정" id="modi" class="btn">
 				</div>
 			</form>

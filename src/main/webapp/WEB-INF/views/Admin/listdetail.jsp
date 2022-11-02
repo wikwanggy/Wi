@@ -11,7 +11,8 @@
 
 </head>
 <body>
-	<div id="main">
+	<div id="mypage_box">
+		<div id="mypage_sb">
 			<form>
 				<h2>회원 정보 상세 보기</h2>
 				<table>
@@ -42,6 +43,7 @@
 						value="회원삭제" class="btn" id="delete"></a>
 				</div>
 			</form>
+			</div>
 		</div>
 </body>
 </html>

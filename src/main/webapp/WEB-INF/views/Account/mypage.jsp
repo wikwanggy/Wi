@@ -38,6 +38,7 @@
 				<br>
 				<br>
 				<div>
+					<a href="/"><input type="button" value="홈으로" class="btn"></a>
 					<a href="/Account/leave?id=${sessionScope.login.id}">
 					<input type="button" value="회원탈퇴" class="btn"></a> 
 					<a href="/Account/mmdetail?id=${sessionScope.login.id}">

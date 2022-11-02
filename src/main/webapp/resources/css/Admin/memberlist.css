@@ -46,3 +46,9 @@ a{
 	text-decoration: none;
 	color: black;
 }
+#table {
+    height: 650px;
+}
+tr {
+    height: 60px;
+}

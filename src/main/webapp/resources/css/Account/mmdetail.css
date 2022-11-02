@@ -9,10 +9,15 @@
 	font-family: 'establishRoomNo703OTF';
 	margin: 0 auto;
 }
+body{
+	background-image: url("/resources/css/img/mdetail.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 #mypage_box{
 	width: 850px;
 	height: 850px;
-	background-color: yellow;	
+	background-color: white;
 	margin-top: 130px;
 	border: 1px solid black;
 	box-shadow: 10px 10px gray;

@@ -27,6 +27,7 @@
 						<input type="hidden" name="amount" value="${paging.cri.amount}">
 						<input type="button" value="검색" name="sh">
 					</form>
+					<div id="table">
 					<table>
 						<tr>
 							<th>이름</th>
@@ -43,6 +44,7 @@
 							</tr>
 						</c:forEach>
 					</table>
+					</div>
 					<br> <br>
 					<!-- prev=true면 이전버튼 활성화 -->
 					<c:if test="${paging.prev}">
