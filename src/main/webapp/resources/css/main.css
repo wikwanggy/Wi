@@ -176,7 +176,7 @@ h2{
 #Scroll{
 	position: absolute;
 	bottom: 75px;
-	left: 960px;
+	left: 1066px;
 }
 a {
   font-size: 15px;
@@ -367,7 +367,7 @@ h2{
 	text-shadow: 10px 10px 10px #000;
 	position: absolute;
 	top: 100px;
-	left: 850px;
+	left: 956px;
 }
 #html{
 	background-image: url("/resources/css/img/HTML.png");
