@@ -10,9 +10,9 @@ $(document).ready(function(){
 		$(attachlist).each(function(i,attach){
 			// 만약 image결과가 true면
 			if(attach.image){
-				 var filePath=encodeURIComponent(attach.uploadPath+"/s_"+attach.uuid+"_"+attach.fileName);
+				 var filePath=encodeURIComponent(attach.uploadPath+"/"+attach.uuid+"_"+attach.fileName);
 				 console.log(filePath);
-				 str+="<li><img src='/display?fileName="+filePath+"'></li>"
+				 str+="<li class='fileli'><img src='/display?fileName="+filePath+"'style='cursor:pointer' class='fileimg'></li>"
 			}else{ // 그렇지 않으면
 				 var filePath=encodeURIComponent(attach.uploadPath+"/"+attach.uuid+"_"+attach.fileName);
         		 console.log(filePath);

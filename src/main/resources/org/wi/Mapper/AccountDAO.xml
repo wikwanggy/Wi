@@ -22,14 +22,13 @@
   			select * from member where id=#{id}
   	</select>
   <select id="list" resultType="org.wi.model.ProjectDTO">
-		select rownum,bno,name,link,regdate,cnt,id,content,Concat(Replace(uploadpath,'\\','/'),'/',uuid,'_'
-      ,filename)AS filem
+		select rownum,bno,name,link,regdate,cnt,id,content
       from(
       select @rownum:=@rownum+1 rownum, b.* 
       from( select *
       from(select
-      p.bno,name,link,cnt,id,content,regdate,uploadpath,uuid,filename
-      from project p join attach a on p.bno = a.bno where image=1)
+      p.bno,name,link,cnt,id,content,regdate
+      from project p)
       as j) as b,(select @rownum:=0)as tmp
 		<if test="keyword!=null">
 				<choose>

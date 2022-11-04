@@ -11,9 +11,12 @@
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="/resources/js/sidebar.js"></script>
+<script type="text/javascript" src="/resources/js/Account/detail.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.picZoomer.js"></script>
 <script type="text/javascript" src="/resources/js/Account/reply.js"></script>
 <script type="text/javascript" src="/resources/js/Account/attach.js"></script>
 <link rel="stylesheet" href="/resources/css/Account/detail.css">
+<link rel="stylesheet" href="/resources/css/Account/jquery-picZoomer.css">
 </head>
 <body>
 	<header id="side_bar" style="left: -270px;">
@@ -73,11 +76,12 @@
 					</tr>
 					<tr >
 						<th>내용</th>
-						<td colspan="3"><textarea name="content"style="background-color: transparent; height: 98%; width: 99%;border: none; resize: none; font-size: 20px; font-family: 'establishRoomNo703OTF';">${detail.content}</textarea></td>
+						<td colspan="3"><textarea name="content"style="background-color: transparent; height: 98%; width: 99%;border: none; resize: none; font-size: 20px; font-family: 'establishRoomNo703OTF'; text-align: center;
+    					margin-top: 10px;">${detail.content}</textarea></td>
 					</tr>
 					<tr >
 						<th>첨부파일</th>
-						<td colspan="3"><div id="uploadResult"><ul></ul></div></td>
+						<td colspan="3"><div id="uploadResult"><ul id="fileul"></ul></div></td>
 					</tr>
 					<tr style="height: 40px;">
 						<th>작성일자</th>

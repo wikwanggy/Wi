@@ -178,12 +178,12 @@ section{
 }
 #detailbox{
 	margin: 0 auto;
-	width: 800px;
+	width: 1200px;
 	height: 800px;
 	
 }
 #table{
-	width: 800px;
+	width: 1200px;
 	height: 800px;
 	border-collapse: collapse;
 	border:  1px solid black;
@@ -216,7 +216,6 @@ span{
 	margin-right: 5px;
 }
 .replycontent{
-	width: 720px;
 	overflow-wrap: anywhere;
 }
 #reply{
@@ -234,14 +233,14 @@ textarea.autosize {
     border: none;
 }
 textarea{
-	width: 700px;
+	width: 1200px;
 	resize: none;
 }
 #detail_reply{
-	width: 800px;
+	width: 1200px;
 }
 .li{
-	width:800px;
+	width:1200px;
 	line-height: 30px;
     display: flex;
     border: 1px solid black;
@@ -256,7 +255,7 @@ textarea{
 .text_box textarea {
 	width:100%; 
 	height:152px; 
-	color:#666; 
+	color:#666; 	
 	font-size:18px; 
 	line-height:28px; 
 	padding:20px; 
@@ -265,7 +264,7 @@ textarea{
 	}
 .text_box .count {
 	position:absolute;
-	 right:5px; 
+	 right:20px; 
 	 bottom:20px; 
 	 color:#666; 
 	font-family: 'establishRoomNo703OTF';
@@ -319,5 +318,13 @@ button {
     background-color: transparent;
     box-shadow: 5px 5px black;
 }
-
-
+#fileul li{
+	list-style-type : none;
+}
+.fileimg{
+	width: 200px;
+	float: left;
+	margin-left: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
