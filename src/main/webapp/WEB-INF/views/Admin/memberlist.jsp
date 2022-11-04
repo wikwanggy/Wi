@@ -27,7 +27,7 @@
 							<option value="N">이름</option>
 							<option value="IN">아이디+이름</option>
 						</select>
-						<!--  -->
+						
 						<input type="text" name="keyword">
 						<input type="hidden" name="pageNum" id="pageNum" value="${paging.cri.pageNum}"> 
 						<input type="hidden" name="amount" value="${paging.cri.amount}">
