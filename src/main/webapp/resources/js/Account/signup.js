@@ -85,7 +85,7 @@ $(document).ready(function() {
 			
 			$("#passwordalert").remove();
 			
-			str = "<span id='passwordalert' class='span_js'>비밀번호는 8자 이상, 20자 이하로 써주세요. </span>"
+			str = "<span id='passwordalert' class='span_js'>대문자 +소문자+특수문자로 8자 이상, 20자 이하로 써주세요.</span>"
 			
 			$("#pw_box").append(str);
 			

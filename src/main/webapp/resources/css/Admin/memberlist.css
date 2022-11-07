@@ -8,15 +8,17 @@
 *{
 	font-family: 'establishRoomNo703OTF';
 	margin: 0 auto;
+	overflow-x: hidden;
 }
 #mypage_box{
-	width: 1024px;
-	height: 850px;
-	background-color: yellow;	
-	margin-top: 130px;
-	border: 1px solid black;
-	box-shadow: 10px 10px gray;
-	border-radius: 15px;
+	   width: 850px;
+    height: 800px;
+    background-color: white;
+    margin-top: 100px;
+    border: 1px solid black;
+    box-shadow: 10px -10px grey;
+    border-radius: 15px;
+	z-index: 100;
 }
 
 #mypage_sb {
@@ -90,11 +92,14 @@ tr {
 }
 
 .background-container{
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left:0;
 	bottom: 0;
 	right: 0;
+	z-index: -1;
+	height: 100%;
+	width: 100%;
 }
 
 .stars {

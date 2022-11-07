@@ -15,20 +15,22 @@ body{
 	background-size: cover;
 }
 #mypage_box{
-	width: 850px;
-	height: 850px;
-	background-color: white;
-	margin-top: 130px;
-	border: 1px solid black;
-	box-shadow: 10px 10px gray;
-	border-radius: 15px;
+	    width: 850px;
+    height: 800px;
+    background-color: white;
+    margin-top: 100px;
+    border: 1px solid black;
+    box-shadow: 10px 10px grey;
+    border-radius: 15px;
 }
 
 #mypage_sb {
-    text-align: center;
+       text-align: center;
     position: absolute;
-    bottom: 166px;
-    left: 680px;
+
+    bottom: 123px;
+
+    left: 630px;
 }
 h1{
 	font-size: 48px;
@@ -53,7 +55,7 @@ input.btn {
     margin-left: 30px;
     font-size: 20px;
 }
-#pw1{
+#password{
     width: 600px;
     height: 100px;
     border-radius: 15px;
@@ -64,4 +66,7 @@ input.btn {
 	position: absolute;
     right: 70px;
     top: 335px;
+}
+.input{
+	margin-top: 15px;
 }
