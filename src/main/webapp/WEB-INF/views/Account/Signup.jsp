@@ -19,24 +19,24 @@
 						<h1>회원 가입</h1>
 					</div>
 					<div class="div_box" id="id_box">
-						<span>ID<input type="text" name="id" id="id"></span>
+						<span>아이디<input type="text" name="id" id="id"></span>
 					</div>
 					<div class="div_box" id="pw_box">
-						<span>PW<input type="password" name="password"
+						<span>비밀번호<input type="password" name="password"
 							id="password"></span>
 					</div>
 					<div class="div_box" id="pwcheck_box">
-						<span>PW Check<input type="password" name="pwcheck"
+						<span>비밀번호 확인<input type="password" name="pwcheck"
 							id="pwcheck"></span>
 					</div>
 					<div class="div_box" id="name_box">
-						<span>NAME<input type="text" name="name" id="name"></span>
+						<span>이름<input type="text" name="name" id="name"></span>
 					</div>
 					<div class="div_box" id="number_box">
-						<span>number<input tpye="text" name="number" id="number"></span>
+						<span>전화번호<input tpye="text" name="number" id="number" class="phoneNumber"></span>
 					</div>
 					<div class="div_box"id="emailbox">
-						<span>Email<input type="text" name="email"id="email" class="input"></span>
+						<span>이메일<input type="text" name="email"id="email" class="input"></span>
 					</div>
 					<div>
 						<input type="submit" value="가입하기" class="signup_btn">

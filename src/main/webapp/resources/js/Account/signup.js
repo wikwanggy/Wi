@@ -13,6 +13,7 @@ $(document).ready(function() {
 	// name 정규식의 result의 값을 저장할 변수선언
 	var namers = "";
 	
+	var numberresult="";
 	var idck= "";
 	var emailck="";
 	
@@ -85,7 +86,7 @@ $(document).ready(function() {
 			
 			$("#passwordalert").remove();
 			
-			str = "<span id='passwordalert' class='span_js'>대문자 +소문자+특수문자로 8자 이상, 20자 이하로 써주세요.</span>"
+			str = "<span id='passwordalert' class='span_js'>대문자 +소문자+특수문자로 8~20자 이하로 써주세요.</span>"
 			
 			$("#pw_box").append(str);
 			
@@ -196,11 +197,32 @@ $(document).ready(function() {
 		}
 		})
 	})
+	// 전화번호
+	$("#number").blur(function(){
+		
+		
+		var numberRegex =  /^[0-9]{3}-[0-9]{3,4}-[0-9]{4}$/;
+		
+		if(numberRegex.test($("#number").val())){
+			$("#numberalert").remove();
+			str="<span id='numberalert'>사용가능합니다.</span>"
+			$("#number_box").append(str);
+			$("#numberalert").css("color", "green").css("margin-left", "10px");
+			numberresult = true;
+		}else{
+			$("#numberalert").remove();
+			str="<span id='numberalert'>숫자, -을 포함해 휴대전화 형식에 맞게 입력해주세요</span>"
+			$("#number_box").append(str);
+			$("#numberalert").css("color", "red").css("margin-left", "10px");
+			numberresult=false;
+		}
+	})
+	
 	// 필요한 데이터가 전부 입력되었다면 submit을 진행한다//
 	
 	$("form").on("submit", function() {
 
-		if(idrs == true && pwrs == true && pwcheckrs == true && namers == true && emailrs == true){
+		if(idrs == true && pwrs == true && pwcheckrs == true && namers == true && emailrs == true && numberresult == true){
 			alert("회원가입을 축하합니다.");
 		}else{
 			alert("다시 확인해주세요.");

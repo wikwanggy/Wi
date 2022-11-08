@@ -34,9 +34,6 @@ h1{
     border: 1px solid black;
     border-radius: 15px;
     box-shadow: 10px 10px gray;
-    background-image: url("/resources/css/img/findid.jpg");
-	background-repeat: no-repeat;
-	background-size:cover;
 }
 form{
 	margin-top: 30px;

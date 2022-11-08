@@ -7,11 +7,54 @@
 }
 *{
 	font-family: 'establishRoomNo703OTF';
-	font-size: 20px;
+	margin: 0 auto;
+	padding:0;
+	box-sizing: border-box;
+	
 }
 body{
 	margin: 0;
 	background-color: #717171;
+	min-height: 100vh;
+	background: #0c192c;
+}
+.container{
+	position: relative;
+	width: 100%;
+	heigth:100vh;
+	overflow:hidden;
+}
+.bubbles{
+	position: relative;
+	display: flex;
+}
+.bubbles span{
+	position: relative;
+	width: 30px;
+	height: 30px;
+	background: #ffff00;
+	margin: 0 4px;
+	border-radius: 50%;
+	box-shadow: 0 0 10px #d1c705,
+	0 0 50px #ffff00,
+	0 0 100px #ffff00;
+	animation:animate 15s linear infinite;
+	animation-duration: calc(125s / var(--i));
+	z-index: -100;
+}
+.bubbles span:nth-child(even){
+    background: #ffffff;
+	box-shadow: 0 0 10px #dfdfdf,
+	0 0 50px #ffffff,
+	0 0 100px #ffffff;
+}
+@keyframes animate{
+	100%{
+	transform:translateY(100vh) scale(0);
+	}
+	0%{
+	transform:translateY(-10vh) scale(1);
+	}
 }
 #side_bar{
 	position:fixed;
@@ -167,8 +210,14 @@ header {
   display: inline-block;
   vertical-align: top;
 }
+#content_box{
+	width: 1240px;
+    height: 930px;
+    border-radius: 15px;
+    z-index:100;
+}
+}
 #listbox{
-	margin: 16px auto;
 	height:860px;
 	width: 1200px;	
 	position: relative;
@@ -177,29 +226,37 @@ header {
 }
 #head_h2{
 	text-align: center;
+	color: white;
 	
 }
 #table_div{
 	width: 1200px;
-	height: 860px;
+    height: 760px;
 
 }
 table{
 	width: 1200px;
+	background-color: white;
 }
-table, th, td{
+table{
 	text-align: center;
-	border: 1px solid white;
-	c
 }
+table, td, th {
+  border : 1px solid black;
+  border-collapse : collapse;
+  z-index: 110;
+}
+  th:first-child, td:first-child {
+    border-left: none;
+  }
 #pagenum_box{
-	position: absolute;
-	left: 500px;
+	text-align: center;
 }
 .page_num{
-	color: black;
+	color: white;
 	font-size: 20px;
 	text-align: center;
+	
 }
 .bno{
 	width: 50px;
@@ -212,7 +269,6 @@ table, th, td{
 }
 .content{
 	width: 615px;
-	display: inline-block;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis; 
@@ -238,8 +294,10 @@ button {
     width: 120px;
     height: 50px;
     margin-bottom: 40px;
-    background-color: transparent;
+    background-color: white;
     box-shadow: 5px 5px black;
+    margin-left: 20px;
+    
 }
 input[type="submit"] {
     border: 1px solid black;
@@ -248,5 +306,5 @@ input[type="submit"] {
     border-radius: 15px;
     box-shadow: 5px 5px;
     margin-left: 10px;
-    background-color: transparent;
+    background-color: white;
 }

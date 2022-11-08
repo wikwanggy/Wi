@@ -35,9 +35,6 @@ h1{
     border: 1px solid black;
     border-radius: 15px;
     box-shadow: 10px 10px gray;
-    background-image: url("/resources/css/img/findpw1.jpg");
-	background-repeat: no-repeat;
-	background-size:cover;
 }
 #id{
 	width: 580px;
