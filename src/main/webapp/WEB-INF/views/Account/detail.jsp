@@ -15,6 +15,7 @@
 <script type="text/javascript" src="/resources/js/lib/jquery.picZoomer.js"></script>
 <script type="text/javascript" src="/resources/js/Account/reply.js"></script>
 <script type="text/javascript" src="/resources/js/Account/attach.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <link rel="stylesheet" href="/resources/css/Account/detail.css">
 <link rel="stylesheet" href="/resources/css/Account/jquery-picZoomer.css">
 </head>
@@ -55,9 +56,62 @@
 		
 		</div>
 	</header>
+	<div class="container">
+	<div class="bubbles">
+		<span style="--i:11;"></span>
+		<span style="--i:12;"></span>
+		<span style="--i:24;"></span>
+		<span style="--i:10;"></span>
+		<span style="--i:14;"></span>
+		<span style="--i:23;"></span>
+		<span style="--i:18;"></span>
+		<span style="--i:16;"></span>
+		<span style="--i:19;"></span>
+		<span style="--i:20;"></span>
+		<span style="--i:22;"></span>
+		<span style="--i:25;"></span>
+		<span style="--i:18;"></span>
+		<span style="--i:21;"></span>
+		<span style="--i:15;"></span>
+		<span style="--i:13;"></span>
+		<span style="--i:26;"></span>
+		<span style="--i:17;"></span>
+		<span style="--i:13;"></span>
+		<span style="--i:28;"></span>
+		<span style="--i:11;"></span>
+		<span style="--i:12;"></span>
+		<span style="--i:24;"></span>
+		<span style="--i:10;"></span>
+		<span style="--i:14;"></span>
+		<span style="--i:23;"></span>
+		<span style="--i:18;"></span>
+		<span style="--i:16;"></span>
+		<span style="--i:19;"></span>
+		<span style="--i:20;"></span>
+		<span style="--i:22;"></span>
+		<span style="--i:25;"></span>
+		<span style="--i:18;"></span>
+		<span style="--i:21;"></span>
+		<span style="--i:15;"></span>
+		<span style="--i:13;"></span>
+		<span style="--i:26;"></span>
+		<span style="--i:17;"></span>
+		<span style="--i:13;"></span>
+		<span style="--i:28;"></span>
+		<span style="--i:22;"></span>
+		<span style="--i:25;"></span>
+		<span style="--i:18;"></span>
+		<span style="--i:21;"></span>
+		<span style="--i:15;"></span>
+		<span style="--i:13;"></span>
+		<span style="--i:26;"></span>
+		<span style="--i:17;"></span>
+		<span style="--i:13;"></span>
+		<span style="--i:28;"></span>
+	</div>
 	<section style="margin-top: 20px;">
 		<div>
-			<h2 style="font-size: 40px;">게시물 상세 보기</h2>
+			<h2 style="font-size: 40px; color:white;">게시물 상세 보기</h2>
 		</div>
 		<div id="detailbox">
 			<form method="post">
@@ -95,7 +149,7 @@
 						<c:when test="${sessionScope.login==null}">
 						</c:when>
 						<c:when test="${sessionScope.login.id=='dnkrhkdrb'}">
-							<input type="submit" value="글수정" formaction="/Account/modify" class="submit">
+							<input type="submit" value="글수정" formaction="/Account/modify" class="submit" id="modify">
 							<input type="submit" value="글삭제" formaction="/Account/remove" class="submit">
 						</c:when>
 						<c:otherwise>
@@ -110,7 +164,7 @@
 								<c:when test="${sessionScope.login!=null}">
 									<div class="detail_input">
 										<div>
-											<label>댓글 <c:if test="${detail.count!=0}">
+											<label style="color:white;">댓글 <c:if test="${detail.count!=0}">
 								${detail.count}개
 							</c:if>
 											</label> <input type="hidden" name="sessionid"
@@ -159,5 +213,6 @@
 			</div>
 		</div>
 	</section>
+	</div>
 </body>
 </html>

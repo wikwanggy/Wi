@@ -106,7 +106,7 @@
 	</div>
 	<div id="content_box">
 	<div id="head_h2">
-		<h2 style="font-size: 60px;">ProJect List</h2>
+		<h2 style="font-size: 60px;">PROJECT</h2>
 	</div>
 	<div id="listbox">
 		<form>

@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
 $(function(){
 	$("#findBtn").click(function(){
@@ -16,7 +17,7 @@ $(function(){
 				email : $("#email").val()
 			},
 			success : function(result) {
-				alert(result);
+				swal("문자발송",result,"success");
 			},
 		})
 	});

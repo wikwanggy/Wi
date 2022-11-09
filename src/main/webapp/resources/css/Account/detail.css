@@ -10,10 +10,16 @@
 	padding: 0px;
 	font-size: 20px;
 	font-family: 'establishRoomNo703OTF';
+	
+}
+body::-webkit-scrollbar {
+  display: none;
+  overflow-y: scroll;
+	-ms-overflow-style: none;
 }
 body{
 	margin: 0px;
-	background-color:#c0c0c0;
+	background: #0c192c;
 }
 #side_bar{
 	font-family: 'establishRoomNo703OTF';
@@ -188,6 +194,7 @@ section{
 	border-collapse: collapse;
 	border:  1px solid black;
 	box-shadow: 6px 6px grey;
+	background-color: white;
 }
 th,td{
 
@@ -225,7 +232,7 @@ span{
     resize: none;
     border-radius: 15px;
     box-shadow: 5px 5px;
-
+	background-color: white;
 }
 textarea.autosize { 
 	min-height: 50px; 
@@ -245,7 +252,8 @@ textarea{
     display: flex;
     border: 1px solid black;
     border-radius: 15px;
-	box-shadow: 3px 3p
+	box-shadow: 3px 3px;
+	background-color: white;
 }
 .text_box {
 	position:relative; 
@@ -291,7 +299,7 @@ textarea{
     border: 1px solid black;
     box-shadow: 3px 3px;
     font-family: 'establishRoomNo703OTF';
-    background-color: transparent;
+    background-color: white;
 }
 .detail_input {
     margin-top: 15px;
@@ -307,19 +315,23 @@ label {
     box-shadow: 3px 3px;
     border-radius: 15px;
     font-family: 'establishRoomNo703OTF';
-    background-color: transparent;
+    background-color: white;
+    box-shadow: 5px 5px black;
 }
-button {
+button{
     border: 1px solid black;
     border-radius: 15px;
     width: 120px;
     height: 50px;
     margin-bottom: 40px;
     background-color: transparent;
-    box-shadow: 5px 5px black;
 }
 #fileul li{
 	list-style-type : none;
+}
+#fileul a{
+	text-decoration: none;
+	color: black;
 }
 .fileimg{
 	width: 200px;
@@ -327,4 +339,40 @@ button {
 	margin-left: 20px;
 	margin-top: 10px;
 	margin-bottom: 10px;
+}
+.container{
+	position: relative;
+	width: 100%;
+}
+.bubbles{
+	position: relative;
+	display: flex;
+}
+.bubbles span{
+	position: relative;
+	width: 30px;
+	height: 30px;
+	background: #ffff00;
+	margin: 0 4px;
+	border-radius: 50%;
+	box-shadow: 0 0 10px #d1c705,
+	0 0 50px #ffff00,
+	0 0 100px #ffff00;
+	animation:animate 15s linear infinite;
+	animation-duration: calc(125s / var(--i));
+	z-index: -100;
+}
+.bubbles span:nth-child(even){
+    background: #ffffff;
+	box-shadow: 0 0 10px #dfdfdf,
+	0 0 50px #ffffff,
+	0 0 100px #ffffff;
+}
+@keyframes animate{
+	100%{
+	transform:translateY(100vh) scale(0);
+	}
+	0%{
+	transform:translateY(-10vh) scale(1);
+	}
 }

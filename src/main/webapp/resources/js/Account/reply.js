@@ -136,7 +136,7 @@ $(document).ready(function(){
 		var idval=$("input[name='sessionid']").val();
 		
 		if(replyval==''){
-			alert("내용을 입력하세요.");
+			swal("Error","내용을 입력하세요.","error");
 			return;
 		}
 		
@@ -158,7 +158,7 @@ $(document).ready(function(){
 		var content = $(this).val();
 		$('.text_box .count span').html(content.length);
 		if (content.length > 300) {
-			alert("최대 200자까지 입력 가능합니다.");
+			swal("Error","최대 300자까지 입력 가능합니다.","error");
 			$(this).val(content.substring(0, 300));
 			$('.text_box .count span').html(300);
 		}
@@ -168,7 +168,7 @@ $(document).ready(function(){
 		var reply=$('#replycontent'+rno).val();
 		var id=$(this).data("id");
 		if(reply==''){
-			alert("내용을 입력하세요.");
+			swal("Error","내용을 입력하세요.","error");
 			return;
 		}
 		modify({rno:rno,reply:reply,id:id});
@@ -183,8 +183,9 @@ function replywrt(reply){
 		contentType:"application/json; charset=utf-8",
 		success:function(result){
 			if(result=="success"){
-				alert("댓글 성공");
+				swal("댓글성공","댓글에 성공하셨습니다.","success").then(function(){
 				location.reload();
+				})
 			}
 		}
 	})
