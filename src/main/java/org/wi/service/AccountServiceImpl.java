@@ -200,4 +200,5 @@ public class AccountServiceImpl implements AccountService {
 				return adao.mtotal(cri);
 
 	}
+
 }

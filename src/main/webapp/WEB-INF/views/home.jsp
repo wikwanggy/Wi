@@ -258,6 +258,7 @@
 								경력 : 현대자동차(21.04~22.02)<br>
 								병역 : 군필(만기제대)<br>
 								</span>
+								<a href="/Account/myphoto"><button>더 보기</button></a>
 							</div>
 						</div>
 					</div>

@@ -214,6 +214,5 @@ public class AccountController {
 			return "redirect:/Admin/memberlist";
 		}
 		
-	
 }	
 

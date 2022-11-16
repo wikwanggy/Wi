@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <link rel="stylesheet" href="/resources/css/Account/Signup.css">
 </head>
 <body>
@@ -33,22 +34,24 @@
 						<span>이름<input type="text" name="name" id="name"></span>
 					</div>
 					<div class="div_box" id="number_box">
-						<span>전화번호<input tpye="text" name="number" id="number" class="phoneNumber"></span>
+						<span>전화번호<input tpye="text" name="number" id="number"
+							class="phoneNumber"></span>
 					</div>
-					<div class="div_box"id="emailbox">
-						<span>이메일<input type="text" name="email"id="email" class="input"></span>
+					<div class="div_box" id="emailbox">
+						<span>이메일<input type="text" name="email" id="email"
+							class="input"></span>
 					</div>
 					<div>
 						<input type="submit" value="가입하기" class="signup_btn">
 					</div>
 				</form>
 				<div>
-					<a href="/" style="text-decoration: none;"><input type="button" value="뒤로가기" class="signup_btn"
-						id="back_btn"></a>
+					<a href="/" style="text-decoration: none;"><input type="button"
+						value="뒤로가기" class="signup_btn" id="back_btn"></a>
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> 
 	<script type="text/javascript" src="/resources/js/Account/signup.js"></script>
 </body>
 </html>
