@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,6 +32,8 @@ import org.wi.service.AccountService;
 public class AccountController {
 		@Autowired
 		AccountService as;
+		@Autowired
+		JavaMailSenderImpl mailSender;
 
 		// 로그인//
 		@RequestMapping(value="/Account/loginpost",method=RequestMethod.POST)
@@ -75,7 +78,9 @@ public class AccountController {
 		public String signup(AccountDTO adto) {
 			as.signup(adto);
 			return "redirect:/";	
-		}	
+		}
+		@GetMapping("/Account/popup")
+		public void getpopup() {}
 		// id 체크
 		@GetMapping("/Account/Signup/idcheck/{id}")
 		public ResponseEntity<AccountDTO> idcheck(@PathVariable("id") String id){
@@ -110,6 +115,12 @@ public class AccountController {
 			System.out.println("findPw");
 			as.findPw(response,adto);
 		}
+		@PostMapping("/Account/eamilkey")
+		public void emailkey(@ModelAttribute AccountDTO adto,HttpServletResponse response) throws Exception{
+			System.out.print("emailkey");
+			as.eamilkey(response,adto);
+		}
+		
 		// 관리자 페이지로 이동
 		@GetMapping("/Admin/Admin")
 		public void getAdmin() {}

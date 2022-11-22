@@ -7,7 +7,7 @@
 <mapper namespace="org.wi.Mapper.projectAttachDAO">
 	<!-- 파일경로,파일명,uuid,image여부를 attach테이블에 insert -->
 	<insert id="insert">
-		insert into attach(uuid, uploadpath, filename, image, bno)
+		insert into attach(uuid, uploadpath, fileName, image, bno)
 		value(#{uuid},#{uploadPath},#{fileName},#{image},#{bno});
 	</insert>
 	<select id="attachlist" resultType="org.wi.model.AttachFileDTO">

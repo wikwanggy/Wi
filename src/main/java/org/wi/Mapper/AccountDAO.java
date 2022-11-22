@@ -21,6 +21,8 @@ public interface AccountDAO {
 	public AccountDTO findId(@Param("name") String name,@Param("email") String email);
 	// 비밀번호 업데이트
 	public void updatePassword(AccountDTO adto);
+	// 인증번호 인설트
+	public void emailkey(AccountDTO adto);
 	// 게시물 리스트
 	public ArrayList<ProjectDTO> list(ProjectCriteriaDTO pcd);
 	// 토탈
@@ -47,4 +49,6 @@ public interface AccountDAO {
 	public void mleave(AccountDTO adto);
 	// memberlist 전체 테이블 건수 체크
 	public int mtotal(adminCriteriaDTO cri);
+
+	
 }

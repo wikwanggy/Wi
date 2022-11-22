@@ -13,6 +13,7 @@ import org.wi.Mapper.AccountDAO;
 import org.wi.Mapper.projectAttachDAO;
 import org.wi.model.AccountDTO;
 import org.wi.model.AttachFileDTO;
+import org.wi.model.MailDTO;
 import org.wi.model.ProjectCriteriaDTO;
 import org.wi.model.ProjectDTO;
 import org.wi.model.adminCriteriaDTO;
@@ -133,6 +134,80 @@ public class AccountServiceImpl implements AccountService {
 		}
 		
 	}
+	@Override
+	public void sendEmailkey(MailDTO mdto,AccountDTO adto, String div) throws Exception {
+		// Mail Server 설정
+		String charSet = "utf-8";
+		String hostSMTP = "smtp.naver.com";//"smtp.gmail.com"; //네이버 이용시 
+		String hostSMTPid = "hyye0913@naver.com";
+		String hostSMTPpwd = "8586439m!";
+
+		// 보내는 사람 EMail, 제목, 내용
+		String fromEmail = "hyye0913@naver.com";
+		String fromName = "개인프로젝트";
+		String subject ="이메일 인증 번호입니다.";
+		String msg ="이메일 인증 번호입니다.";
+
+		if(div.equals("emailkey")) {
+			subject ="이메일 인증 번호입니다.";
+			msg += "<div align='center' style='border:1px solid black; font-family:verdana'>";
+			msg += "<h3 style='color: blue;'>";
+			msg += "이메일 인증 번호입니다. 인증번호를 입력해주세요</h3>";
+			msg += "<p>인증번호 : ";
+			msg += mdto.getKey() + "</p></div>";
+		
+		}
+
+		// 받는 사람 E-Mail 주소
+		String mail = adto.getEmail();
+		try {
+			HtmlEmail email = new HtmlEmail();
+			email.setDebug(true);
+			email.setCharset(charSet);
+			email.setSSL(true);
+			email.setHostName(hostSMTP);
+			email.setSmtpPort(587); //네이버 이용시 587
+
+			email.setAuthentication(hostSMTPid, hostSMTPpwd);
+			email.setTLS(true);
+			email.addTo(mail, charSet);
+			email.setFrom(fromEmail, fromName, charSet);
+			email.setSubject(subject);
+			email.setHtmlMsg(msg);
+			email.send();
+		} catch (Exception e) {
+			System.out.println("메일발송 실패 : " + e);
+		}
+	}
+	// 이메일 인증 
+		public void eamilkey(HttpServletResponse response,MailDTO mdto, AccountDTO adto) throws Exception {
+			response.setContentType("text/html;charset=utf-8");
+			
+			AccountDTO ck = adao.emailcheck(adto.getEmail());
+			PrintWriter out = response.getWriter();
+			// 가입된 아이디가 없으면
+			if(!adto.getEmail().equals(ck.getEmail())) { // 가입된 email이 아니면
+				// 임시 비밀번호 생성
+				String pw ="";
+				for(int i = 0; i < 12; i++) {
+					pw += (char)((Math.random()*26)+97);
+				}
+				adto.setPassword(pw);
+				//비밀번호 변경
+				adao.emailkey(adto);
+				// 비밀번호 변경 메일 발송
+				sendEmailkey(mdto,ck, "emailkey");
+				
+				out.print("이메일로 인증번호를 발송하였습니다.");
+				out.close();
+			}else {
+				out.print("등록되어 있는 Email입니다.");
+				out.close();
+			}
+			
+			
+		}
+
 	//게시물 리스트
 	public ArrayList<ProjectDTO> list(ProjectCriteriaDTO pcd){
 		
@@ -200,5 +275,9 @@ public class AccountServiceImpl implements AccountService {
 				return adao.mtotal(cri);
 
 	}
-
+			@Override
+			public void pwUpdate(String pASSWORD, String eMAIL, String iD) {
+				// TODO 자동 생성된 메소드 스텁
+				
+			}
 }

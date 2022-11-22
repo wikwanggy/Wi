@@ -15,7 +15,7 @@
 	<div id="signup">
 		<div id="signup_box">
 			<div id="signuparea">
-				<form id="form" action="/Account/Signup" method="post">
+				<form id="form" method="post">
 					<div>
 						<h1>회원 가입</h1>
 					</div>
@@ -34,15 +34,15 @@
 						<span>이름<input type="text" name="name" id="name"></span>
 					</div>
 					<div class="div_box" id="number_box">
-						<span>전화번호<input tpye="text" name="number" id="number"
+						<span>전화번호<input type="text" name="number" id="number"
 							class="phoneNumber"></span>
 					</div>
 					<div class="div_box" id="emailbox">
 						<span>이메일<input type="text" name="email" id="email"
-							class="input"></span>
+							class="input"><a href="javascript:showPopUp()">링크</a></span>
 					</div>
 					<div>
-						<input type="submit" value="가입하기" class="signup_btn">
+						<input type="submit" value="가입하기" class="signup_btn" formaction="/Account/Signup" >
 					</div>
 				</form>
 				<div>

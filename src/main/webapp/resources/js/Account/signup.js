@@ -217,24 +217,6 @@ $(document).ready(function() {
 			numberresult=false;
 		}
 	})
-	$('#mail-Check-Btn').click(function() {
-		const eamil = $('#email').val() // 이메일 주소값 얻어오기!
-		console.log('완성된 이메일 : ' + eamil); // 이메일 오는지 확인
-		const checkInput = $('.mail-check-input') // 인증번호 입력하는곳 
-		
-		$.ajax({
-			type : 'get',
-			url : '<c:url value ="/Accoubt/Signup/mailCheck?email="/>'+eamil, // GET방식이라 Url 뒤에 email을 뭍힐수있다.
-			success : function (data) {
-				console.log("data : " +  data);
-				checkInput.attr('disabled',false);
-				code =data;
-				alert('인증번호가 전송되었습니다.')
-			}			
-		}); // end ajax
-	}); // end send eamil
-	// 필요한 데이터가 전부 입력되었다면 submit을 진행한다//
-	
 	$("form").on("submit", function() {
 
 		if(idrs == true && pwrs == true && pwcheckrs == true && namers == true && emailrs == true && numberresult == true){
@@ -247,3 +229,22 @@ $(document).ready(function() {
 	})
 	
 })
+function showPopUp() {
+		
+		//창 크기 지정
+		var width = 500;
+		var height = 500;
+		
+		//pc화면기준 가운데 정렬
+		var left = (window.screen.width / 2) - (width/2);
+		var top = (window.screen.height / 4);
+		
+	    	//윈도우 속성 지정
+		var windowStatus = 'width='+width+', height='+height+', left='+left+', top='+top+', scrollbars=yes, status=yes, resizable=yes, titlebar=yes';
+		
+	    	//연결하고싶은url
+	    	const url = "/Account/emailkey";
+
+		//등록된 url 및 window 속성 기준으로 팝업창을 연다.
+		window.open(url, "hello popup", windowStatus);
+	}

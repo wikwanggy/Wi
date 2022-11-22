@@ -69,3 +69,12 @@ input{
 .span_js{
 	font-size: 15px;
 }
+ 
+#mail_check_input_false{
+    background-color:#ebebe4;
+}
+ 
+#mail_check_input_true{
+    background-color:white;
+}
+ 
