@@ -160,8 +160,5 @@
   		name=#{name}
   		where id=#{id};
   	</update>
-  	<insert id="emailkey">
-  		insert into mail("key")
-  			values(#{key});
-  	</insert>
+
   </mapper><!--  -->

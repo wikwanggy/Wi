@@ -6,6 +6,7 @@ public class AccountDTO {
 	private String name;
 	private String email;
 	private String number;
+	private String mailkey;
 	
 	public String getId() {
 		return id;
@@ -37,12 +38,16 @@ public class AccountDTO {
 	public void setNumber(String number) {
 		this.number = number;
 	}
+	public String getMailkey() {
+		return mailkey;
+	}
+	public void setMailkey(String mailkey) {
+		this.mailkey = mailkey;
+	}
 	@Override
 	public String toString() {
 		return "AccountDTO [id=" + id + ", password=" + password + ", name=" + name + ", email=" + email + ", number="
-				+ number + "]";
+				+ number + ", mailkey=" + mailkey + "]";
 	}
-	
-	
 	
 }

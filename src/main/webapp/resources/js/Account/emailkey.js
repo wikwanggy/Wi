@@ -45,12 +45,13 @@ $(document).ready(function(){
 		})
 	})
     $("#mailbtn").click(function(){
+    	console.log($("#email").val())
        if(emailrs==true){
     	   $.ajax({
     		 url:"/Account/emailkey",
     		 type:"POST",
     		 data:{
-    			 email : $("#eamil").val()
+    			 email : $("#email").val()
     		 },
     		 success : function(result){
     			 swal("문자발송",result,"success");

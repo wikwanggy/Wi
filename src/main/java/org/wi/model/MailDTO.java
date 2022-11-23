@@ -1,20 +1,20 @@
 package org.wi.model;
 
 public class MailDTO {
-	String key;
+	private String mailkey;
 
-	public String getKey() {
-		return key;
+	public String getMailkey() {
+		return mailkey;
 	}
 
-	public void setKey(String key) {
-		this.key = key;
+	public void setMailkey(String mailkey) {
+		this.mailkey = mailkey;
 	}
 
 	@Override
 	public String toString() {
-		return "MailDTO [key=" + key + "]";
+		return "MailDTO [mailkey=" + mailkey + ", getMailkey()=" + getMailkey() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
-	
 	
 }

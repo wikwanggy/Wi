@@ -13,7 +13,6 @@ import org.wi.Mapper.AccountDAO;
 import org.wi.Mapper.projectAttachDAO;
 import org.wi.model.AccountDTO;
 import org.wi.model.AttachFileDTO;
-import org.wi.model.MailDTO;
 import org.wi.model.ProjectCriteriaDTO;
 import org.wi.model.ProjectDTO;
 import org.wi.model.adminCriteriaDTO;
@@ -135,7 +134,7 @@ public class AccountServiceImpl implements AccountService {
 		
 	}
 	@Override
-	public void sendEmailkey(MailDTO mdto,AccountDTO adto, String div) throws Exception {
+	public void sendkey(AccountDTO adto, String div) throws Exception {
 		// Mail Server 설정
 		String charSet = "utf-8";
 		String hostSMTP = "smtp.naver.com";//"smtp.gmail.com"; //네이버 이용시 
@@ -154,7 +153,7 @@ public class AccountServiceImpl implements AccountService {
 			msg += "<h3 style='color: blue;'>";
 			msg += "이메일 인증 번호입니다. 인증번호를 입력해주세요</h3>";
 			msg += "<p>인증번호 : ";
-			msg += mdto.getKey() + "</p></div>";
+			msg += adto.getMailkey() + "</p></div>";
 		
 		}
 
@@ -180,23 +179,29 @@ public class AccountServiceImpl implements AccountService {
 		}
 	}
 	// 이메일 인증 
-		public void eamilkey(HttpServletResponse response,MailDTO mdto, AccountDTO adto) throws Exception {
+		public void emailkey(HttpServletResponse response, AccountDTO adto) throws Exception {
 			response.setContentType("text/html;charset=utf-8");
 			
-			AccountDTO ck = adao.emailcheck(adto.getEmail());
+			
 			PrintWriter out = response.getWriter();
-			// 가입된 아이디가 없으면
-			if(!adto.getEmail().equals(ck.getEmail())) { // 가입된 email이 아니면
+			
+			System.out.println("adto.getEmail()="+adto.getEmail());
+			
+			
+			
+			
+			if(adao.emailcheck(adto.getEmail())==null) { // 가입된 email이 아니면
 				// 임시 비밀번호 생성
-				String pw ="";
+				System.out.println("aaa");
+				String mailkey ="";
 				for(int i = 0; i < 12; i++) {
-					pw += (char)((Math.random()*26)+97);
+					mailkey += (char)((Math.random()*26)+97);
 				}
-				adto.setPassword(pw);
+				adto.setMailkey(mailkey);
 				//비밀번호 변경
-				adao.emailkey(adto);
+				
 				// 비밀번호 변경 메일 발송
-				sendEmailkey(mdto,ck, "emailkey");
+				sendkey(adto, "emailkey");
 				
 				out.print("이메일로 인증번호를 발송하였습니다.");
 				out.close();
@@ -280,4 +285,6 @@ public class AccountServiceImpl implements AccountService {
 				// TODO 자동 생성된 메소드 스텁
 				
 			}
+			
+
 }

@@ -79,8 +79,7 @@ public class AccountController {
 			as.signup(adto);
 			return "redirect:/";	
 		}
-		@GetMapping("/Account/popup")
-		public void getpopup() {}
+		
 		// id 체크
 		@GetMapping("/Account/Signup/idcheck/{id}")
 		public ResponseEntity<AccountDTO> idcheck(@PathVariable("id") String id){
@@ -115,10 +114,14 @@ public class AccountController {
 			System.out.println("findPw");
 			as.findPw(response,adto);
 		}
-		@PostMapping("/Account/eamilkey")
-		public void emailkey(@ModelAttribute AccountDTO adto,HttpServletResponse response) throws Exception{
-			System.out.print("emailkey");
-			as.eamilkey(response,adto);
+		@GetMapping("/Account/emailkey")
+		public void getemailkey() {}
+		
+		@PostMapping("/Account/emailkey")
+		public void emailkey(AccountDTO adto,HttpServletResponse response) throws Exception{
+			System.out.println("adto="+adto);
+			
+			as.emailkey(response,adto);
 		}
 		
 		// 관리자 페이지로 이동

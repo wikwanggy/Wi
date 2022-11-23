@@ -7,7 +7,6 @@ import javax.servlet.http.HttpSession;
 
 import org.wi.model.AccountDTO;
 import org.wi.model.AttachFileDTO;
-import org.wi.model.MailDTO;
 import org.wi.model.ProjectCriteriaDTO;
 import org.wi.model.ProjectDTO;
 import org.wi.model.adminCriteriaDTO;
@@ -28,9 +27,9 @@ public interface AccountService {
 	// 비밀번호 메일 전송
 	public void sendEmail(AccountDTO adto, String div) throws Exception;
 	// 이메일 인증 키 전송
-	public void eamilkey(HttpServletResponse response, AccountDTO adto) throws Exception;
+	public void emailkey(HttpServletResponse response, AccountDTO adto) throws Exception;
 	// 메일 인증 전송
-	void sendEmailkey(MailDTO mdto, AccountDTO adto, String div) throws Exception;
+	public void sendkey(AccountDTO adto, String div) throws Exception;
 	// 게시물 리스트
 	public ArrayList<ProjectDTO> list(ProjectCriteriaDTO pcd);
 	// 토탈
@@ -59,7 +58,7 @@ public interface AccountService {
 	public int mtotal(adminCriteriaDTO cri);
 	
 	public void pwUpdate(String pASSWORD, String eMAIL, String iD);
-	void sendEmailkey();
+
 	
 	
 	
