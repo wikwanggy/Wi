@@ -25,6 +25,8 @@ public class AccountServiceImpl implements AccountService {
 	@Autowired
 	projectAttachDAO padao;
 	
+	String mailkey ="";
+	
 	// 로그인 select
 	public boolean login(AccountDTO adto, HttpSession session) {
 		AccountDTO login=adao.login(adto);
@@ -61,12 +63,12 @@ public class AccountServiceImpl implements AccountService {
 	public void sendEmail(AccountDTO adto, String div) throws Exception {
 		// Mail Server 설정
 		String charSet = "utf-8";
-		String hostSMTP = "smtp.naver.com";//"smtp.gmail.com"; //네이버 이용시 
-		String hostSMTPid = "hyye0913@naver.com";
+		String hostSMTP = "smtp.mail.nate.com";//"smtp.gmail.com"; //네이버 이용시 
+		String hostSMTPid = "dnkrhkdrb@nate.com";
 		String hostSMTPpwd = "8586439m!";
 
 		// 보내는 사람 EMail, 제목, 내용
-		String fromEmail = "hyye0913@naver.com";
+		String fromEmail = "dnkrhkdrb@nate.com";
 		String fromName = "개인프로젝트";
 		String subject ="임시비밀번호";
 		String msg ="임시비밀번호입니다.";
@@ -133,27 +135,30 @@ public class AccountServiceImpl implements AccountService {
 		}
 		
 	}
+	
 	@Override
 	public void sendkey(AccountDTO adto, String div) throws Exception {
 		// Mail Server 설정
+		
 		String charSet = "utf-8";
-		String hostSMTP = "smtp.naver.com";//"smtp.gmail.com"; //네이버 이용시 
-		String hostSMTPid = "hyye0913@naver.com";
+		String hostSMTP = "smtp.mail.nate.com";//"smtp.gmail.com"; //네이버 이용시 
+		String hostSMTPid = "dnkrhkdrb@nate.com";
 		String hostSMTPpwd = "8586439m!";
 
 		// 보내는 사람 EMail, 제목, 내용
-		String fromEmail = "hyye0913@naver.com";
+		String fromEmail = "dnkrhkdrb@nate.com";
 		String fromName = "개인프로젝트";
 		String subject ="이메일 인증 번호입니다.";
 		String msg ="이메일 인증 번호입니다.";
 
 		if(div.equals("emailkey")) {
+			System.out.println(subject);
 			subject ="이메일 인증 번호입니다.";
 			msg += "<div align='center' style='border:1px solid black; font-family:verdana'>";
 			msg += "<h3 style='color: blue;'>";
 			msg += "이메일 인증 번호입니다. 인증번호를 입력해주세요</h3>";
-			msg += "<p>인증번호 : ";
-			msg += adto.getMailkey() + "</p></div>";
+			msg += "<p>인증번호 :"+ mailkey+"</p></div>";
+			  
 		
 		}
 
@@ -166,7 +171,6 @@ public class AccountServiceImpl implements AccountService {
 			email.setSSL(true);
 			email.setHostName(hostSMTP);
 			email.setSmtpPort(587); //네이버 이용시 587
-
 			email.setAuthentication(hostSMTPid, hostSMTPpwd);
 			email.setTLS(true);
 			email.addTo(mail, charSet);
@@ -174,10 +178,12 @@ public class AccountServiceImpl implements AccountService {
 			email.setSubject(subject);
 			email.setHtmlMsg(msg);
 			email.send();
+			
 		} catch (Exception e) {
 			System.out.println("메일발송 실패 : " + e);
 		}
 	}
+	
 	// 이메일 인증 
 		public void emailkey(HttpServletResponse response, AccountDTO adto) throws Exception {
 			response.setContentType("text/html;charset=utf-8");
@@ -193,15 +199,15 @@ public class AccountServiceImpl implements AccountService {
 			if(adao.emailcheck(adto.getEmail())==null) { // 가입된 email이 아니면
 				// 임시 비밀번호 생성
 				System.out.println("aaa");
-				String mailkey ="";
 				for(int i = 0; i < 12; i++) {
 					mailkey += (char)((Math.random()*26)+97);
 				}
-				adto.setMailkey(mailkey);
+				
 				//비밀번호 변경
 				
 				// 비밀번호 변경 메일 발송
-				sendkey(adto, "emailkey");
+				sendkey(adto, mailkey);
+				System.out.println("gdgdg"+adto+mailkey);
 				
 				out.print("이메일로 인증번호를 발송하였습니다.");
 				out.close();
