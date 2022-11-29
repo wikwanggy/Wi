@@ -16,32 +16,21 @@ $(document).ready(function(){
 			console.log(data)
 			$("#emailalert").remove();
 			
-			str = "<span id='emailalert'> 사용중입니다 </span>"
-			
-			$("#emailbox").append(str);
-			
-			$("#emailalert").css("color", "red").css("margin-left", "10px");
+		
 			
 			emailck= false;
 				
 		}).fail(function(data){// select된 결과가 없으면 fail로 인식
-			alert("aa")
-			if(emailRegex.test($("#email").val()==null)){
+			
+			if(emailRegex.test($("#email").val())){
 				$("#emailalert").remove();
-				alert("bb")
-				str="<span id='emailalert'>사용가능합니다.</span>"
 				
-				$("#emailbox").append(str);
-				
-				$("#emailalert").css("color", "green").css("margin-left", "10px");
 				
 				emailrs = true;
 		}else {
 			
 			$("#emailalert").remove();
-			str="<span id='emailalert'>이메일 형식에 맞게 입력해주세요.</span>"
-			$("#emailbox").append(str);
-			$("#emailalert").css("color", "red").css("margin-left", "10px");
+	
 			emailrs=false;
 		}
 		})
@@ -64,7 +53,7 @@ $(document).ready(function(){
     		 },
     		 success : function(result){
     			 console.log("gdgdgd"+result);
-    			 swal("success","인증번호를 발송하였습니다.","error");
+    			 swal("success","인증번호를 발송하였습니다.","success");
     		 },
     	   })
     }
