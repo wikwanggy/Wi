@@ -13,14 +13,18 @@
   	<select id="logincheck" resultType="int">
   		select count(*) from member where id=#{id} and password=#{password}
   	</select>
+  	<select id="emailkeycheck" resultType="int">
+  		select count(*) from member where email=#{email} and mailkey=#{mailkey}
+  	</select>
   	<!-- 회원가입 -->
   	<insert id="signup">
-  		insert into member(id,password,name,number,email)
-  		values(#{id},#{password},#{name},#{number},#{email});
+  		insert into member(id,password,name,number,email,mailkey)
+  		values(#{id},#{password},#{name},#{number},#{email},#{mailkey});
   	</insert>
   	<select id="idcheck" resultType="org.wi.model.AccountDTO">
   			select * from member where id=#{id}
   	</select>
+  	
   <select id="list" resultType="org.wi.model.ProjectDTO">
 		select rownum,bno,name,link,regdate,cnt,id,content
       from(
@@ -100,6 +104,9 @@
   	</select>
 	<update id="updatePassword" >
 	update member set password = #{password} where id = #{id}
+	</update>
+	<update id="updateMailkey" >
+	update member set mailkey = #{mailkey} where email = #{email}
 	</update>
 	<select id="emailcheck" resultType="org.wi.model.AccountDTO">
   	select * from member where email=#{email}

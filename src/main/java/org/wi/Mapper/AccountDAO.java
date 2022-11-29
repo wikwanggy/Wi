@@ -13,14 +13,19 @@ public interface AccountDAO {
 	public AccountDTO login(AccountDTO adto);
 	// 로그인 체크
 	public int logincheck(AccountDTO adto);
+	public int emailkeycheck(AccountDTO adto);
 	// 회원가입
 	public void signup(AccountDTO adto);
 	// 회원가입 아이디 체크
 	public AccountDTO idcheck(String id);
+	
+	
 	// id찾기
 	public AccountDTO findId(@Param("name") String name,@Param("email") String email);
 	// 비밀번호 업데이트
 	public void updatePassword(AccountDTO adto);
+	// 인증번호 업데이트
+	public void updateMailkey(AccountDTO adto);
 	// 인증번호 인설트
 	public void emailkey(AccountDTO adto);
 	// 게시물 리스트
@@ -49,6 +54,8 @@ public interface AccountDAO {
 	public void mleave(AccountDTO adto);
 	// memberlist 전체 테이블 건수 체크
 	public int mtotal(adminCriteriaDTO cri);
+	
+
 
 	
 }

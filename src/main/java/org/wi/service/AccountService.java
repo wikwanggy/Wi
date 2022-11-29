@@ -16,10 +16,13 @@ public interface AccountService {
 	public boolean login(AccountDTO adto, HttpSession session);
 	// 로그인 체크
 	public int logincheck(AccountDTO adto);
+	
+	public int emailkeycheck(AccountDTO adto);
 	// 회원가입
 	public void signup(AccountDTO adto);
 	// id중복체크
 	public AccountDTO idcheck(String id);
+	
 	// id 찾기
 	public AccountDTO findId(String name, String email);
 	// 비밀번호 찾기
@@ -46,6 +49,7 @@ public interface AccountService {
 	public ArrayList<AttachFileDTO> attachlist(int bno);
 	// 이메일체크
 	public AccountDTO emailcheck(String email);
+	
 	// 멤버 리스트
 	public ArrayList<AccountDTO> memberlist(adminCriteriaDTO cri);
 	// 회원정보 상세 
@@ -59,6 +63,10 @@ public interface AccountService {
 	
 	public void pwUpdate(String pASSWORD, String eMAIL, String iD);
 
+	public void mailUpdate(String mAILKEY,String eMAIL);
+	
+	
+	
 	
 	
 	

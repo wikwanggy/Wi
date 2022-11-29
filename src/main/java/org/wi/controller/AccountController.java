@@ -49,6 +49,7 @@ public class AccountController {
 				return "redirect:/Account/login";
 			}		
 		}
+		
 		// 로그인 체크
 		@PostMapping("/Account/logincheck")
 		public ResponseEntity<String> logincheck(@RequestBody AccountDTO adto) {
@@ -59,6 +60,17 @@ public class AccountController {
 			return result==1?new ResponseEntity<>("success", HttpStatus.OK)
 							:new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
+		
+		@PostMapping("/Account/emailkeycheck")
+		public ResponseEntity<String> emailkeycheck(@RequestBody AccountDTO adto) {
+			System.out.println(adto);
+			int result = as.emailkeycheck(adto);
+			System.out.println("result 결과" + result);
+			
+			return result==1?new ResponseEntity<>("success", HttpStatus.OK)
+							:new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
 		// 로그아웃
 		@GetMapping("/Account/logout")
 		public String getLogout(HttpSession session) {
@@ -77,7 +89,7 @@ public class AccountController {
 		@PostMapping("/Account/Signup")
 		public String signup(AccountDTO adto) {
 			as.signup(adto);
-			return "redirect:/";	
+			return "redirect:/Account/emailkey";	
 		}
 		
 		// id 체크
@@ -86,6 +98,7 @@ public class AccountController {
 			
 			return new ResponseEntity<>(as.idcheck(id), HttpStatus.OK);
 		}
+	
 		//email체크
 		@GetMapping("/Account/Signup/emailcheck/{email}")
 		//                  @PathVariable
@@ -93,6 +106,7 @@ public class AccountController {
 			System.out.println(email);
 			return new ResponseEntity<>(as.emailcheck(email), HttpStatus.OK);
 		}
+	
 		// ID 찾기 페이지로 이동
 		@GetMapping("/Account/searchId")
 		public void getfindId() {}
@@ -105,7 +119,7 @@ public class AccountController {
 		}
 		// 비밀번호 찾기
 		@GetMapping("/Account/findPw")
-		public void getfindPw() throws Exception {
+		public void getfindPw() throws   Exception {
 			
 		}
 		// 비밀번호 찾기
@@ -119,11 +133,11 @@ public class AccountController {
 		
 		@PostMapping("/Account/emailkey")
 		public void emailkey(AccountDTO adto,HttpServletResponse response) throws Exception{
-			System.out.println("adto="+adto);
+			
 			
 			as.emailkey(response,adto);
 		}
-		
+	
 		// 관리자 페이지로 이동
 		@GetMapping("/Admin/Admin")
 		public void getAdmin() {}

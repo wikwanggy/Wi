@@ -24,8 +24,7 @@ public class AccountServiceImpl implements AccountService {
 	
 	@Autowired
 	projectAttachDAO padao;
-	
-	String mailkey ="";
+
 	
 	// 로그인 select
 	public boolean login(AccountDTO adto, HttpSession session) {
@@ -45,6 +44,10 @@ public class AccountServiceImpl implements AccountService {
 		System.out.println(adto);
 		return adao.logincheck(adto);
 	}
+	public int emailkeycheck(AccountDTO adto) {
+		System.out.println(adto);
+		return adao.emailkeycheck(adto);
+	}
 	//회원가입
 	public void signup(AccountDTO adto) {
 		adao.signup(adto);
@@ -55,6 +58,7 @@ public class AccountServiceImpl implements AccountService {
 		
 		return adao.idcheck(id);
 	}
+	
 	// 아이디 찾기
 	public AccountDTO findId(String name, String email) {
 		
@@ -134,6 +138,34 @@ public class AccountServiceImpl implements AccountService {
 			out.close();
 		}
 		
+	}// 이메일 인증 
+	public void emailkey(HttpServletResponse response, AccountDTO adto) throws Exception {
+		response.setContentType("text/html;charset=utf-8");
+		
+		PrintWriter out = response.getWriter();
+		
+		
+		if(adao.emailcheck(adto.getEmail())!=null) { // 가입된 email이면
+			// 임시 비밀번호 생성
+			System.out.println("aaaa");
+			String mk="";
+			for(int i = 0; i < 12; i++) {
+				mk += (char)((Math.random()*26)+97);
+			}
+			adto.setMailkey(mk);
+			//비밀번호 변경
+			adao.updateMailkey(adto);
+			// 비밀번호 변경 메일 발송
+			sendkey(adto,"emailkey");
+			
+			out.print("이메일로 인증번호를 발송하였습니다.");
+			out.close();
+		}else {
+			out.print("등록되어 있지 않은 Email입니다.");
+			out.close();
+		}
+		
+		
 	}
 	
 	@Override
@@ -149,15 +181,15 @@ public class AccountServiceImpl implements AccountService {
 		String fromEmail = "dnkrhkdrb@nate.com";
 		String fromName = "개인프로젝트";
 		String subject ="이메일 인증 번호입니다.";
-		String msg ="이메일 인증 번호입니다.";
+		String msg ="";
 
 		if(div.equals("emailkey")) {
-			System.out.println(subject);
+			System.out.println("emailkey"+subject);
 			subject ="이메일 인증 번호입니다.";
 			msg += "<div align='center' style='border:1px solid black; font-family:verdana'>";
 			msg += "<h3 style='color: blue;'>";
-			msg += "이메일 인증 번호입니다. 인증번호를 입력해주세요</h3>";
-			msg += "<p>인증번호 :"+ mailkey+"</p></div>";
+			msg += adto.getId() +"님의 이메일 인증 번호입니다. 인증번호를 입력해주세요</h3>";
+			msg += "<p>인증번호 :"+adto.getMailkey()+"</p></div>";
 			  
 		
 		}
@@ -184,40 +216,6 @@ public class AccountServiceImpl implements AccountService {
 		}
 	}
 	
-	// 이메일 인증 
-		public void emailkey(HttpServletResponse response, AccountDTO adto) throws Exception {
-			response.setContentType("text/html;charset=utf-8");
-			
-			
-			PrintWriter out = response.getWriter();
-			
-			System.out.println("adto.getEmail()="+adto.getEmail());
-			
-			
-			
-			
-			if(adao.emailcheck(adto.getEmail())==null) { // 가입된 email이 아니면
-				// 임시 비밀번호 생성
-				System.out.println("aaa");
-				for(int i = 0; i < 12; i++) {
-					mailkey += (char)((Math.random()*26)+97);
-				}
-				
-				//비밀번호 변경
-				
-				// 비밀번호 변경 메일 발송
-				sendkey(adto, mailkey);
-				System.out.println("gdgdg"+adto+mailkey);
-				
-				out.print("이메일로 인증번호를 발송하였습니다.");
-				out.close();
-			}else {
-				out.print("등록되어 있는 Email입니다.");
-				out.close();
-			}
-			
-			
-		}
 
 	//게시물 리스트
 	public ArrayList<ProjectDTO> list(ProjectCriteriaDTO pcd){
@@ -291,6 +289,12 @@ public class AccountServiceImpl implements AccountService {
 				// TODO 자동 생성된 메소드 스텁
 				
 			}
+			@Override
+			public void mailUpdate(String mAILKEY, String eMAIL) {
+				// TODO 자동 생성된 메소드 스텁
+				
+			}
+			
 			
 
 }

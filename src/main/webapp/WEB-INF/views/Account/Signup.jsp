@@ -39,7 +39,10 @@
 					</div>
 					<div class="div_box" id="emailbox">
 						<span>이메일<input type="text" name="email" id="email"
-							class="input"><a href="javascript:showPopUp()">링크</a></span>
+							class="input"></span>
+					</div>
+					<div>
+						<input type="hidden" name="mailkey" id="mailkey" value="1">
 					</div>
 					<div>
 						<input type="submit" value="가입하기" class="signup_btn" formaction="/Account/Signup" >

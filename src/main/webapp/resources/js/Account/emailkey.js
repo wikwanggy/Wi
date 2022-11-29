@@ -4,6 +4,7 @@
 $(document).ready(function(){
 	emailck="";
 	emailrs="";
+
 	// email
 	$("#email").blur(function(){
 
@@ -24,9 +25,10 @@ $(document).ready(function(){
 			emailck= false;
 				
 		}).fail(function(data){// select된 결과가 없으면 fail로 인식
-			if(emailRegex.test($("#email").val())){
+			alert("aa")
+			if(emailRegex.test($("#email").val()==null)){
 				$("#emailalert").remove();
-				
+				alert("bb")
 				str="<span id='emailalert'>사용가능합니다.</span>"
 				
 				$("#emailbox").append(str);
@@ -34,7 +36,7 @@ $(document).ready(function(){
 				$("#emailalert").css("color", "green").css("margin-left", "10px");
 				
 				emailrs = true;
-		} else {
+		}else {
 			
 			$("#emailalert").remove();
 			str="<span id='emailalert'>이메일 형식에 맞게 입력해주세요.</span>"
@@ -45,8 +47,15 @@ $(document).ready(function(){
 		})
 	})
     $("#mailbtn").click(function(){
-    	console.log($("#email").val())
-       if(emailrs==true){
+    	var ev=$("#email").val();
+    	
+    	if(ev==""){
+    		swal("실패","이메일입력","error");
+    		$("#email").focus();
+    	}else if(emailrs==true){
+    		swal("실패","이메일없음","error");
+    		$("#email").focus();
+    	}else{
     	   $.ajax({
     		 url:"/Account/emailkey",
     		 type:"POST",
@@ -54,13 +63,49 @@ $(document).ready(function(){
     			 email : $("#email").val()
     		 },
     		 success : function(result){
-    			 swal("문자발송",result,"success");
+    			 console.log("gdgdgd"+result);
+    			 swal("success","인증번호를 발송하였습니다.","error");
     		 },
     	   })
-    	   
-       }else{
-    	   swal("이메일이 중복되었거나 형식에 맞게 입력해주세요.",result,"error")
-    	   return false;
-       }
-    })
+    }
+   $("#mailcheck").submit(function(){
+	   var email =$("#email").val();
+	   var mailkey=$("#mailkey").val();
+	   var check = false;
+	   
+	   if (email==""){
+		   swal("공백 발생!!","이메일을 입력해주세요","error");
+		   $("#email").focus();
+	   }else if(mailkey==""){
+		   swal("공백 발생!!","인증번호를 입력해주세요.","error");
+		   $("#mailkey").focus();
+	   }else{
+		   $.ajax({
+			   type : "POST",
+				url : "/Account/emailkeycheck",
+				data : JSON.stringify ({email:email, mailkey:mailkey}),
+				contentType : "application/json; charset=utf-8",
+				async : false,
+				success:function(result) {
+					if(result == "success") {
+						swal({
+							title:"성공!!",
+							text:"이메일 인증에 성공하셨습니다.",
+							icon:"success",
+							buttons:'확인'
+						}).then(function(){
+							location.href="/Account/login"
+						})
+						
+					}
+				},
+				error:function() {
+					swal("실패!!","이메일 인증에 실패하셨습니다.","error")
+					check = false;
+				}
+		   })
+	   }
+	   return check;
+   })
  })
+})
